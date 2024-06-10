@@ -1,0 +1,93 @@
+{% load static %}
+<footer class="footer-area secondary-bg pt-120">
+    <div class="container">
+        <div class="footer__wrp pb-60">
+            <div class="footer__item footer-about">
+                <a class='logo mb-4' href='index.html'>
+                    <img class="logo_dark" src="{% static 'assets/oneiro_horizontal.png' %}" alt="logo">
+                </a>
+                <p>{% trans 'Biz, müştərilərimizin brendlərinin rəqabət üstünlüyünü artırmağa kömək edən innovativ Media və Marketinq şirkəitiyik.' %}
+                </p>
+                <div class="social-icons mt-20">
+                    <a href="#0">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M23.9982 23.9997V15.2098C23.9982 10.8898 23.0682 7.58984 18.0282 7.58984C15.5982 7.58984 13.9782 8.90983 13.3182 10.1698H13.2582V7.97984H8.48828V23.9997H13.4682V16.0498C13.4682 13.9498 13.8582 11.9398 16.4382 11.9398C18.9882 11.9398 19.0182 14.3098 19.0182 16.1698V23.9697H23.9982V23.9997Z"
+                                fill="white" />
+                            <path d="M0.390625 7.97949H5.37059V23.9994H0.390625V7.97949Z" fill="white" />
+                            <path
+                                d="M2.87998 0C1.28999 0 0 1.28999 0 2.87998C0 4.46997 1.28999 5.78996 2.87998 5.78996C4.46997 5.78996 5.75996 4.46997 5.75996 2.87998C5.75996 1.28999 4.46997 0 2.87998 0Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                 
+                    <a href="#0">
+                        <svg width="14" height="24" viewBox="0 0 14 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M8.85941 24V13.0533H12.5323L13.0833 8.78588H8.85941V6.06176C8.85941 4.82664 9.20099 3.98492 10.9742 3.98492L13.232 3.98399V0.167076C12.8415 0.116334 11.5012 0 9.94123 0C6.68371 0 4.45356 1.98836 4.45356 5.63912V8.78588H0.769531V13.0533H4.45356V24H8.85941Z"
+                                fill="white" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__item">
+                <h3>{% trans 'Əsas keçidlər' %}</h3>
+                <ul>
+                    <li>
+                        <a href='about.html'>{% trans 'Ana səhifə' %}</a>
+                    </li>
+                    <li>
+                        <a href='service.html'>{% trans 'Haqqımızda' %}</a>
+                    </li>
+                    <li>
+                        <a href='blog.html'>{% trans 'Xidmətlər' %}</a>
+                    </li>
+                    <li>
+                        <a href='pricing.html'>{% trans 'Portfolio' %}</a>
+                    </li>
+                    <li>
+                        <a href='pricing.html'>{% trans 'Bloqlar' %}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__item">
+                <h3>{% trans 'Sosial şəbəkə' %}</h3>
+                <ul>
+                    <li>
+                        <a href='contact.html'>{% trans 'İnstagram' %}</a>
+                    </li>
+                    <li>
+                        <a href='error.html'>{% trans 'Facebook' %}</a>
+                    </li>
+                    <li>
+                        <a href='privacy-policy.html'>{% trans 'Linkedin' %}</a>
+                    </li>
+                    <li>
+                        <a href='term-condition.html'>{% trans 'Tiktok' %}</a>
+                    </li>
+                  
+                </ul>
+            </div>
+            <div class="footer__item footer-subscribe">
+                <h3>{% trans 'İndi abunə ol!' %}</h3>
+                <div class="subscribe-feild">
+                    <input type="text" placeholder="E-poçt daxil edin!">
+                    <button><i class="fa-light fa-arrow-up-right"></i></button>
+                </div>
+                
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <p> &copy; Copyright 2024 <a href="#0">Oneiro Group</a>. </p>
+            <a href="#0">
+                <svg width="14" height="18" viewBox="0 0 14 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M11.6309 2.55094C10.3989 1.33583 8.75455 0.666626 7.00066 0.666626C5.24674 0.666626 3.60236 1.33583 2.37036 2.55094C0.0779159 4.812 -0.280968 7.52721 1.30371 10.621C2.6035 13.1587 4.94433 15.4671 6.65356 17.1527L6.72063 17.2189C6.79799 17.2951 6.89931 17.3333 7.00066 17.3333C7.10202 17.3333 7.20341 17.2951 7.2807 17.2189L7.3479 17.1526C9.05707 15.467 11.3979 13.1585 12.6976 10.6209C14.2823 7.52714 13.9234 4.812 11.6309 2.55094ZM11.9907 10.2687C10.8001 12.5932 8.64884 14.7628 7.00066 16.3902C5.35252 14.7628 3.20123 12.5931 2.01069 10.2688C0.577693 7.47102 0.878523 5.12721 2.93047 3.10338C4.05263 1.99661 5.52665 1.44319 7.00063 1.44319C8.47465 1.44319 9.94866 1.99657 11.0708 3.10338C13.1227 5.12717 13.4236 7.47099 11.9907 10.2687ZM7.00063 4.6314C5.39641 4.6314 4.09125 5.91871 4.09125 7.501C4.09125 9.08329 5.39641 10.3706 7.00063 10.3706C8.60488 10.3706 9.91005 9.08329 9.91005 7.501C9.91005 5.91871 8.60491 4.6314 7.00063 4.6314ZM7.00063 9.58935C5.83315 9.58935 4.88334 8.65253 4.88334 7.501C4.88334 6.34947 5.83315 5.41265 7.00063 5.41265C8.16814 5.41265 9.11796 6.34947 9.11796 7.501C9.11796 8.65253 8.16814 9.58935 7.00063 9.58935Z"
+                        fill="white" fill-opacity="0.7" />
+                </svg>
+                {% trans '28 May metrosu yaxınlığı, Jalə plaza' %}</a>
+        </div>
+    </div>
+</footer>

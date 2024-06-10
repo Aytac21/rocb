@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="{% trans 'az' %}">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oneiro Group - {% trans 'Media və marketinq şirkəti' %} </title>
+    <meta name="language" content="{% trans 'az' %}">
+    <meta name="description" content="{% trans 'Oneiro Group – SMM, Foto və video çəkilişlər, Marketinq, veb-sayt və mobil proqramların hazırlanması xidmətlərini təqdim edən Media və Marketinq şirkətidir.' %}' ">
+    <meta name="keywords" content="Oneiro Group, Oneiro, Oneiro.az, Smm, Marketinq, Video çəkilişlər, Foto, Reklam, Veb-sayt, mobil proqramlar">
+    <meta name="image" content="{% static 'assets/fav_icon.png' %}">
+    <meta property="og:title" content="Oneiro.az - Oneiro Group">
+    <meta property="og:image" content="{% static 'assets/fav_icon.png' %}">
+    <meta property="og:description" content="{% trans 'Oneiro Group – SMM, Foto və video çəkilişlər, Marketinq, veb-sayt və mobil proqramların hazırlanması xidmətlərini təqdim edən Media və Marketinq şirkətidir.' %}">
+    <meta property="og:url" content="https://oneiro.az/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Oneiro Group">
+    <!-- Favicon img -->
+    <link rel="shortcut icon" sizes="32x32" href="{% static 'assets/fav_icon.png' %}">
+    <link rel="icon" sizes="any" href="{% static 'assets/fav_icon.png' %}" type="image/png">
+    <!-- Bootstarp min css -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- Mean menu css -->
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <!-- All min css -->
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <!-- Swiper bundle min css -->
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
+    <!-- Magnigic popup css -->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <!-- Splitting css -->
+    <link rel="stylesheet" href="{% static 'assets/css/splitting.css' %}">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+    <!-- Style css -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- Preloader area start -->
+    <div id="loading" class="preloader">
+        <div class="loading-overlay"></div>
+        <div class="custom-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- Preloader area end -->
+
+    <!-- Top header area start here -->
+    <div class="header-top header-top-area d-none d-lg-block">
+        <div class="container">
+            <div class="header-top-wrp">
+                <ul class="info">
+                  
+                </ul>
+                <div class="right-info">
+                    <ul class="site-link">
+                        <li><a href="mailto:info@oneiro.az">info@oneiro.az</a></li>
+                        <li><a href="tel:+994554264644">+994 55 4264644</a></li>
+                    </ul>
+                    <ul class="link-info">
+                        <li>
+                            <a href="https://www.facebook.com/profile.php?id=61556256917170&mibextid=ZbWKwL">
+                                <svg width="8" height="16" viewBox="0 0 8 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M5.10223 8.99555V16H1.97333V8.99555H0V6.09778H1.97333V3.89334C1.97333 1.38667 3.46666 0 5.76 0C6.85333 0 8 0.195557 8 0.195557V2.65778H6.73778C5.49334 2.65778 5.10223 3.43111 5.10223 4.22222V6.09778H7.88444L7.44 8.99555H5.10223Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/oneirogroup.az/">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M15.9466 4.69593C15.8843 3.41522 15.5906 2.27682 14.6563 1.34297C13.7219 0.409114 12.5829 0.11562 11.3014 0.053363C9.97553 -0.0177877 6.01557 -0.0177877 4.69855 0.053363C3.41713 0.11562 2.28699 0.409114 1.34372 1.34297C0.400455 2.27682 0.115684 3.41522 0.0533926 4.69593C-0.0177975 6.02111 -0.0177975 9.97887 0.0533926 11.3041C0.115684 12.5848 0.409354 13.7232 1.34372 14.657C2.28699 15.5909 3.41713 15.8844 4.69855 15.9466C6.02447 16.0178 9.98443 16.0178 11.3014 15.9466C12.5829 15.8844 13.7219 15.5909 14.6563 14.657C15.5906 13.7232 15.8843 12.5848 15.9466 11.3041C16.0178 9.97887 16.0178 6.02112 15.9466 4.70483V4.69593ZM7.99111 12.2201C5.65963 12.2201 3.76419 10.3257 3.76419 7.99555C3.76419 5.66536 5.65963 3.77098 7.99111 3.77098C10.3226 3.77098 12.218 5.66536 12.218 7.99555C12.218 10.3257 10.3226 12.2201 7.99111 12.2201ZM12.9032 3.99332C12.4138 3.99332 12.0133 3.5931 12.0133 3.10394C12.0133 2.61478 12.4049 2.21456 12.9032 2.21456C13.3926 2.21456 13.7931 2.61478 13.7931 3.10394C13.7931 3.5931 13.3926 3.99332 12.9032 3.99332ZM10.8832 7.99555C10.8832 9.58754 9.58399 10.886 7.99111 10.886C6.39823 10.886 5.09901 9.58754 5.09901 7.99555C5.09901 6.40355 6.39823 5.10505 7.99111 5.10505C9.58399 5.10505 10.8832 6.40355 10.8832 7.99555Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/oneiro-group/">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M3.58958 15.9911H0.222698V5.89045H3.58958V15.9911ZM3.92717 1.96389C3.92717 0.897859 3.08323 0.0361424 2.01719 0.000607979C0.933392 -0.0260429 0.0272588 0.826778 0.00060798 1.91058C-0.0260429 2.99438 0.826779 3.90051 1.91058 3.92716C3.01215 3.93605 3.9094 3.06546 3.92717 1.96389ZM15.9467 9.88807C15.9467 6.74327 13.9124 5.78383 12.1801 5.78383C10.963 5.7483 9.81701 6.34351 9.15074 7.35624V5.89932H5.89933V16H9.26622V10.7587C9.26622 10.7054 9.26622 10.6521 9.26622 10.5988C9.26622 10.5988 9.26622 10.5988 9.26622 10.5899C9.19515 9.51495 10.0124 8.58218 11.0874 8.51111C11.9668 8.51111 12.6331 9.07966 12.6331 10.6787V16H16L15.9556 9.89695L15.9467 9.88807Z"
+                                        fill="white" />
+                                </svg>
+                            </a>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top header area end here -->
+
+    <!-- Header area start here -->
+    <header class="header-area border-none header-one-area">
+        <div class="container">
+            <div class="header__main header__main-one">
+                <a class='logo' href='{% url "home" %}'>
+                    <img class="logo_dark" src="{% static 'assets/oneiro_horizontal_dark.png' %}" alt="Oneiro logo loqo">
+                </a>
+                <div class="main-menu">
+                    <nav>
+                        <ul>
+                            <li><a href='{% url "home" %}'>{% trans 'Ana səhifə' %}</a></li>
+                            <li><a href='{% url "about" %}'>{% trans 'Haqqımızda' %}</a></li>
+                            <li><a href='{% url "services" %}'>{% trans 'Xidmətlər' %}</a></li>
+                            <li><a href='{% url "portfolios" %}'>{% trans 'Portfolio' %}</a></li>
+                            <li><a href='{% url "blogs" %}'>{% trans 'Bloqlar' %}</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="menu-btns d-none d-lg-flex">
+                    <a class='menu-btn-one' href='{% url "contact" %}'>Əlaqə</a>
+                </div>
+                <button class="menubars d-block d-lg-none" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#menubar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Header area end here -->
+
+    <!-- Sidebar area start here -->
+    {% include 'sidebar.html' %}
+    <!-- Sidebar area end here -->
+
+    <div class="ScrollSmoother-content">
+
+
+        <main>
+
+            <!-- Banner area start here -->
+            <section class="banner-area bg-image" data-background="{% static 'assets/images/banner/banner-image.jpg' %}">
+           
+                <div class="container">
+                    <div class="banner__content pb-120">
+                        <h5 class="splt-txt wow" data-splitting>{% trans 'Media və Marketinq' %}</h5>
+                        <h1>Oneiro Group <br> <strong id="typing-text"></strong><span>.</span></h1>
+                        <p>{% trans 'Kreativ və effektiv media marketinq həlləri axtarışındasınızsa düzgün ünvandasınız. Sosial media strategiyaları və unikal dizayn xidmətlərimizlə brendinizi yüksək zirvələrə aparın. Bizimlə əməkdaşlıq edin və sosial mediada böyük uğurlara imza ataq !' %}</p>
+                        <div class="d-flex align-items-center gap-3">
+                            <a class='btn-one' href='{% url "contact" %}'>{% trans 'Əlaqə' %}
+                                <span>
+                                    <i class="fa-regular fa-arrow-up-right arry1"></i>
+                                    <i class="fa-regular fa-arrow-up-right arry2"></i>
+                                </span>
+                            </a>
+                            <a class='btn-two' href='{% url "about" %}'>{% trans 'Daha ətraflı' %}
+                                <span>
+                                    <i class="fa-regular fa-arrow-right arry1"></i>
+                                    <i class="fa-regular fa-arrow-right arry2"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="brand-area pb-120">
+                        <P class="mb-4"><i class="fa-regular me-1 fa-arrow-right"></i> {% trans 'Tərəfdaşlarımız' %}
+                        </P>
+                        <div class="marquee-area">
+                            <div class="container-fluid">
+                                <div class="marquee__wrp">
+                                    <div class="marquee__slide brand__slider">
+                                        <div class="marquee__item-wrp">
+                                            {% for partner in partners %}
+                                            <div class="marquee__item logo_background">
+                                                <img class="logo_dark" src="{{ partner.image.url }}" alt="{{ partner.title }}">
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="marquee__item-wrp">
+                                            {% for partner in partners %}
+                                            <div  class="marquee__item logo_background">
+                                                <img class="logo_dark" src="{{ partner.image.url }}" alt="{{ partner.title }}">
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="marquee__item-wrp">
+                                            {% for partner in partners %}
+                                            <div class="marquee__item logo_background">
+                                                <img class="logo_dark" src="{{ partner.image.url }}" alt="{{ partner.title }}">
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="marquee__item-wrp">
+                                            {% for partner in partners %}
+                                            <div class="marquee__item logo_background">
+                                                <img class="logo_dark" src="{{ partner.image.url }}" alt="{{ partner.title }}">
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="marquee__item-wrp">
+                                            {% for partner in partners %}
+                                            <div class="marquee__item logo_background">
+                                                <img class="logo_dark" src="{{ partner.image.url }}" alt="{{ partner.title }}">
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Banner area end here -->
+
+            <!-- Fanfact area start here -->
+            <section class="fanfact-area fanfact-radius pt-120 pb-120">
+                <div class="container">
+                    <div class="row g-4 justify-content-between">
+                        <div class="col-lg-5">
+                            <div class="fanfact__item-left">
+                                <h2 class="splt-txt wow" data-splitting>{% trans 'Müasir marketinqdə hər zaman bir addım öndə ol.' %}%'
+                                </h2>
+                                <p class="mb-40 wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">{% trans 'Şirkətimiz, sürətlə dəyişən marketinq dünyasına uyğunlaşmaq üçün, trendləri hər zaman izləyir və müştərilərimizə hər zaman öncü həllər təqdim etmək üçün əlindən gələni edir. Yenilikçi və peşəkar xidmət üçün daimi olaraq bazarın tələblərini və trendləri izləməyə davam edir.' %}</p>
+                                <h2 class="splt-txt wow" data-splitting>Missiyamız
+                                </h2>
+                                <p class="mb-30">{% trans 'Şirkətimiz bizneslərə marketinq həlləri təqdim etməklə, satışların artırılması və biznesin bazarda düzgün mövqe formalaşdırmasına yardımçı olur.' %}</p>
+                                <h2 class="splt-txt wow" data-splitting>Dəyərlərimiz</h2>
+                                <p>{% trans 'Biz bizneslərə xidmət satmaqla qalmır, onların satış strategiyasını formalaşdırır və artan rəqabətdə öncü həllər təklif edirik.' %}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <h2 class="mb-60 wow splt-txt" data-splitting>{% trans 'Zirvəyə gedən yolda bizi izləyin!' %}</h2>
+                            <div class="fanfact__item-right">
+                                <div class="fanfact__item mb-60">
+                                    <h2 class="mb-10"><span class="count">100</span>+</h2>
+                                    <strong>{% trans 'Tamamlanmış layihə' %}</strong>
+                                </div>
+                                <div class="fanfact__item">
+                                    <h2 class="mb-10"><span class="count">10</span>+</h2>
+                                    <strong>{% trans 'Tərəfdaş' %}</strong>
+                                </div>
+                                <div class="fanfact__item">
+                                    <h2 class="mb-10"><span class="count">40</span>+</h2>
+                                    <strong>{% trans 'Uğurlu müştəri' %}</strong>
+                                </div>
+                                <div class="fanfact__item">
+                                    <h2 class="mb-10"><span class="count">5</span> {% trans 'il' %}+</h2>
+                                    <strong>{% trans 'Marketinq təcrübəsi' %}</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Fanfact area end here -->
+
+            <!-- Service area start here -->
+            <section class="service-area sub-bg pt-120 pb-120">
+                <div class="service__shape1 sway__animationX">
+                    <img src="{% static 'assets/images/shape/service-shape1.png' %}" alt="shape">
+                </div>
+                <div class="service__shape2 sway_Y__animationY">
+                    <img src="{% static 'assets/images/shape/service-shape2.png' %}" alt="shape">
+                </div>
+                <div class="container">
+                    <div class="row g-4">
+                        <div class="col-xl-4 col-md-6">
+                            <div class="section-header line-title">
+                                <h2 class="fw-600 splt-txt wow" data-splitting>
+                                    <span>{% trans 'Xidmətlərimiz' %} <img src="{% static 'assets/images/shape/title-line-service.png' %}"
+                                            alt="shape"></span>
+                                </h2>
+                                <p class="wow fadeInUp" data-wow-delay="400ms" data-wow-duration="1500ms">{% trans 'Biz hər müştəriyə fərdi olaraq yanaşır' %},<br> 
+                                 {% trans ' düzgün strategiya ilə xidmət göstəririk.' %}  </p>
+                                <a class='btn-one active wow fadeInUp mt-40' data-wow-delay='600ms' data-wow-duration='1500ms' href='{% url "contact" %}'>{% trans 'Əlaqə saxla!' %}
+                                    <span>
+                                        <i class="fa-regular fa-arrow-up-right arry1"></i>
+                                        <i class="fa-regular fa-arrow-up-right arry2"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                        {% for service in services %}
+                        <div class="col-xl-4 col-md-6">
+                            <div class="service__item {% if forloop.first %} active {% endif %}">
+                                <div class="d-flex align-items-center gap-2">
+                                    <div class="icon">
+                                        <svg width="27" height="29" viewBox="0 0 27 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M24.0256 10.1045C23.7298 9.09888 23.2908 8.14072 22.7218 7.25919L23.7181 5.13343L20.7519 2.38049L18.6908 3.51793C17.7675 3.01461 16.7765 2.64554 15.7479 2.42194L14.9429 0.219664L10.8891 0.361226L10.2396 2.6143C9.22912 2.90906 8.26626 3.34635 7.38032 3.91285L5.24492 2.92206L2.47793 5.87521L3.62015 7.92629C3.11403 8.84534 2.74286 9.8318 2.51793 10.8556L0.304933 11.6576L0.445825 15.6922L2.70943 16.3378C3.00521 17.3434 3.44426 18.3016 4.01319 19.1831L3.01683 21.3087L5.98308 24.0617L8.04427 22.9242C8.35172 23.0916 8.66841 23.2443 8.98986 23.3817L9.03 24.5309C9.03999 24.8081 9.16003 25.0699 9.36376 25.2589C9.5675 25.448 9.8383 25.5489 10.1167 25.5395L10.5316 25.525C10.6594 26.3121 11.0714 27.0255 11.6903 27.5316C12.3092 28.0376 13.0925 28.3013 13.8931 28.2734C14.6937 28.2454 15.4566 27.9277 16.0387 27.3797C16.6208 26.8317 16.9821 26.0913 17.0547 25.2972L17.4695 25.2827C17.748 25.2727 18.0111 25.1532 18.2011 24.9503C18.3911 24.7475 18.4926 24.478 18.4832 24.2008L18.4431 23.0517C18.7543 22.8921 19.0594 22.7176 19.3546 22.5292L21.49 23.5201L24.257 20.567L23.1148 18.516C23.6209 17.5969 23.992 16.6105 24.217 15.5867L26.43 14.7847L26.2891 10.7501L24.0256 10.1045ZM13.8644 27.4519C13.283 27.4714 12.7133 27.2858 12.2561 26.9279C11.7988 26.57 11.4834 26.0629 11.3653 25.4959L16.221 25.3263C16.1428 25.9001 15.8635 26.4281 15.4323 26.817C15.0011 27.2059 14.4458 27.4308 13.8644 27.4519ZM17.6577 24.2297C17.659 24.2888 17.637 24.3461 17.5965 24.3894C17.5559 24.4327 17.5 24.4585 17.4406 24.4613L10.0881 24.7181C10.0287 24.7194 9.97109 24.6975 9.92762 24.6572C9.88415 24.6169 9.85822 24.5612 9.85537 24.5021L9.78768 22.5636C9.7864 22.5044 9.80838 22.4471 9.84893 22.4038C9.88949 22.3606 9.94541 22.3348 10.0048 22.3319L17.3576 22.0752C17.417 22.0739 17.4746 22.0957 17.518 22.1361C17.5615 22.1764 17.5874 22.232 17.5903 22.2911L17.6577 24.2297ZM16.8724 19.8044C16.8046 19.8407 16.7482 19.8952 16.7099 19.9617C16.6715 20.0283 16.6525 20.1041 16.6552 20.1808L16.6935 21.276L15.8615 21.305L15.7731 18.7739L17.4568 17.2328C17.5007 17.1927 17.5353 17.1436 17.5583 17.0889C17.5813 17.0342 17.5921 16.9752 17.59 16.916L17.4893 14.032C17.898 13.9172 18.2502 13.6574 18.4795 13.3018C18.7089 12.9461 18.7994 12.5191 18.7339 12.1017C18.6685 11.6842 18.4516 11.3051 18.1243 11.036C17.7971 10.7669 17.3821 10.6265 16.9578 10.6413C16.5334 10.6562 16.1292 10.8252 15.8215 11.1164C15.5138 11.4077 15.324 11.801 15.2878 12.222C15.2516 12.643 15.3717 13.0626 15.6253 13.4014C15.8788 13.7403 16.2484 13.9748 16.664 14.0609L16.7581 16.7559L15.0744 18.2969C15.0306 18.3371 14.996 18.3862 14.973 18.4409C14.95 18.4955 14.9392 18.5545 14.9412 18.6138L15.0362 21.3337L14.0651 21.3676L13.7111 11.2297C14.1198 11.1149 14.472 10.8551 14.7014 10.4994C14.9307 10.1437 15.0212 9.71676 14.9557 9.29926C14.8903 8.88176 14.6734 8.50264 14.3462 8.23356C14.0189 7.96448 13.6039 7.82408 13.1795 7.8389C12.7552 7.85371 12.351 8.02272 12.0433 8.31398C11.7356 8.60524 11.5457 8.99856 11.5095 9.41961C11.4734 9.84065 11.5934 10.2602 11.847 10.5991C12.1006 10.9379 12.4701 11.1725 12.8858 11.2585L13.2398 21.3964L12.5372 21.421L12.484 19.8961C12.4819 19.8369 12.467 19.7788 12.4403 19.7258C12.4135 19.6729 12.3755 19.6263 12.329 19.5893L10.5419 18.1695L10.464 15.9391C10.8727 15.8243 11.225 15.5645 11.4543 15.2088C11.6836 14.8531 11.7741 14.4262 11.7087 14.0087C11.6432 13.5912 11.4264 13.2121 11.0991 12.943C10.7718 12.6739 10.3568 12.5335 9.93247 12.5483C9.50815 12.5631 9.10393 12.7322 8.79622 13.0234C8.48851 13.3147 8.29862 13.708 8.26246 14.129C8.22629 14.5501 8.34634 14.9697 8.59993 15.3085C8.85352 15.6474 9.22306 15.8819 9.63872 15.968L9.7232 18.3872C9.72526 18.4464 9.74019 18.5045 9.76694 18.5575C9.79369 18.6105 9.83164 18.657 9.87819 18.694L11.6653 20.1138L11.7119 21.45L10.6115 21.4884L10.5733 20.3932C10.5706 20.3166 10.5464 20.2422 10.5034 20.1785C10.4605 20.1148 10.4005 20.0644 10.3302 20.0329C9.06537 19.4721 7.98502 18.5677 7.21307 17.4236C6.44112 16.2795 6.00881 14.942 5.96571 13.5643C5.8238 9.50053 9.03021 6.07844 13.1133 5.93586C17.1964 5.79327 20.6337 8.98335 20.7756 13.0471C20.8287 14.4244 20.4907 15.7889 19.8004 16.9841C19.1101 18.1792 18.0954 19.1567 16.8727 19.8044L16.8724 19.8044ZM17.0497 13.2748C16.8697 13.2811 16.6918 13.2341 16.5387 13.1398C16.3855 13.0455 16.2639 12.9081 16.1892 12.7449C16.1145 12.5818 16.0901 12.4002 16.1191 12.2233C16.1481 12.0463 16.2292 11.8819 16.352 11.7507C16.4749 11.6196 16.6341 11.5276 16.8095 11.4865C16.9848 11.4454 17.1685 11.4569 17.3372 11.5197C17.5059 11.5824 17.6521 11.6936 17.7574 11.8391C17.8626 11.9846 17.9221 12.1579 17.9284 12.3371C17.9365 12.5772 17.8486 12.8108 17.6839 12.9866C17.5192 13.1624 17.2913 13.266 17.05 13.2748L17.0497 13.2748ZM13.2715 10.4725C13.0915 10.4788 12.9136 10.4318 12.7604 10.3375C12.6073 10.2431 12.4857 10.1057 12.411 9.94258C12.3363 9.77945 12.3119 9.59792 12.3409 9.42095C12.3699 9.24398 12.451 9.07953 12.5738 8.94838C12.6967 8.81723 12.8559 8.72528 13.0312 8.68416C13.2066 8.64304 13.3903 8.65459 13.559 8.71735C13.7277 8.78011 13.8739 8.89127 13.9792 9.03676C14.0844 9.18225 14.1439 9.35555 14.1501 9.53473C14.1583 9.77493 14.0703 10.0086 13.9056 10.1844C13.7409 10.3602 13.5128 10.4638 13.2715 10.4725ZM10.0244 15.1819C9.84434 15.1882 9.6665 15.1412 9.51332 15.0469C9.36015 14.9526 9.23854 14.8152 9.16386 14.652C9.08919 14.4889 9.0648 14.3074 9.09379 14.1304C9.12277 13.9534 9.20383 13.789 9.32671 13.6578C9.44959 13.5267 9.60877 13.4347 9.78413 13.3936C9.95948 13.3525 10.1431 13.364 10.3119 13.4268C10.4806 13.4895 10.6268 13.6007 10.732 13.7462C10.8373 13.8917 10.8968 14.065 10.903 14.2442C10.9111 14.4844 10.8232 14.718 10.6585 14.8938C10.4937 15.0696 10.2657 15.1732 10.0244 15.1819ZM25.5839 14.2167L23.4994 14.9722L23.4544 15.1998C23.2385 16.2934 22.8431 17.3443 22.2842 18.3101L22.168 18.5116L23.2439 20.4436L21.2955 22.5232L19.2839 21.5896L19.0901 21.7191C18.8675 21.868 18.6374 22.0078 18.403 22.1393C18.3685 21.9189 18.2641 21.7153 18.1052 21.5582C17.9462 21.401 17.741 21.2984 17.5194 21.2655L17.4893 20.4028C18.7831 19.6587 19.8492 18.5784 20.5734 17.2775C21.2976 15.9767 21.6526 14.5043 21.6004 13.0183C21.4427 8.50157 17.6225 4.95592 13.0841 5.11441C8.54578 5.27289 4.98216 9.07627 5.13989 13.5931C5.19147 15.0792 5.64834 16.5232 6.46155 17.7703C7.27475 19.0175 8.41364 20.0208 9.75619 20.6729L9.7863 21.5351C9.56753 21.5835 9.36997 21.7001 9.22238 21.868C9.0748 22.0358 8.9849 22.2462 8.96579 22.4684C8.72287 22.3537 8.48371 22.2303 8.25111 22.0973L8.04903 21.9816L6.10739 23.0531L4.01916 21.1147L4.95736 19.1123L4.82735 18.9198C4.20245 17.9952 3.73479 16.9745 3.44313 15.8986L3.38237 15.6746L1.25025 15.0665L1.15104 12.2255L3.2356 11.47L3.28053 11.2423C3.49648 10.1487 3.89183 9.09793 4.45074 8.13206L4.56701 7.93095L3.4913 5.99877L5.43978 3.91931L7.45115 4.8527L7.64468 4.72323C8.57382 4.10099 9.59949 3.63517 10.6805 3.34445L10.9056 3.28396L11.5174 1.1617L14.3719 1.06202L15.1302 3.13643L15.3589 3.18108C16.4577 3.39574 17.5134 3.7889 18.4837 4.34478L18.6858 4.46037L20.6274 3.38895L22.7161 5.32742L21.7776 7.32994L21.9076 7.5225C22.5325 8.44705 23.0002 9.46772 23.2919 10.5436L23.3527 10.7675L25.4848 11.3757L25.5839 14.2167Z"
+                                                fill="#16523E" />
+                                        </svg>
+                                    </div>
+                                    <h4 class="splt-txt wow" data-splitting>{{ service.title }}</h4>
+                                </div>
+                                <p class="mt-20 pb-20 fs-16">{{ service.description }}</p>
+                                <a href="{% url 'service' service.slug %}">{% trans 'Daha ətraflı' %} <i class="fa-light ms-1 fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!-- Service area end here -->
+
+            <!-- Story area start here -->
+            <section class="story-area pt-120 pb-120">
+                <div class="container">
+                    <div class="section-header-flex line-title mb-80">
+                        <h2 class="fw-600 splt-txt wow" data-splitting>{% trans 'Biz müştərilərimizi' %}% <br> <span>{% trans 'sevindirməyə davam edirik.' %} <img src="{% static 'assets/images/shape/title-line-store.png' %}"
+                                    alt=""></span></h2>
+                        <p class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms">{% trans 'Oneiro Group olaraq müştərilərimizə keyfiyyətlə xidmət göstərməkdən qürur duyuruq. Müştəri məmnuniyyəti əsas prioritetlərimizdəndir.' %}</p>
+                    </div>
+                    <div class="swiper story__slider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="row g-5 align-items-star">
+                                    {% for portfolio in portfolios %}
+                                    <div class="col-lg-4">
+                                        <div class="story__item">
+                                            <div class="image">
+                                                <img src="{{ portfolio.image.url }}" alt="image">
+                                            </div>
+                                            <div
+                                                class="d-flex align-items-center flex-wrap gap-3 justify-content-between mt-20">
+                                                <div>
+                                                    <h3 class="mb-2"><a href="{% url 'portfolio' portfolio.slug %}">{{ portfolio.title }}</a></h3>
+                                                    <div class="story__info">
+                                                        <ul>
+                                                            
+                                                            <li class="li-dot"></li>
+                                                            <li>{{ portfolio.description }}</li>
+                                                            
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div> <a class='btn-one' href='{% url "portfolio" portfolio.slug %}'>{% trans 'Daha ətraflı' %}
+                                                        <span>
+                                                            <i class="fa-regular fa-arrow-up-right arry1"></i>
+                                                            <i class="fa-regular fa-arrow-up-right arry2"></i>
+                                                        </span>
+                                                    </a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                           
+                          
+                        </div>
+                    </div>
+                    <div class="story__btn mt-80">
+                        <a href="{% url 'portfolios' %}" class="btn-one active">{% trans 'Daha çox' %}
+                            <span>
+                                <i class="fa-regular fa-arrow-up-right arry1"></i>
+                                <i class="fa-regular fa-arrow-up-right arry2"></i>
+                            </span>
+                        </a>
+                        <div class="story__scrollbar">
+                            <div class="position-relative">
+                                <div class="swiper-scrollbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Story area end here -->
+
+            <!-- Testimonial area start here -->
+            <section class="testimonial-area pb-120">
+                <div class="container">
+                    <div class="row g-4 justify-content-between">
+                        <div class="col-lg-5">
+                            <div class="testimonial__item-left">
+                                <h2 class="fw-600 wow splt-txt" data-splitting>{% trans 'Müştəri rəyləri' %}</h2>
+                                <p class="mb-50 fs-20 fw-500 text-uppercase wow splt-txt" data-splitting>{% trans 'Müştəri məmnuniyyəti bizim üçün hərşeydən öncə gəlir!' %}</p>
+                                <div class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="testimonial__item-right">
+                                <svg class="coma" width="88" height="68" viewBox="0 0 88 68" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M8.10885 62.0247C3.19219 56.6164 0.242188 50.7164 0.242188 40.8831C0.242188 23.6747 12.5339 8.43307 29.7422 0.566406L34.1672 6.95807C17.9422 15.8081 14.5005 27.1164 13.5172 34.4914C15.9755 33.0164 19.4172 32.5247 22.8589 33.0164C31.7089 33.9997 38.5922 40.8831 38.5922 50.2247C38.5922 54.6497 36.6255 59.0747 33.6755 62.5164C30.2339 65.9581 26.3005 67.4331 21.3839 67.4331C15.9755 67.4331 11.0589 64.9747 8.10885 62.0247ZM57.2755 62.0247C52.3589 56.6164 49.4089 50.7164 49.4089 40.8831C49.4089 23.6747 61.7005 8.43307 78.9089 0.566406L83.3339 6.95807C67.1089 15.8081 63.6672 27.1164 62.6839 34.4914C65.1422 33.0164 68.5839 32.5247 72.0255 33.0164C80.8755 33.9997 87.7589 40.8831 87.7589 50.2247C87.7589 54.6497 85.7922 59.0747 82.8422 62.5164C79.8922 65.9581 75.4672 67.4331 70.5505 67.4331C65.1422 67.4331 60.2255 64.9747 57.2755 62.0247Z"
+                                        fill="#151314" fill-opacity="0.1" />
+                                </svg>
+                                <div class="swiper testimonial__slider">
+                                    <div class="swiper-wrapper">
+                                        {% for testimonial in testimonials %}
+                                        <div class="swiper-slide">
+                                            <div class="testimonial__item">
+                                                <div class="star d-flex gap-2 mb-2">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </div>
+                                                <h3 class="mb-10">{{ testimonial.title }}</h3>
+                                                <p>
+                                                    {{ testimonial.description }}
+                                                    <svg class="ms-1" width="28" height="21"
+                                                        viewBox="0 0 28 21" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M24.9516 1.62256C26.4516 3.24506 27.3516 5.01506 27.3516 7.96506C27.3516 13.1276 23.6016 17.7001 18.3516 20.0601L17.0016 18.1426C21.9516 15.4876 23.0016 12.0951 23.3016 9.88256C22.5516 10.3251 21.5016 10.4726 20.4516 10.3251C17.7516 10.0301 15.6516 7.96506 15.6516 5.16256C15.6516 3.83506 16.2516 2.50756 17.1516 1.47506C18.2016 0.442561 19.4016 6.22475e-05 20.9016 6.23786e-05C22.5516 6.25229e-05 24.0516 0.73756 24.9516 1.62256ZM9.95156 1.62256C11.4516 3.24506 12.3516 5.01506 12.3516 7.96506C12.3516 13.1276 8.60156 17.7001 3.35156 20.0601L2.00156 18.1426C6.95156 15.4876 8.00156 12.0951 8.30156 9.88256C7.55156 10.3251 6.50156 10.4726 5.45156 10.3251C2.75156 10.0301 0.651563 7.96506 0.651563 5.16256C0.651563 3.83506 1.25156 2.50756 2.15156 1.47506C3.05156 0.44256 4.40156 6.09362e-05 5.90156 6.10673e-05C7.55156 6.12115e-05 9.05156 0.737559 9.95156 1.62256Z"
+                                                            fill="#151314" fill-opacity="0.1" />
+                                                    </svg>
+                                                </p>
+                                                <div
+                                                    class="bor-top pt-4 mt-30 d-flex align-items-center gap-3 flex-wrap justify-content-between">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="testimonialImage" src="{{ testimonial.image.url }}" alt="image">
+                                                        <div>
+                                                            <h5>{{ testimonial.full_name }}</h5>
+                                                            <span>{{ testimonial.field }}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper__info m-0">
+                                                        <button class="testimonial__arry-prev"><i
+                                                                class="fa-regular fa-arrow-left-long"></i></button>
+                                                        <div class="dot testimonial__dot"></div>
+                                                        <button class="testimonial__arry-next active"><i
+                                                                class="fa-regular fa-arrow-right-long"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonial area end here -->
+
+         
+
+            <!-- Blog area start here -->
+            <section class="blog-area pb-120">
+                <div class="container">
+                    <div class="section-header-flex mb-80">
+                        <h2 class="fw-600 splt-txt wow" data-splitting>{% trans 'Bloqlar' %}</h2>
+                        <div class="wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1500ms">
+                            <p>{% trans 'Müasir marketinq strategiyaları və trendlər.' %}
+                            </p>
+                            <div class="swiper__info justify-content-start m-0 mt-3">
+                                <button class="blog__arry-prev"><i class="fa-regular fa-arrow-left-long"></i></button>
+                                <button class="blog__arry-next active"><i
+                                        class="fa-regular fa-arrow-right-long"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper blog__slider">
+                        <div class="swiper-wrapper">
+                            {% for blog in blogs %}
+                            <div class="swiper-slide">
+                                <div class="blog__item">
+                                    <div class="blog__image image">
+                                        <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                                        <div class="tag">
+                                            {% for tag in blog.tag.all %}<a href='{% url "blogs" %}?tag={{tag.slug}}'>{{ tag.title }}</a>{% endfor %}
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-10 mb-20"><a class='primary-hover' href='{% url "blog" blog.slug %}'>{{ blog.title }}</a></h4>
+                                    <a class='fs-18 blog-btn text-font' href='{% url "blog" blog.slug %}'>{% trans 'Daha ətraflı' %} <i
+                                            class="fa-light ms-1 fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Blog area end here -->
+
+            <!-- Book area start here -->
+            {% include 'book.html' %}
+            <!-- Book area end here -->
+
+        </main>
+
+        <!-- Footer area start here -->
+         {% include 'footer.html' %}
+        <!-- Footer area end here -->
+
+
+    </div>
+
+    <!-- Back to top btn area start here -->
+    <button id="back-top" class="btn-backToTop">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    <!-- Back to top btn area end here -->
+
+    <!-- Jquery 3.7.0 Min Js -->
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+    <!-- Bootstrap min Js -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- Mean menu Js -->
+    <script src="{% static 'assets/js/meanmenu.js' %}"></script>
+    <!-- Swiper bundle min Js -->
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <!-- Counterup min Js -->
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <!-- Wow min Js -->
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <!-- Magnific popup min Js -->
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <!-- Nice select min Js -->
+    <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+    <!-- Isotope pkgd min Js -->
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <!-- Splitting Js -->
+    <script src="{% static 'assets/js/splitting.js' %}"></script>
+    <!-- Waypoints Js -->
+    <script src="{% static 'assets/js/jquery.waypoints.js' %}"></script>
+    <!-- Gsap -->
+    <script src="{% static 'assets/js/gsap/gsap.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap/ScrollSmoother.min.js' %}"></script>
+    <!-- Script Js -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from main--agenshart-landing.netlify.app/agenshark-html/index-4 by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 May 2024 16:52:24 GMT -->
+</html>

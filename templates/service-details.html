@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+{% load static %}
+{% load i18n %}
+<html lang="{% trans 'az' %}">
+
+
+<!-- Mirrored from main--agenshart-landing.netlify.app/agenshark-html/service-details by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 May 2024 16:56:13 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ service.seo_title }}</title>
+    <meta name="language" content="{% trans 'az' %}">
+    <meta name="description" content="{{ service.seo_description }}">
+    <meta name="keywords" content="{{ service.title }}">
+    <meta name="image" content="{% static 'assets/fav_icon.png' %}">
+    <meta property="og:title" content="Oneiro Group - {{ service.title }}">
+    <meta property="og:image" content="{% static 'assets/fav_icon.png' %}">
+    <meta property="og:description" content="{{ service.seo_description }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Oneiro Group">
+
+    <link rel="shortcut icon" sizes="32x32" href="{% static 'assets/fav_icon.png' %}">
+    <link rel="icon" sizes="any" href="{% static 'assets/fav_icon.png' %}" type="image/png">
+    
+    <!-- Bootstarp min css -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <!-- Mean menu css -->
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}">
+    <!-- All min css -->
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <!-- Swiper bundle min css -->
+    <link rel="stylesheet" href="{% static 'assets/css/swiper-bundle.min.css' %}">
+    <!-- Magnigic popup css -->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <!-- Animate css -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <!-- Splitting css -->
+    <link rel="stylesheet" href="{% static 'assets/css/splitting.css' %}">
+    <!-- Nice select css -->
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+    <!-- Style css -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+</head>
+<style>
+    @media (min-width: 1400px) {
+        .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+            max-width: 1200px;
+        }
+    }
+    .banner-inner-area {
+        padding-bottom:60px;
+    }
+    .sectionImage{
+        padding:2% 5%;
+    }
+</style>
+<body>
+
+    <!-- Preloader area start -->
+    <div id="loading" class="preloader">
+        <div class="loading-overlay"></div>
+        <div class="custom-loader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- Preloader area end -->
+
+    {% include 'header.html' %}
+
+    <!-- Sidebar area start here -->
+    {% include 'sidebar.html' %}
+    <!-- Sidebar area end here -->
+
+    <div class="ScrollSmoother-content">
+
+        <main>
+
+            <!-- Banner area start here -->
+            <section class="banner-inner-area">
+                <div class="container">
+                    <div class="banner-inner__content">
+                     
+                        <h1 style="font-weight:500">{{ service.title }}</h1>
+                        <p>{{ service.description }}</p>
+                    </div>
+                </div>
+            </section>
+            <!-- Banner area end here -->
+
+            <!-- Service details area start here -->
+            <section class="service-details-area pb-120">
+                <div class="container">
+              
+                    <div class="image service-details__image">
+                        <img src="{{ service.image.url }}" alt="{{ service.title }}">
+                    </div>
+                    <div class="service-details__wrp ">
+                        {% for section in service.service_sections.all %}
+                        <h3 class="mb-30 mt-60">{{ section.title }}</h3>
+                        <p class="mb-10">{{ section.description }}</p>
+                        {% if section.image %}
+                        <div class="row g-2 g-sm-4 mb-30 mt-10">
+                            {% if not section.second_image %}
+                            <div class="col-12">
+                                <div class="image">
+                                    <img class="sectionImage" src="{{ section.image.url }}" alt="{{ section.title }}">
+                                </div>
+                            </div>
+                            {% else %}
+                            <div class="col-6">
+                                <div class="image">
+                                    <img class="sectionImage" src="{{ section.image.url }}" alt="{{ section.title }}">
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="image">
+                                    <img class="sectionImage" src="{{ section.second_image.url }}" alt="{{ section.title }}">
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!-- Service details area end here -->
+
+            <!-- Book area start here -->
+           {% include 'book.html' %}
+            <!-- Book area end here -->
+
+        </main>
+
+        <!-- Footer area start here -->
+        {% include 'footer.html' %}
+        <!-- Footer area end here -->
+
+
+    </div>
+
+    <!-- Back to top btn area start here -->
+    <button id="back-top" class="btn-backToTop">
+        <i class="fa-solid fa-chevron-up"></i>
+    </button>
+    <!-- Back to top btn area end here -->
+
+    <!-- Jquery 3.7.0 Min Js -->
+    <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+    <!-- Bootstrap min Js -->
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <!-- Mean menu Js -->
+    <script src="{% static 'assets/js/meanmenu.js' %}"></script>
+    <!-- Swiper bundle min Js -->
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <!-- Counterup min Js -->
+    <script src="{% static 'assets/js/jquery.counterup.min.js' %}"></script>
+    <!-- Wow min Js -->
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <!-- Magnific popup min Js -->
+    <script src="{% static 'assets/js/magnific-popup.min.js' %}"></script>
+    <!-- Nice select min Js -->
+    <script src="{% static 'assets/js/nice-select.min.js' %}"></script>
+    <!-- Isotope pkgd min Js -->
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <!-- Splitting Js -->
+    <script src="{% static 'assets/js/splitting.js' %}"></script>
+    <!-- Waypoints Js -->
+    <script src="{% static 'assets/js/jquery.waypoints.js' %}"></script>
+    <!-- Gsap -->
+    <script src="{% static 'assets/js/gsap/gsap.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap/ScrollSmoother.min.js' %}"></script>
+    <!-- Script Js -->
+    <script src="{% static 'assets/js/script.js' %}"></script>
+</body>
+
+
+<!-- Mirrored from main--agenshart-landing.netlify.app/agenshark-html/service-details by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 28 May 2024 16:56:14 GMT -->
+</html>
