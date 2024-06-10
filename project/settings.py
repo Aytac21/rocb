@@ -29,6 +29,7 @@ ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = [
     'https://check.oneiro.az',
     'https://oneiro.az',
+    'https://www.oneiro.az',
 ]
 # Application definition
 CSRF_TRUSTED_ORIGINS = [
@@ -48,7 +49,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'oneapp',
 
     #third party apps
