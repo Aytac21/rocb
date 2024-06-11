@@ -95,10 +95,11 @@
             <!-- Service details area start here -->
             <section class="service-details-area pb-120">
                 <div class="container">
-              
+                    {% if service.image %}
                     <div class="image service-details__image">
                         <img src="{{ service.image.url }}" alt="{{ service.title }}">
                     </div>
+                    {% endif %}
                     <div class="service-details__wrp ">
                         {% for section in service.service_sections.all %}
                         <h3 class="mb-30 mt-60">{{ section.title }}</h3>

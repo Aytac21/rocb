@@ -90,9 +90,10 @@
                             <div class="service-two__item bg{{ forloop.counter }}">
                                 {% if service.icon %}
                                 <div class="icon">
-                                    <img src="{{ service.icon.url }}" alt="{{service.title}}">
+                                    <img style="max-height:60px" src="{{ service.icon.url }}" alt="{{service.title}}">
                                 </div>
                                 {% endif %}
+                          
                                 <div class="service-two__content">
                                     <h3 class="mb-10">{{ service.title }}</h3>
                                     <p class="mb-20">{{ service.description }}</p>
