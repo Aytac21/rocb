@@ -2451,6 +2451,7 @@ button {
   border-bottom: 1px solid rgba(6, 18, 14, 0.1019607843);
   position: fixed;
   width: 100%;
+  top: 48px;
   z-index: 9999;
 }
 .header-area.menu-fixed {
