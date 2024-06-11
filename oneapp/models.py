@@ -89,7 +89,7 @@ class ServiceSection(models.Model):
 class Blog(BaseMixin):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(null=True,blank=True)
     category = models.ForeignKey(Category,on_delete=models.SET_NULL,null=True,blank=True,related_name='categoryBlogs')
     tag = models.ManyToManyField(Tag,related_name='tagBlogs')
     in_home = models.BooleanField(default=False)
@@ -123,7 +123,7 @@ class BlogSection(models.Model):
 class Portfolio(BaseMixin):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    image = models.ImageField()
+    image = models.ImageField(null=True,blank=True)
     category = models.ForeignKey(Category,on_delete=models.SET_NULL,null=True,blank=True,related_name='categoryPortfolios')
     in_home = models.BooleanField(default=False)
 
