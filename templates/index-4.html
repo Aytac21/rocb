@@ -592,6 +592,7 @@ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC6
                             <div class="swiper-slide">
                                 <div class="blog__item">
                                     <div class="blog__image image">
+                                        
                                         <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
                                         <div class="tag">
                                             {% for tag in blog.tag.all %}<a href='{% url "blogs" %}?tag={{tag.slug}}'>{{ tag.title }}</a>{% endfor %}
