@@ -43,7 +43,11 @@
     <!-- Style css -->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
-
+<style>
+    .banner-inner-area {
+    padding-bottom:0px !important;
+    }
+</style>
 <body>
 
     <!-- Preloader area start -->
@@ -75,8 +79,8 @@
                 <div class="container">
                     <div class="banner-inner__content BlogDetailBanner">
                        
-                        <h1 class="blog_detail_title">{{ blog.title }}</h1>
-                        <p>{{ blog.description }}</p>
+                        <h1 class="visuallyhidden">{{ blog.title }}</h1>
+                       
                     </div>
                 </div>
             </section>
@@ -116,6 +120,9 @@
                                         
                                         </ul>
                                     </div>
+                                    <h2 class="mb-1 blog_title_ui">{{ blog.title }}
+                                    </h2>
+                                    <p class="mb-10">{{ blog.description }}</p>
                                     {% for section in blog.blog_sections.all %}
                                     <h3 class="mb-1">{{ section.title }}
                                     </h3>
