@@ -93,9 +93,11 @@
                             <div class="blog-details__item-left">
                                 {% for blog in blogs %}
                                 <div class="blog-details__item mb-40">
+                                    {% if blog.image %}
                                     <a class='image d-block' href='{% url "blog" blog.slug %}'>
                                         <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
                                     </a>
+                                    {% endif %}
                                     <div class="info">
                                         <ul>
                                     
