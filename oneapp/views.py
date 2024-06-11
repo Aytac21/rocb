@@ -74,7 +74,7 @@ def blogs(request):
         category = request.GET.get('category')
         blog_list = blog_list.filter(category__slug=category)
 
-    paginator = Paginator(blog_list, 1)
+    paginator = Paginator(blog_list, 2)
     page = request.GET.get("page", 1)
     blogs = paginator.get_page(page)
     total_pages = [x+1 for x in range(paginator.num_pages)]
