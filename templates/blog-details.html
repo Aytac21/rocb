@@ -210,7 +210,9 @@
                         <div class="col-xl-4 col-md-6">
                             <div class="blog__item">
                                 <div class="blog__image image">
+                                    {% if blog.image %}
                                     <img src="{{ blog.image.url }}" alt="{{ blog.title }}">
+                                    {% endif %}
                                     <div class="tag">
                                         <a href='{% url "blogs" %}?category={{blog.category.slug}}'>{{ blog.category.title }}</a>
                                     </div>
