@@ -6608,7 +6608,7 @@ button {
     font-size:24px;
   }
   .service_title{
-    font-weight:500;
+    font-weight:500 !important;
     font-size:30px !important;
   }
 }
