@@ -6607,8 +6607,14 @@ button {
   .section_title{
     font-size:24px;
   }
+  .service_title{
+    font-size:30px !important;
+  }
 }
 .section_title{
   font-size:28px;
+}
+.service_title{
+  font-size:34px !important;
 }
 /*# sourceMappingURL=style.css.map */
