@@ -96,7 +96,7 @@
                           
                                 <div class="service-two__content">
                                     <h3 class="mb-10">{{ service.title }}</h3>
-                                    <p class="mb-20">{{ service.description }}</p>
+                                    <p class="mb-20">{{ service.description|slice:300 }}</p>
                                     <a class="explore-btn" href="{% url 'service' service.slug %}">{% trans 'Daha ətraflı' %} <i
                                             class="fa-light ms-1 fa-arrow-right"></i></a>
                                 </div>
