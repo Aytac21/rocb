@@ -100,9 +100,9 @@
                         <img src="{{ service.image.url }}" alt="{{ service.title }}">
                     </div>
                     {% endif %}
-                    <div class="service-details__wrp ">
+                    <div class="service-details__wrp">
                         {% for section in service.service_sections.all %}
-                        <h3 class="mb-30 mt-30">{{ section.title }}</h3>
+                        <h2 class="mb-30 mt-30 section_title">{{ section.title }}</h2>
                         <p class="mb-10">{{ section.description }}</p>
                         {% if section.image %}
                         <div class="row g-2 g-sm-4 mb-30 mt-10">
