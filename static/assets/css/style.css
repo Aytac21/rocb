@@ -3852,6 +3852,23 @@ button {
 .service-two__item.bg6 {
   background-color: #f9f9f6;
 }
+
+.service-two__item.bg7 {
+  background-color: #f2fcf5;
+}
+
+.service-two__item.bg8 {
+  background-color: #ecfcff;
+}
+
+.service-two__item.bg9 {
+  background-color: #fdf5f8;
+}
+
+.service-two__item.bg9 {
+  background-color: #fef5ed;
+}
+
 .service-two__item:hover .explore-btn i {
   margin-left: 10px !important;
 }
