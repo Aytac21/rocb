@@ -13,4 +13,5 @@ urlpatterns = [
     path('portfolio/<slug>',portfolio,name='portfolio'),
     path('elaqe',contact,name='contact'),
     path('message',message,name='message'),
+    path('subscribe',subscribe,name='subscribe'),
 ]
