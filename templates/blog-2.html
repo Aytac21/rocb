@@ -169,7 +169,7 @@
                                     </div>
                                 </div>
                                 <div class="item mb-40">
-                                    <h4>Digər bloqlar</h4>
+                                    <h4>{% trans 'Digər bloqlar' %}</h4>
                                     <ul>
                                         {% for blog in recent_blogs %}
                                         <li class="mb-20">
@@ -180,7 +180,7 @@
                                     </ul>
                                 </div>
                                 <div class="item category mb-40">
-                                    <h4>Kateqoriyalar</h4>
+                                    <h4>{% trans 'Kateqoriyalar' %}</h4>
                                     <ul>
                                         <li class="mb-25">
                                             <a class='fs-18 primary-hover' href='{% url "blogs" %}?category='><span {% if not request.GET.category %}style="color:#7c2b91;font-weight:500;"{% endif %}>Hamısı</span><span>({{ blogs_count }})</span></a>
@@ -193,7 +193,7 @@
                                     </ul>
                                 </div>
                                 <div class="item mb-40">
-                                    <h4>Teqlər</h4>
+                                    <h4>{% trans 'Teqlər' %}</h4>
                                     <div class="tags">
                                         {% for tag in tags %}
                                         <a {% if request.GET.tag == tag.slug %} style="color:#7c2b91;font-weight:500;" {% endif %} {% if not request.GET.tag == tag.slug %} href='{% url "blogs" %}?tag={{tag.slug}}' {% else %} href="{% url 'blogs' %}?category=" {% endif %}>{{ tag.title }}</a>
