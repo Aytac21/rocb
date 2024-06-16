@@ -73,7 +73,7 @@
                 <h3>{% trans 'İndi abunə ol!' %}</h3>
                 <div class="subscribe-feild">
                     <input name="emailSub" id="emailSub" type="text" placeholder="{% trans 'E-poçt daxil edin!' %}">
-                    <button id="submitButton"><i class="fa-light fa-arrow-up-right"></i></button>
+                    <button id="submitButtonn"><i class="fa-light fa-arrow-up-right"></i></button>
                 </div>
             </div>
         </div>
@@ -117,7 +117,7 @@
         }
     }
     
-    document.getElementById('submitButton').addEventListener('click', submitForm);
+    document.getElementById('submitButtonn').addEventListener('click', submitForm);
     document.getElementById('emailSub').addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             submitForm(event);
