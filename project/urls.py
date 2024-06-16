@@ -18,7 +18,7 @@ sitemaps = {
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+
     path('robots.txt/', TemplateView.as_view(template_name='robots.txt', content_type="text/plain")),
 
 ]
@@ -27,7 +27,7 @@ urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     re_path(r'^rosetta/', include('rosetta.urls')),
     path('', include("oneapp.urls")),
-    
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 )
 
 urlpatterns += static (settings.STATIC_URL, document_root=settings.STATIC_ROOT)
