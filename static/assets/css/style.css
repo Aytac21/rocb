@@ -3290,8 +3290,8 @@ button {
 }
 .banner-inner-area {
   overflow: hidden;
-  padding-top: 210px;
-  padding-bottom: 120px;
+  padding-top: 180px;
+  padding-bottom: 90px;
   background: linear-gradient(180deg, rgba(255, 254, 239, 0.9) 0%, rgba(255, 255, 255, 0.9) 103.91%);
 }
 @media (max-width: 991px) {
