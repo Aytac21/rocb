@@ -7,7 +7,8 @@ __pycache__/
 *.so
 *.so2
 */migrations/*
-
+migrations
+migations/
 # Distribution / packaging
 .Python
 build/
