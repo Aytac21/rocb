@@ -38,7 +38,7 @@ CSS TABLE OF CONTENTS
   --primary-color: #7c2b91;
   --secondary-color: #101b17;
   --tertiary-color: #7c2b91;
-  --yellow-color: #ecb13e;
+  --yellow-color: #7c2b91;
   --blue-color: #4635ff;
   --main-bg: #ffffff;
   --sub-bg: #f1f7f4;
@@ -2248,7 +2248,7 @@ button {
   border-radius: 50%;
   transition: var(--transition);
   border-radius: 12px;
-  background-color: #68dc80;
+  background-color: #7c2b91;
   color: var(--heading-color);
   font-size: 18px;
   box-shadow: var(--shadow);

@@ -11,11 +11,9 @@ from django.conf.urls.i18n import i18n_patterns
 
 
 sitemaps = {
-    # 'tag_sitemap': TagSiteMap,
-    # 'training_sitemap': TrainingSiteMap,
-    # 'article_sitemap': ArticleSiteMap,
-    # 'service_sitemap': ServiceSitemap,
-    # 'static_sitemap': StaticSitemap,
+    'blog_sitepap':BlogSiteMap,
+    'service_sitemap': ServiceSiteMap,
+    'static_sitemap': StaticSitemap,
 }
 
 urlpatterns = [
@@ -31,8 +29,6 @@ urlpatterns += i18n_patterns(
     path('', include("oneapp.urls")),
     
 )
-
-
 
 urlpatterns += static (settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
