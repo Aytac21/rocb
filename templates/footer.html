@@ -109,10 +109,8 @@
         if (result.status === 'success') {
             Swal.fire('{% trans "Göndərildi!" %}', result.message, 'success');
         } else {
-            let errorMessages = '';
-            for (let field in result.errors) {
-                errorMessages += `${result.errors[field].join(', ')}\n`;
-            }
+            let errorMessages = '{% trans "Düzgün elektron poçt ünvanı daxil edin!" %}';
+            
             Swal.fire('{% trans "Xəta!" %}', errorMessages, 'error');
         }
     }
