@@ -135,7 +135,7 @@
                                 {% endfor %}
                                 {% if blogs %}
                                 <div class="pegi justify-content-center mt-60">
-                                    <a class="prev" {% if not blogs.has_previous %} style="cursor:not-allowed;font-weight: 700;font-size:20px" {% else %} style="font-weight: 700;font-size:20px"  href="?{{ request.GET.urlencode|removetag:'page' }}&page={{ blogs.previous_page_number }}" {% endif %}><i class="fa-regular fa-arrow-left"></i></a>
+                                    <a class="prev" {% if not blogs.has_previous %} style="cursor:not-allowed;font-weight: 700;font-size:20px" {% else %} style="font-weight: 700;font-size:20px"  href="?{{ request.GET.urlencode|removetag:'page' }}&page={{ blogs.previous_page_number }}" {% endif %}><i style="color:white" class="fa-regular fa-arrow-left"></i></a>
                                     <div class="pegi-dots">
                                         
                                     
@@ -144,7 +144,7 @@
                                          {% endfor %}
                                        
                                     </div>
-                                    <a class="next" {% if not blogs.has_next %} style="cursor:not-allowed;font-weight: 700;font-size:20px" {% else %} style="font-weight: 700;font-size:20px"  href="?{{ request.GET.urlencode|removetag:'page' }}&page={{ blogs.next_page_number }}" {% endif %}><i class="fa-regular fa-arrow-right"></i></a>
+                                    <a class="next" {% if not blogs.has_next %} style="cursor:not-allowed;font-weight: 700;font-size:20px" {% else %} style="font-weight: 700;font-size:20px"  href="?{{ request.GET.urlencode|removetag:'page' }}&page={{ blogs.next_page_number }}" {% endif %}><i style="color:white" class="fa-regular fa-arrow-right"></i></a>
                                 </div>
                                 {% else %}
                                 <div class="blog-details__item mb-40">
