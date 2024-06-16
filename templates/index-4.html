@@ -221,7 +221,7 @@ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC6
                             <li><a href='{% url "home" %}'>{% trans 'Ana səhifə' %}</a></li>
                             <li><a href='{% url "about" %}'>{% trans 'Haqqımızda' %}</a></li>
                             <li><a href='{% url "services" %}'>{% trans 'Xidmətlər' %}</a></li>
-                            <li><a href='{% url "portfolios" %}'>{% trans 'Portfolio' %}</a></li>
+                            {% comment %} <li><a href='{% url "portfolios" %}'>{% trans 'Portfolio' %}</a></li> {% endcomment %}
                             <li><a href='{% url "blogs" %}'>{% trans 'Bloqlar' %}</a></li>
                         </ul>
                     </nav>
