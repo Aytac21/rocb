@@ -541,7 +541,9 @@ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC6
                                                 <div
                                                     class="bor-top pt-4 mt-30 d-flex align-items-center gap-3 flex-wrap justify-content-between">
                                                     <div class="d-flex align-items-center gap-3">
+                                                        {% if testimonial.image %}
                                                         <img class="testimonialImage" src="{{ testimonial.image.url }}" alt="image">
+                                                        {% endif %}
                                                         <div>
                                                             <h5>{{ testimonial.full_name }}</h5>
                                                             <span>{{ testimonial.field }}</span>
