@@ -95,7 +95,7 @@
         event.preventDefault();
         const email = document.getElementById('emailSub').value;
     
-        const response = await fetch('{% url "message" %}', {
+        const response = await fetch('{% url "subscribe" %}', {
             method: 'POST',
             body: JSON.stringify({ 'email': email }),
             headers: {
