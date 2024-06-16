@@ -174,3 +174,18 @@ def message(request):
         
     else:
         return HttpResponse(status=405) 
+    
+
+def subscribe(request):
+    if request.method == 'POST':
+        newmessage = Subscriberform(request.POST)
+        if newmessage.is_valid():
+            newmessage.save()
+            data = {'status': 'success','message': 'Uğurlu əməliyyat!'}
+            return JsonResponse(data)
+        else:
+            print(newmessage.errors)
+            return JsonResponse({'status': 'error', 'message': 'Form hataları var!', 'errors': newmessage.errors})
+        
+    else:
+        return HttpResponse(status=405) 

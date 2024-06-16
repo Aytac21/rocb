@@ -157,3 +157,4 @@ class TagCategoryAdmin(TranslationAdmin):
 admin.site.register(Category,TagCategoryAdmin)
 admin.site.register(Tag,TagCategoryAdmin)
 admin.site.register(Message)
+admin.site.register(Subscriber)

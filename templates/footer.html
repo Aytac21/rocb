@@ -72,10 +72,9 @@
             <div class="footer__item footer-subscribe">
                 <h3>{% trans 'İndi abunə ol!' %}</h3>
                 <div class="subscribe-feild">
-                    <input type="text" placeholder="E-poçt daxil edin!">
-                    <button><i class="fa-light fa-arrow-up-right"></i></button>
+                    <input name="emailSub" id="emailSub" type="text" placeholder="{% trans 'E-poçt daxil edin!' %}">
+                    <button id="submitButton"><i class="fa-light fa-arrow-up-right"></i></button>
                 </div>
-                
             </div>
         </div>
         <div class="footer__copyright">
@@ -90,3 +89,38 @@
         </div>
     </div>
 </footer>
+
+<script>
+    async function submitForm(event) {
+        event.preventDefault();
+        const email = document.getElementById('emailSub').value;
+    
+        const response = await fetch('{% url "message" %}', {
+            method: 'POST',
+            body: JSON.stringify({ 'email': email }),
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        });
+    
+        const result = await response.json();
+    
+        if (result.status === 'success') {
+            Swal.fire('{% trans "Göndərildi!" %}', result.message, 'success');
+        } else {
+            let errorMessages = '';
+            for (let field in result.errors) {
+                errorMessages += `${result.errors[field].join(', ')}\n`;
+            }
+            Swal.fire('{% trans "Xəta!" %}', errorMessages, 'error');
+        }
+    }
+    
+    document.getElementById('submitButton').addEventListener('click', submitForm);
+    document.getElementById('emailSub').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            submitForm(event);
+        }
+    });
+</script>
