@@ -178,14 +178,21 @@ def message(request):
 
 def subscribe(request):
     if request.method == 'POST':
-        newmessage = Subscriberform(request.POST)
-        if newmessage.is_valid():
-            newmessage.save()
-            data = {'status': 'success','message': 'Uğurlu əməliyyat!'}
-            return JsonResponse(data)
-        else:
-            print(newmessage.errors)
-            return JsonResponse({'status': 'error', 'message': 'Form hataları var!', 'errors': newmessage.errors})
+        try:
+            data = json.loads(request.body)
+            email = data.get('email')
+            form_data = {'email': email}
+            newmessage = Subscriberform(form_data)
+
+            if newmessage.is_valid():
+                newmessage.save()
+                response_data = {'status': 'success', 'message': 'Uğurlu əməliyyat!'}
+                return JsonResponse(response_data)
+            else:
+                errors = newmessage.errors.as_json()
+                return JsonResponse({'status': 'error', 'message': 'Form hataları var!', 'errors': errors})
         
+        except json.JSONDecodeError:
+            return JsonResponse({'status': 'error', 'message': 'Geçersiz JSON verisi!'}, status=400)
     else:
-        return HttpResponse(status=405) 
+        return HttpResponse(status=405)
