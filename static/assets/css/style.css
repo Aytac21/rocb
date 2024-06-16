@@ -6563,6 +6563,11 @@ button {
 .logo_dark{
     height:60px;
 }
+@media (max-width: 525px) {
+  .logo_dark{
+    height:40px;
+}
+}
 .testimonialImage{
   max-height: 40px;
   border-radius: 20%;

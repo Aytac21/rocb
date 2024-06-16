@@ -101,6 +101,20 @@ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC6
   background-position: center center;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC64paAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTM0A1t6AAABhUlEQVQ4T2Ows82PjGixsc4LD2tysC/09Kjw8622tyuICG8u0w/cpGSCBzF4e1VmZkzw9anOzOj38a4KCW4IC22ECHYk1l9tn4gHMeTlTnZxLikvm+XiUpKW2hvgX+vnV5OVOQEoOGfOtv94AYOzU3Fd7XxHh6Lq6rlurqUx0W0J8Z1AnbW18yotonaYuOJBDBXls4A+bGpaBCTz86YEBtQCvVBSPAPIbY0oP1/aiAcxABU1Ny+2tclvbFjo5FgUF9uenNwNDLnmpkWEnV1TPRcY1O1tS4H6i4umA/0MDK2K8tlAwRqHpP1uoXgQKKraWpcClTY3LQZaCLQ5NaUX5OaWJY3++SeTC/AgBmA4AXUClUJs9ver8fKsAAYEUJCws4G21dXNB1oFdD/Qz8DQTk4C+bm2dn6DZ9bRiDQ8iAEYt8CoBpK5YBIYw0AEEZwSXX4oMB4PYoC6gCzAcDqrjGzEsMfen2xEmbMv1rSTjRi26dqRjShz9o2+6WQjBrSShQSkZAIADvW/HLrLY6cAAAAASUVORK5CYII=');
 }
+@media (min-width: 992px) {
+  .menu-btn-one{
+      display:flex !important;
+  }
+    
+}
+@media (max-width: 992px) {
+  .left-auto{
+      margin-left:auto
+  }
+  .logo{
+      width:120px;
+  }
+}
 </style>
 <div class="header-top d-none d-lg-block">
     <div class="container">
@@ -169,29 +183,30 @@ background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAIAAAAC6
                     </ul>
                 </nav>
             </div>
-            <div class="menu-btns d-none d-lg-flex">
+                <div class="menu-btns left-auto d-lg-flex">
                            
                                
                                 {% get_current_language as LANGUAGE_CODE %}
                                 {% get_available_languages as LANGUAGES %}
-                                <div class="nav-wrapper">
-                                    <div class="sl-nav">
-                                 
-                                      <ul>
-                                        <li><span class="capitalize">{{LANGUAGE_CODE}}</span> <i class="fa fa-angle-down" aria-hidden="true"></i>
-                                          <div class="triangle"></div>
-                                          <ul>
-                                            {% for lang_code, lang_name in LANGUAGES %}
-                                            <li><a href="{% url 'set_language' lang_code %}"><div id="lang_code"></div></i> <span class="{% if lang_code == LANGUAGE_CODE %}active{% endif %}">{{ lang_name }}</span></a></li>
-                                            {% endfor %}
-                                          </ul>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                  
+                                {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    <div  class="nav-wrapper">
+                        <div class="sl-nav">
+                     
+                          <ul>
+                            <li style="padding-bottom:0px;"><span class="capitalize">{{LANGUAGE_CODE}}</span> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                              <div class="triangle"></div>
+                              <ul>
+                                {% for lang_code, lang_name in LANGUAGES %}
+                                <li><a href="{% url 'set_language' lang_code %}"><div id="lang_code"></div></i> <span class="{% if lang_code == LANGUAGE_CODE %}active{% endif %}">{{ lang_name }}</span></a></li>
+                                {% endfor %}
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                               
-                <a class='menu-btn-one' href='{% url "contact" %}'>{% trans 'Əlaqə' %}</a>
+                <a class='menu-btn-one d-none' href='{% url "contact" %}'>{% trans 'Əlaqə' %}</a>
             </div>
             <button class="menubars d-block d-lg-none" type="button" data-bs-toggle="offcanvas"
             data-bs-target="#menubar">
