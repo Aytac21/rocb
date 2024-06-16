@@ -43,9 +43,9 @@
                     <li>
                         <a href='{% url "services" %}'>{% trans 'Xidmətlər' %}</a>
                     </li>
-                    <li>
+                    {% comment %} <li>
                         <a href='{% url "portfolios" %}'>{% trans 'Portfolio' %}</a>
-                    </li>
+                    </li> {% endcomment %}
                     <li>
                         <a href='{% url "blogs" %}'>{% trans 'Bloqlar' %}</a>
                     </li>
@@ -94,7 +94,7 @@
     async function submitForm(event) {
         event.preventDefault();
         const email = document.getElementById('emailSub').value;
-    
+        console.log(email)
         const response = await fetch('{% url "subscribe" %}', {
             method: 'POST',
             body: JSON.stringify({ 'email': email }),
