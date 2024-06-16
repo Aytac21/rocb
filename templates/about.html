@@ -43,7 +43,16 @@
     <!-- Style css -->
     <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
 </head>
-
+<style>
+    .image_banner{
+        border-radius:60px;
+    }
+    @media (max-width: 900px) {
+        .image_banner{
+            border-radius:20px;
+        }
+    }
+</style>
 <body>
     <h1 class="visuallyhidden">{% trans 'Oneiro Group Əlaqə' %}</h1>
     <!-- Preloader area start -->
@@ -90,7 +99,7 @@
             <div class="banner-video mt-0">
                 <div class="container">
                     <div class="banner-video__image image">
-                        <img style="border-radius:60px;" src="{% static 'assets/about_banner.webp' %}" alt="image">
+                        <img class="image_banner" src="{% static 'assets/about_banner.webp' %}" alt="image">
                        
                     </div>
                 </div>
