@@ -7,6 +7,7 @@ class BlogSiteMap(Sitemap):
     changefreq = "daily"
     priority = 0.6
     protocol = 'https'
+    i18n = True 
     
     def items(self):
         return Blog.objects.all()
@@ -21,6 +22,7 @@ class ServiceSiteMap(Sitemap):
     changefreq = "daily"
     priority = 0.6
     protocol = 'https'
+    i18n = True 
     
     def items(self):
         return Service.objects.all()
@@ -35,6 +37,7 @@ class StaticSitemap(Sitemap):
     protocol = 'https'
     priority = 0.5
     changefreq = "daily"
+    i18n = True 
 
     def items(self):
         return [
