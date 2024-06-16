@@ -183,7 +183,7 @@
                                     <h4>{% trans 'Kateqoriyalar' %}</h4>
                                     <ul>
                                         <li class="mb-25">
-                                            <a class='fs-18 primary-hover' href='{% url "blogs" %}?category='><span {% if not request.GET.category %}style="color:#7c2b91;font-weight:500;"{% endif %}>Hamısı</span><span>({{ blogs_count }})</span></a>
+                                            <a class='fs-18 primary-hover' href='{% url "blogs" %}?category='><span {% if not request.GET.category %}style="color:#7c2b91;font-weight:500;"{% endif %}>{% trans 'Hamısı' %}</span><span>({{ blogs_count }})</span></a>
                                         </li>
                                         {% for category in categories %}
                                         <li class="mb-25" >
