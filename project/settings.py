@@ -153,7 +153,7 @@ LOCALE_PATHS = [
 ]
 
 TIME_ZONE = 'Asia/Baku'
-SITE_ID = 1
+SITE_ID = 2
 
 USE_I18N = True
 USE_TZ = True
