@@ -15,11 +15,13 @@
     <meta name="description" content="{{ service.description }}">
     <meta name="keywords" content="{{ service.title }}">
     <meta name="image" content="{% static 'assets/fav_icon.png' %}">
-    <meta property="og:title" content="Oneiro Group - {{ service.title }}">
+    <meta property="og:title" content="{{ service.title }} - Oneiro Group">
     <meta property="og:image" content="{% static 'assets/fav_icon.png' %}">
     <meta property="og:description" content="{{ service.description }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Oneiro Group">
+    <meta property="twitter:title" content="{{ service.title }}">
+    <meta property="twitter:description" content="{{ service.description }}">
 
     <link rel="shortcut icon" sizes="32x32" href="{% static 'assets/fav_icon.png' %}">
     <link rel="icon" sizes="any" href="{% static 'assets/fav_icon.png' %}" type="image/png">

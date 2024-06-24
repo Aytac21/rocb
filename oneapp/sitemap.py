@@ -4,8 +4,8 @@ from django.urls import reverse, NoReverseMatch
 
 
 class BlogSiteMap(Sitemap):
-    changefreq = "daily"
-    priority = 0.6
+    changefreq = "weekly"
+    priority = 0.8
     protocol = 'https'
     i18n = True 
     
@@ -19,8 +19,8 @@ class BlogSiteMap(Sitemap):
         return obj.get_absolute_url()
 
 class ServiceSiteMap(Sitemap):
-    changefreq = "daily"
-    priority = 0.6
+    changefreq = "weekly"
+    priority = 1.0
     protocol = 'https'
     i18n = True 
     
@@ -35,8 +35,8 @@ class ServiceSiteMap(Sitemap):
 
 class StaticSitemap(Sitemap):
     protocol = 'https'
-    priority = 0.5
-    changefreq = "daily"
+    priority = 0.9
+    changefreq = "monthly"
     i18n = True 
 
     def items(self):
