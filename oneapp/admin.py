@@ -71,6 +71,7 @@ class ServiceAdmin(TranslationAdmin):
 
 admin.site.register(Service,ServiceAdmin)
 
+
 class CustomerModelInline(TranslationStackedInline):  
     model = Customer
     extra = 0
