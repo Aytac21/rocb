@@ -1,0 +1,17 @@
+@media (min-width: 1400px) {
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+        max-width: 1200px;
+    }
+}
+.banner-inner-area {
+    padding-bottom:0px;
+    padding-top:180px;
+
+}
+.sectionImage{
+    padding:2% 5%;
+}
+h1{
+    font-size:40px;
+    font-weight:500 !important
+}

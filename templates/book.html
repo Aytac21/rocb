@@ -20,7 +20,7 @@
                             alt="shape"></span> {% trans 'birgə imza ataq!' %}</h2>
                 <p class="mt-20 mb-25"> {% trans 'Brendinizi zirvələrə daşımaq və biznesinizi uğura aparmaq istəyirsiniz?' %} <br> {% trans 'O zaman bizimlə əlaqə saxla!' %}</p>
               
-                <a href="{% url 'contact' %}" id="booking-item" class='btn-two border-none mt-45' >{% trans 'Ödənişsiz konsultasiya üçün müraciət et!' %}'
+                <a href="{% url 'contact' %}" id="booking-item" class='btn-two border-none mt-45' >{% trans 'Ödənişsiz konsultasiya üçün müraciət et!' %}
                     <span>
                         <i class="fa-regular fa-arrow-up-right arry1"></i>
                         <i class="fa-regular fa-arrow-up-right arry2"></i>
@@ -31,23 +31,3 @@
     </div>
 </section>
 <link>
-<script>
-
-    document.addEventListener("DOMContentLoaded", function() {
-        var bookingItem = document.getElementById("booking-item");
-        
-        bookingItem.addEventListener("click", function() {
-            Swal.fire({
-              
-                icon: "success",
-                title: "Your work has been saved",
-                text: "Something went wrong!",
-                showConfirmButton: false,
-                timer: 1500
-              });
-        });
-    });
-
-
-
-</script>
