@@ -15,7 +15,7 @@ class BlogSiteMap(Sitemap):
     def lastmod(self, obj):
         return obj.created_at
 
-    def location(self, obj: Blog) -> str:
+    def location(self, obj):
         return obj.get_absolute_url()
 
 class ServiceSiteMap(Sitemap):
@@ -31,7 +31,7 @@ class ServiceSiteMap(Sitemap):
     def lastmod(self, obj):
         return obj.created_at
 
-    def location(self, obj: Service) -> str:
+    def location(self, obj):
         return obj.get_absolute_url()
 
 class StaticSitemap(Sitemap):
