@@ -1,10 +1,11 @@
 from django import forms
-from .models import Message,Subscriber
+
 from django.contrib.auth.forms import UserCreationForm
 
 class Messageform(forms.ModelForm):
 
     class Meta:
+        from oneapp.models import Message
         model = Message
         fields = ['full_name','subject','email','message','phone']
     
@@ -16,6 +17,7 @@ class Messageform(forms.ModelForm):
 class Subscriberform(forms.ModelForm):
 
     class Meta:
+        from oneapp.models import Subscriber
         model = Subscriber
         fields = ['email']
     
