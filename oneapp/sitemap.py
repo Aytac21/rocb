@@ -1,7 +1,6 @@
 from django.contrib.sitemaps import Sitemap
-from oneapp.models import Blog,Service
 from django.urls import reverse, NoReverseMatch
-
+from oneapp.models import Blog,Service
 
 class BlogSiteMap(Sitemap):
     changefreq = "weekly"

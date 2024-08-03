@@ -1,7 +1,5 @@
 from django.db import models
-from django.contrib.auth import get_user, get_user_model
 from oneapp.utils import *
-from datetime import datetime
 from django.urls import reverse
 
 class MetaInfo(models.Model):

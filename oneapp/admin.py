@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from .models import Blog,Service,ServiceSection,BlogSection,Customer,PortfolioSection,Partner,Portfolio,Testmonial,Tag,Category,Message,Subscriber
 from modeltranslation.admin import TranslationAdmin,TranslationStackedInline
 
 class BlogModelInline(TranslationStackedInline):  

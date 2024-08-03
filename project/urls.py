@@ -1,4 +1,4 @@
-from oneapp.sitemap import *
+from oneapp.sitemap import BlogSiteMap,ServiceSiteMap,StaticSitemap
 from django.contrib import admin
 from django.urls import path,include,re_path
 from django.conf import settings
