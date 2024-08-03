@@ -1,5 +1,5 @@
 from django.contrib.sitemaps import Sitemap
-from oneapp.models import *
+from oneapp.models import Blog,Service
 from django.urls import reverse, NoReverseMatch
 
 
