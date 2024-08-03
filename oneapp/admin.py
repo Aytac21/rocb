@@ -158,6 +158,9 @@ class TagCategoryAdmin(TranslationAdmin):
 class MetaInfoAdmin(TranslationAdmin):
     list_display = ("page_name",)
 
+    def has_delete_permission(self, request, obj=None):
+        return False
+
     class Media:
         group_fieldsets = True 
 
