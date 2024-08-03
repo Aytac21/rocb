@@ -9,10 +9,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oneiro Group - {% trans 'Media və marketinq şirkəti' %} </title>
+
+    <title>{{ meta.meta_title }}</title>
+    <meta name="description" content="{{ meta.meta_description }}">
+    <meta name="keywords" content="{{ meta.meta_keyword }}">
+
+
     <meta name="language" content="{% trans 'az' %}">
-    <meta name="description" content="{% trans 'Oneiro Group – Oneiro SMM, Foto və Video çəkilişlər, Marketinq, Veb-sayt və Mobil proqramların hazırlanması xidmətlərini təqdim edən Media və Marketinq şirkətidir.' %} ">
-    <meta name="keywords" content="Oneiro Group, Oneiro, Oneiro.az, Smm, Marketinq, Video çəkilişlər, Foto, Reklam, Veb-sayt, mobil proqramlar">
     <meta name="image" content="{% static 'assets/fav_icon.png' %}">
     <meta name="msvalidate.01" content="C760AFCB964DF7DBEE384BC6C3B5696F" />
     <meta name="yandex-verification" content="63fe1d739ee61085" />

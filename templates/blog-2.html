@@ -10,12 +10,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oneiro Group - Bloqlar </title>
+    
+    <title>{{ meta.meta_title }}</title>
+    <meta name="description" content="{{ meta.meta_description }}">
+    <meta name="keywords" content="{{ meta.meta_keyword }}">
+
     <meta name="language" content="{% trans 'az' %}">
     <link rel="canonical" href="{% url 'blogs' %}">
-    <meta name="description" content="Oneiro Group – Media, Marketinq, SMM və İT üzrə maraqlı məlumatlardan xəbərdar olmaq istəyirsənsə bloqlara bölməmiz xidnətinizdədir!">
-    <meta name="keywords" content="Oneiro Group, Oneiro, Oneiro.az, Smm, Marketinq, Video çəkilişlər, Foto, Reklam, Veb-sayt, mobil proqramlar, Bloqlar">
-    <meta name="image" content="{% static 'assets/fav_icon.png' %}">
+   <meta name="image" content="{% static 'assets/fav_icon.png' %}">
     <meta property="og:title" content="Oneiro.az - Oneiro Group">
     <meta property="og:image" content="{% static 'assets/fav_icon.png' %}">
     <meta property="og:description" content="Oneiro Group – Media, Marketinq, SMM və İT üzrə maraqlı məlumatlardan xəbərdar olmaq istəyirsənsə bloqlar bölməmiz xidnətinizdədir! ">

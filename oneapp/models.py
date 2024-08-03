@@ -1,7 +1,7 @@
 from django.db import models
 from oneapp.utils import get_url_names,slugify
 from django.urls import reverse
-
+from django.core.exceptions import ValidationError
 URL_CHOICES = [
         ('home', 'home'),
         ('about', 'about'),
@@ -20,7 +20,9 @@ class MetaInfo(models.Model):
 
     def __str__(self):
         return self.page_name
-
+    
+    def delete(self, *args, **kwargs):
+        raise ValidationError("Meta məlumatları silinə bilməz!")
 
 class BaseMixin(models.Model):
     slug = models.SlugField(unique=True,editable=False,blank=True,null=True)

@@ -4,7 +4,7 @@ from django.shortcuts import  HttpResponse,render, redirect
 from django.http import JsonResponse
 from django.db.models import Q
 from .forms import Messageform,Subscriberform
-from .models import Blog,Service,Tag,Category,Portfolio,Partner,Testmonial
+from .models import Blog,Service,Tag,Category,Portfolio,Partner,Testmonial,MetaInfo
 from django.http import HttpResponseRedirect
 from django.urls import resolve, reverse
 from django.utils import translation
@@ -38,20 +38,23 @@ def home(request):
     portfolios = Portfolio.objects.filter(in_home=True)
     partners = Partner.objects.all()
     testmonials = Testmonial.objects.all()
-
+    meta = MetaInfo.objects.filter(page_name="home").first()
     context = {
         'blogs':blogs,
         'services':services,
         'portfolios':portfolios,
         'partners':partners,
-        'testimonials':testmonials
+        'testimonials':testmonials,
+        'meta':meta
     }
 
     return render(request,'index-4.html',context)
 
 def about(request):
     partners = Partner.objects.all()
+    meta = MetaInfo.objects.filter(page_name="about").first()
     context = {
+        'meta':meta,
         'partners':partners,
     }
     return render(request,'about.html',context)
@@ -80,7 +83,9 @@ def blogs(request):
     total_pages = [x+1 for x in range(paginator.num_pages)]
     blogs_count = Blog.objects.count()
  
+    meta = MetaInfo.objects.filter(page_name="blogs").first()
     context = {
+        'meta':meta,
         'categories':categories,
         'blogs':blogs,
         'total_pages':total_pages,
@@ -127,7 +132,9 @@ def blog(request,slug):
 
 def services(request):
     services = Service.objects.all()
+    meta = MetaInfo.objects.filter(page_name="services").first()
     context = {
+        'meta':meta,
         'services':services
     }
     return render(request,'service.html',context)
@@ -143,7 +150,9 @@ def service(request,slug):
 
 def portfolios(request):
     portfolios = Portfolio.objects.all()
+    meta = MetaInfo.objects.filter(page_name="portfolios").first()
     context = {
+        'meta':meta,
         'portfolios':portfolios
     }
     return render(request,'case-study.html',context)
@@ -158,7 +167,10 @@ def portfolio(request,slug):
     return render(request,'case-study-details.html',context)
 
 def contact(request):
-    context = {}
+    meta = MetaInfo.objects.filter(page_name="contact").first()
+    context = {
+        'meta':meta,
+    }
     return render(request,'contact.html',context)
 
 def message(request):
