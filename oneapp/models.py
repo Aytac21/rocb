@@ -19,7 +19,7 @@ class MetaInfo(models.Model):
     meta_description = models.CharField(max_length=1200,null=True,blank=True,verbose_name='description for seo')
 
     def __str__(self):
-        return self.title
+        return self.page_name
 
 
 class BaseMixin(models.Model):
