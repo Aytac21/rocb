@@ -4,13 +4,25 @@ from oneapp.utils import *
 from datetime import datetime
 from django.urls import reverse
 
+class MetaInfo(models.Model):
+    URL_CHOICES = get_url_names()
+    page_name = models.CharField(max_length=100, choices=URL_CHOICES, unique=True)
+    meta_title = models.CharField(max_length=1200,null=True,blank=True,verbose_name='title for seo')
+    meta_keyword = models.CharField(max_length=1200,null=True,blank=True,verbose_name='keyword for seo')
+    image_alt = models.CharField(max_length=1200,null=True,blank=True)
+    meta_description = models.CharField(max_length=1200,null=True,blank=True,verbose_name='description for seo')
+
+    def __str__(self):
+        return self.title
+
+
 class BaseMixin(models.Model):
     slug = models.SlugField(unique=True,editable=False,blank=True,null=True)
     created_at = models.DateField(auto_now=True,blank=True,null=True,)
-    seo_title = models.CharField(max_length=1200,null=True,blank=True,verbose_name='title for seo')
-    seo_keyword = models.CharField(max_length=1200,null=True,blank=True,verbose_name='keyword for seo')
-    seo_alt = models.CharField(max_length=1200,null=True,blank=True)
-    seo_description = models.CharField(max_length=1200,null=True,blank=True,verbose_name='description for seo')
+    meta_title = models.CharField(max_length=1200,null=True,blank=True,verbose_name='title for seo')
+    meta_keyword = models.CharField(max_length=1200,null=True,blank=True,verbose_name='keyword for seo')
+    image_alt = models.CharField(max_length=1200,null=True,blank=True)
+    meta_description = models.CharField(max_length=1200,null=True,blank=True,verbose_name='description for seo')
     
     class Meta:
         abstract = True

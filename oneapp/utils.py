@@ -1,6 +1,7 @@
 import random
 import string
 
+from django.urls import get_resolver
 
 def code_slug_generator(size=12, chars=string.ascii_letters):
     return ''.join(random.choice(chars)
@@ -42,3 +43,11 @@ def slugify(title):
 
     return title_url
 
+
+def get_url_names():
+    url_names = []
+    resolver = get_resolver()
+    for pattern in resolver.url_patterns:
+        if pattern.name:  # Only include named patterns
+            url_names.append((pattern.name, pattern.name.replace('_', ' ').title()))
+    return url_names
