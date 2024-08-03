@@ -155,8 +155,23 @@ class TagCategoryAdmin(TranslationAdmin):
             'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
         }
 
+class MetaInfoAdmin(TranslationAdmin):
+    list_display = ("page_name",)
+
+    class Media:
+        group_fieldsets = True 
+
+        js = (
+            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
+            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
+            'modeltranslation/js/tabbed_translation_fields.js',
+        )
+        css = {
+            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
+        }
+
 admin.site.register(Category,TagCategoryAdmin)
 admin.site.register(Tag,TagCategoryAdmin)
 admin.site.register(Message)
 admin.site.register(Subscriber)
-admin.site.register(MetaInfo)
+admin.site.register(MetaInfo,MetaInfoAdmin)
