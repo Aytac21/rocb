@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blog,Service,ServiceSection,BlogSection,Customer,PortfolioSection,Partner,Portfolio,Testmonial,Tag,Category,Message,Subscriber
+from .models import MetaInfo,Blog,Service,ServiceSection,BlogSection,Customer,PortfolioSection,Partner,Portfolio,Testmonial,Tag,Category,Message,Subscriber
 from modeltranslation.admin import TranslationAdmin,TranslationStackedInline
 
 class BlogModelInline(TranslationStackedInline):  
@@ -159,3 +159,4 @@ admin.site.register(Category,TagCategoryAdmin)
 admin.site.register(Tag,TagCategoryAdmin)
 admin.site.register(Message)
 admin.site.register(Subscriber)
+admin.site.register(MetaInfo)
