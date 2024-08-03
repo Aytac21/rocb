@@ -3,8 +3,8 @@ from django.conf import settings
 from django.shortcuts import  HttpResponse,render, redirect
 from django.http import JsonResponse
 from django.db.models import Q
-from .forms import *
-from .models import *
+from .forms import Messageform,Subscriberform
+from .models import Blog,Service,Tag,Category,Portfolio,Partner,Testmonial
 from django.http import HttpResponseRedirect
 from django.urls import resolve, reverse
 from django.utils import translation
@@ -13,7 +13,7 @@ from urllib.parse import urlparse
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
 import json 
-
+import random
 def set_language(request, language):
     for lang, _ in settings.LANGUAGES:
         translation.activate(lang)

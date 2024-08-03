@@ -1,9 +1,17 @@
 from django.db import models
-from oneapp.utils import *
+from oneapp.utils import get_url_names,slugify
 from django.urls import reverse
 
+URL_CHOICES = [
+        ('home', 'home'),
+        ('about', 'about'),
+        ('blogs', 'blogs'),
+        ('services', 'services'),
+        ('portfolios', 'portfolios'),
+        ('contact', 'contact'),
+    ]
+
 class MetaInfo(models.Model):
-    URL_CHOICES = get_url_names()
     page_name = models.CharField(max_length=100, choices=URL_CHOICES, unique=True)
     meta_title = models.CharField(max_length=1200,null=True,blank=True,verbose_name='title for seo')
     meta_keyword = models.CharField(max_length=1200,null=True,blank=True,verbose_name='keyword for seo')

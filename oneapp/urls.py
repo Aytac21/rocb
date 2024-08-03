@@ -1,5 +1,5 @@
 from django.urls import path,include
-from .views import *
+from .views import set_language,home,about,blogs,blog,service,services,portfolio,portfolios,contact,message,subscribe
 
 urlpatterns = [
     path('set_language/<language>', set_language, name='set_language'),

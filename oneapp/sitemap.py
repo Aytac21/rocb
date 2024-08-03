@@ -1,6 +1,6 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse, NoReverseMatch
-
+from oneapp.models import Blog,Service
 
 class BlogSiteMap(Sitemap):
     changefreq = "weekly"
@@ -9,7 +9,7 @@ class BlogSiteMap(Sitemap):
     i18n = True 
     
     def items(self):
-        from oneapp.models import Blog
+
         return Blog.objects.all()
 
     def lastmod(self, obj):
@@ -25,7 +25,6 @@ class ServiceSiteMap(Sitemap):
     i18n = True 
     
     def items(self):
-        from oneapp.models import Service
         return Service.objects.all()
 
     def lastmod(self, obj):

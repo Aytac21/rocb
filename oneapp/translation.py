@@ -1,5 +1,5 @@
 from modeltranslation.translator import TranslationOptions,register, translator
-from oneapp.models import *
+from oneapp.models import Blog,BlogSection,Service,ServiceSection,Portfolio,PortfolioSection,Testmonial,Tag,Category,Customer
 
 
 class BlogTranslationOption(TranslationOptions):
