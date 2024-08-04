@@ -14,8 +14,8 @@ URL_CHOICES = [
 class MetaInfo(models.Model):
     page_name = models.CharField(max_length=100, choices=URL_CHOICES, unique=True)
     meta_title = models.CharField(max_length=60,null=True,blank=True,verbose_name='title for seo')
-    meta_description = models.CharField(max_length=160,null=True,blank=True,verbose_name='description for seo')
-    meta_keyword = models.CharField(max_length=160,null=True,blank=True,verbose_name='keyword for seo')
+    meta_description = models.CharField(max_length=160,null=True,blank=True,verbose_name='Meta Description')
+    meta_keyword = models.CharField(max_length=160,null=True,blank=True,verbose_name='keywords for seo')
     image_alt = models.CharField(max_length=160,null=True,blank=True)
 
 
