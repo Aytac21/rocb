@@ -37,6 +37,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://check.oneiro.az',
     'https://oneiro.az',
     'http://oneiro.az',
+    'https://www.oneiro.az',
 ]
 
 # Application definition
