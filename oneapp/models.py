@@ -13,10 +13,11 @@ URL_CHOICES = [
 
 class MetaInfo(models.Model):
     page_name = models.CharField(max_length=100, choices=URL_CHOICES, unique=True)
-    meta_title = models.CharField(max_length=1200,null=True,blank=True,verbose_name='title for seo')
-    meta_keyword = models.CharField(max_length=1200,null=True,blank=True,verbose_name='keyword for seo')
-    image_alt = models.CharField(max_length=1200,null=True,blank=True)
-    meta_description = models.CharField(max_length=1200,null=True,blank=True,verbose_name='description for seo')
+    meta_title = models.CharField(max_length=60,null=True,blank=True,verbose_name='title for seo')
+    meta_description = models.CharField(max_length=160,null=True,blank=True,verbose_name='description for seo')
+    meta_keyword = models.CharField(max_length=160,null=True,blank=True,verbose_name='keyword for seo')
+    image_alt = models.CharField(max_length=160,null=True,blank=True)
+
 
     def __str__(self):
         return self.page_name
@@ -27,10 +28,11 @@ class MetaInfo(models.Model):
 class BaseMixin(models.Model):
     slug = models.SlugField(unique=True,editable=False,blank=True,null=True)
     created_at = models.DateField(auto_now=True,blank=True,null=True,)
-    meta_title = models.CharField(max_length=1200,null=True,blank=True,verbose_name='title for seo')
-    meta_keyword = models.CharField(max_length=1200,null=True,blank=True,verbose_name='keyword for seo')
-    image_alt = models.CharField(max_length=1200,null=True,blank=True)
-    meta_description = models.CharField(max_length=1200,null=True,blank=True,verbose_name='description for seo')
+    meta_title = models.CharField(max_length=60,null=True,blank=True,verbose_name='title for seo')
+    meta_description = models.CharField(max_length=160,null=True,blank=True,verbose_name='description for seo')
+    meta_keyword = models.CharField(max_length=160,null=True,blank=True,verbose_name='keyword for seo')
+    image_alt = models.CharField(max_length=160,null=True,blank=True)
+
     
     class Meta:
         abstract = True
