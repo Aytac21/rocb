@@ -1,50 +1,28 @@
 from modeltranslation.translator import TranslationOptions,register, translator
-from oneapp.models import Blog,BlogSection,Service,ServiceSection,Portfolio,PortfolioSection,Testmonial,Tag,Category,Customer,MetaInfo
+from oneapp.models import News, NewsSection, Event, EventSection
 
-class MetaTranslationOption(TranslationOptions):
-    fields = ('meta_title','meta_description')
+# ------------------- News ------------------- #
 
-translator.register(MetaInfo, MetaTranslationOption)
-
-class BlogTranslationOption(TranslationOptions):
+class NewsTranslationOption(TranslationOptions):
     fields = ('title','description','meta_title','meta_description')
 
-class BlogSectionTranslationOption(TranslationOptions):
+class NewsSectionTranslationOption(TranslationOptions):
     fields = ('title','description')
 
-translator.register(Blog, BlogTranslationOption)
-translator.register(BlogSection, BlogSectionTranslationOption)
+translator.register(News, NewsTranslationOption)
+translator.register(NewsSection, NewsSectionTranslationOption)
 
-class ServiceTranslationOption(TranslationOptions):
+# ------------------- News ------------------- #
+
+# ------------------- Event ------------------- #
+
+class EventTranslationOption(TranslationOptions):
     fields = ('title','description','meta_title','meta_description')
 
-class ServiceSectionTranslationOption(TranslationOptions):
+class EventSectionTranslationOption(TranslationOptions):
     fields = ('title','description')
 
-translator.register(Service, ServiceTranslationOption)
-translator.register(ServiceSection, ServiceSectionTranslationOption)
+translator.register(Event, EventTranslationOption)
+translator.register(EventSection, EventSectionTranslationOption)
 
-class PortfolioTranslationOption(TranslationOptions):
-    fields = ('title','description','meta_title','meta_description')
-
-class PortfolioSectionTranslationOption(TranslationOptions):
-    fields = ('title','description')
-
-translator.register(Portfolio, PortfolioTranslationOption)
-translator.register(PortfolioSection, PortfolioSectionTranslationOption)
-
-class TestimonialTranslationOption(TranslationOptions):
-    fields = ('title','description','field')
-
-translator.register(Testmonial,TestimonialTranslationOption)
-
-class CategoryTagTranslationOption(TranslationOptions):
-    fields = ('title',)
-
-translator.register(Tag,CategoryTagTranslationOption)
-translator.register(Category,CategoryTagTranslationOption)
-
-class CustomerTranslationOption(TranslationOptions):
-    fields = ('project','timeline','company')
-
-translator.register(Customer,CustomerTranslationOption)
+# ------------------- Event ------------------- #

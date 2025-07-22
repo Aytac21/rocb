@@ -1,4 +1,4 @@
-from oneapp.sitemap import BlogSiteMap,ServiceSiteMap,StaticSitemap
+# from oneapp.sitemap import BlogSiteMap,ServiceSiteMap,StaticSitemap
 from django.contrib import admin
 from django.urls import path,include,re_path
 from django.conf import settings
@@ -10,11 +10,11 @@ from django.views.generic import TemplateView
 from django.conf.urls.i18n import i18n_patterns
 
 
-sitemaps = {
-    'blog_sitepap':BlogSiteMap,
-    'service_sitemap': ServiceSiteMap,
-    'static_sitemap': StaticSitemap,
-}
+# sitemaps = {
+#     'blog_sitepap':BlogSiteMap,
+#     'service_sitemap': ServiceSiteMap,
+#     'static_sitemap': StaticSitemap,
+# }
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,7 +27,7 @@ urlpatterns += i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     re_path(r'^rosetta/', include('rosetta.urls')),
     path('', include("oneapp.urls")),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
+    # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 )
 
 urlpatterns += static (settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,3 +1,3 @@
 User-Agent: *
 Disallow: /admin/
-Sitemap: https://oneiro.az/sitemap.xml
+Sitemap: https://rocb-europe.org/sitemap.xml

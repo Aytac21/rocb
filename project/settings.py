@@ -27,17 +27,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 CORS_ALLOWED_ORIGINS = [
-    'https://check.oneiro.az',
-    'https://oneiro.az',
-    'https://www.oneiro.az',
+    'https://demo.rocb-europe.org',
+    'https://rocb-europe.org',
+    'https://www.rocb-europe.org',
 ]
 # Application definition
 CSRF_TRUSTED_ORIGINS = [
-    'https://check.oneiro.az',
-    'http://check.oneiro.az',
-    'https://oneiro.az',
-    'http://oneiro.az',
-    'https://www.oneiro.az',
+    'https://rocb-europe.org',
+    'http://rocb-europe.org',
+    'https://demo.rocb-europe.org',
+    'http://demo.rocb-europe.org',
+    'https://www.rocb-europe.org',
 ]
 
 # Application definition
@@ -130,24 +130,26 @@ from django.utils.translation import gettext_lazy as _
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
 LANGUAGES = [
-    ('az', _('Az')),
     ('en', _('En')),
+    ('ru', _('Ru')),
+    ('az', _('Az')),
 ]
 
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'az'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 PARLER_LANGUAGES = {
     None : (
-        {'code': 'az',},
         {'code': 'en',},
+        {'code': 'ru',},
+        {'code': 'az',},
     ),
     'default': {
         'fallbacks': [],
         'hide_untranslated': False,
     }
 }
-LANGUAGE_CODE = 'az'
-MODELTRANSLATION_DEFAULT_LANGUAGE = 'az'
-DEFAULT_LANGUAGE = 'az'
+LANGUAGE_CODE = 'en'
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
+DEFAULT_LANGUAGE = 'en'
 
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
@@ -165,9 +167,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')

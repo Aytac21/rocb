@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import MetaInfo,Blog,Service,ServiceSection,BlogSection,Customer,PortfolioSection,Partner,Portfolio,Testmonial,Tag,Category,Message,Subscriber
+from .models import Event, EventSection, News, NewsSection
 from modeltranslation.admin import TranslationAdmin,TranslationStackedInline
 
-class BlogModelInline(TranslationStackedInline):  
-    model = BlogSection
+class EventModelInline(TranslationStackedInline):  
+    model = EventSection
     extra = 0
 
     class Media:
@@ -18,9 +18,9 @@ class BlogModelInline(TranslationStackedInline):
             'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
         }
 
-class BlogAdmin(TranslationAdmin):
+class EventAdmin(TranslationAdmin):
     list_display = ("title",)
-    inlines = [BlogModelInline]
+    inlines = [EventModelInline]
 
     class Media:
         group_fieldsets = True 
@@ -34,11 +34,11 @@ class BlogAdmin(TranslationAdmin):
             'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
         }
 
-admin.site.register(Blog,BlogAdmin)
+admin.site.register(Event,EventAdmin)
 
 
-class ServiceModelInline(TranslationStackedInline):  
-    model = ServiceSection
+class NewsModelInline(TranslationStackedInline):  
+    model = NewsSection
     extra = 0
 
     class Media:
@@ -53,9 +53,9 @@ class ServiceModelInline(TranslationStackedInline):
             'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
         }
 
-class ServiceAdmin(TranslationAdmin):
+class NewsAdmin(TranslationAdmin):
     list_display = ("title",)
-    inlines = [ServiceModelInline]
+    inlines = [NewsModelInline]
 
     class Media:
         group_fieldsets = True 
@@ -69,109 +69,5 @@ class ServiceAdmin(TranslationAdmin):
             'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
         }
 
-admin.site.register(Service,ServiceAdmin)
+admin.site.register(News,NewsAdmin)
 
-
-class CustomerModelInline(TranslationStackedInline):  
-    model = Customer
-    extra = 0
-
-    class Media:
-        group_fieldsets = True 
-
-        js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
-        )
-        css = {
-            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
-        }
-
-class PortfolioModelInline(TranslationStackedInline):  
-    model = PortfolioSection
-    extra = 0
-
-    class Media:
-        group_fieldsets = True 
-
-        js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
-        )
-        css = {
-            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
-        }
-
-class PortfolioAdmin(TranslationAdmin):
-    list_display = ("title",)
-    inlines = [PortfolioModelInline,CustomerModelInline]
-
-    class Media:
-        group_fieldsets = True 
-
-        js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
-        )
-        css = {
-            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
-        }
-
-admin.site.register(Portfolio,PortfolioAdmin)
-admin.site.register(Partner)
-
-class TestimonialAdmin(TranslationAdmin):
-    list_display = ("title",)
-
-    class Media:
-        group_fieldsets = True 
-
-        js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
-        )
-        css = {
-            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
-        }
-
-admin.site.register(Testmonial,TestimonialAdmin)
-
-class TagCategoryAdmin(TranslationAdmin):
-    list_display = ("title",)
-
-    class Media:
-        group_fieldsets = True 
-
-        js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
-        )
-        css = {
-            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
-        }
-
-class MetaInfoAdmin(TranslationAdmin):
-    list_display = ("page_name",)
-
-    class Media:
-        group_fieldsets = True 
-
-        js = (
-            'http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js',
-            'http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js',
-            'modeltranslation/js/tabbed_translation_fields.js',
-        )
-        css = {
-            'screen': ('modeltranslation/css/tabbed_translation_fields.css',),
-        }
-
-admin.site.register(Category,TagCategoryAdmin)
-admin.site.register(Tag,TagCategoryAdmin)
-admin.site.register(Message)
-admin.site.register(Subscriber)
-admin.site.register(MetaInfo,MetaInfoAdmin)
