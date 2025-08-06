@@ -1,6 +1,6 @@
 from django.core.mail import send_mail
 from django.conf import settings
-from django.shortcuts import  HttpResponse,render, redirect
+from django.shortcuts import HttpResponse, render, redirect
 from django.http import JsonResponse
 from django.db.models import Q
 from django.http import HttpResponseRedirect
@@ -10,10 +10,11 @@ from django.urls.exceptions import Resolver404
 from urllib.parse import urlparse
 from django.core.paginator import Paginator
 from django.shortcuts import get_object_or_404
-import json 
+import json
 import random
 
 from .models import News, Event
+
 
 def set_language(request, language):
     for lang, _ in settings.LANGUAGES:
@@ -39,8 +40,13 @@ def home(request):
     news = News.objects.filter(in_home=True)[0:8]
 
     context = {
-        events:events,
-        news:news
+        events: events,
+        news: news
     }
 
-    return render(request,'index.html',context)
+    return render(request, 'index.html', context)
+
+
+def about(request):
+
+    return render(request, 'about.html')

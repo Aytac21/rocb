@@ -630,11 +630,7 @@ body:has(.sticky) .sticky-lg-top {
 }
 .main-color-rocb .btn-icon i {
   color: var(--tj-color-common-white);
-  -webkit-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+ 
 }
 .main-color-rocb.btn-dark {
   background-color: var(--tj-color-theme-dark);
@@ -1339,6 +1335,137 @@ START: Theme Header CSS
   transition: transform 0.3s;
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
+
+ .header-flag {
+            line-height: 1;
+            position: relative;
+        }
+
+        .header-flag .flag {
+            color: var(--tj-color-heading-primary);
+            font-size: 20px;
+            line-height: 1;
+            width: 48px;
+            height: 48px;
+            gap: 10px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border: 2px solid #e0e0e0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .header-flag .flag:hover {
+            border-color: #007bff;
+            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+        }
+
+        .header-flag .flag img {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .header-flag .flag i {
+            position: absolute;
+            right: -5px;
+            bottom: -5px;
+            background: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease;
+        }
+
+        .header-flag .flag.active i {
+            transform: rotate(180deg);
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            min-width: 120px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            margin-top: 8px;
+        }
+
+        .dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .dropdown-item:first-child {
+            border-radius: 8px 8px 0 0;
+        }
+
+        .dropdown-item:last-child {
+            border-radius: 0 0 8px 8px;
+        }
+
+        .dropdown-item:only-child {
+            border-radius: 8px;
+        }
+
+        .dropdown-item img {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+
+        .dropdown-item span {
+            font-size: 14px;
+            color: var(--tj-color-heading-primary);
+        }
+
+        .dropdown-item.selected {
+            background-color: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .dropdown-item.selected span {
+            color: #1976d2;
+            font-weight: 500;
+        }
+
+
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .header-search .search {
     font-size: 18px;

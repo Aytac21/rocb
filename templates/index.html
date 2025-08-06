@@ -77,7 +77,7 @@
             class="hamburger_top d-flex align-items-center justify-content-between"
           >
             <div class="hamburger_logo">
-              <a href="index.html" class="mobile_logo">
+              <a href="{% url 'home' %}" class="mobile_logo">
                 <img src="{% static 'logo.png' %}" alt="Logo" />
               </a>
             </div>
@@ -97,7 +97,7 @@
           <div class="hamburger-search-area">
             <h5 class="hamburger-title">Search Now!</h5>
             <div class="hamburger_search">
-              <form method="get" action="index.html">
+              <form method="get" action="{% url 'home' %}">
                 <button type="submit"><i class="tji-search"></i></button>
                 <input
                   type="search"
@@ -173,7 +173,7 @@
             class="hamburger_top d-flex align-items-center justify-content-between"
           >
             <div class="hamburger_logo">
-              <a href="index.html" class="mobile_logo">
+              <a href="{% url 'home' %}" class="mobile_logo">
                 <img
                   style="height: 75px"
                   src="{% static 'logo.png' %}"
@@ -251,7 +251,7 @@
             <div class="header-wrapper">
               <!-- site logo -->
               <div class="site_logo">
-                <a class="logo" href="index.html"
+                <a class="logo" href="{% url 'home' %}"
                   ><img
                     style="height: 75px"
                     src="{% static 'logo.png' %}"
@@ -263,63 +263,79 @@
               <div class="menu-area d-none d-lg-inline-flex align-items-center">
                 <nav id="mobile-menu" class="mainmenu">
                   <ul>
-                    <li class="has-dropdown current-menu-ancestor">
-                      <a href="index.html">Home</a>
-                      <ul class="sub-menu">
-                        <li class="current-menu-item">
-                          <a href="index.html">Home One</a>
-                        </li>
-                        <li><a href="index-2.html">Home Two</a></li>
-                        <li><a href="index-3.html">Home Three</a></li>
-                        <li><a href="index-4.html">Home Four</a></li>
-                        <li><a href="index-5.html">Home Five</a></li>
-                        <li><a href="index-6.html">Home Six</a></li>
-                        <li><a href="index-7.html">Home Seven</a></li>
-                      </ul>
+                    <li>
+                      <a href="{% url 'about' %}">About Us</a>
                     </li>
                     <li class="has-dropdown">
-                      <a href="about.html">Pages</a>
+                      <a href="#">Region</a>
                       <ul class="sub-menu">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="team-details.html">Team Details</a></li>
-                        <li><a href="faq.html">Faq</a></li>
-                        <li><a href="pricing.html">Pricing Page</a></li>
-                        <li><a href="error.html">Error 404</a></li>
+                        <li><a href="#">Adress by the Vice-Chair</a></li>
+                        <li><a href="#">Member Administrations</a></li>
+                        <li><a href="#">Regional Training Centers</a></li>
                       </ul>
                     </li>
+                    <li>
+                      <a href="#">News</a>
+                    </li>
+                    <li>
+                      <a href="#">Events</a>
+                    </li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">E-Training</a></li>
                     <li class="has-dropdown">
-                      <a href="service.html">Services</a>
+                      <a href="#">Publicity</a>
                       <ul class="sub-menu">
-                        <li><a href="service.html">Services</a></li>
-                        <li>
-                          <a href="service-details.html">Services Details</a>
-                        </li>
+                        <li><a href="#">Newsletters</a></li>
+                        <li><a href="#">Outreach Materials</a></li>
+                        <li><a href="#">Visual Gallery</a></li>
+                        <li><a href="#">CCT Center</a></li>
+                        <li><a href="#">Surveys</a></li>
+                        <li><a href="#">Utilize Our Premises</a></li>
                       </ul>
                     </li>
-                    <li class="has-dropdown">
-                      <a href="portfolio.html">Portfolio</a>
-                      <ul class="sub-menu">
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li>
-                          <a href="portfolio-details.html">Portfolio Details</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="has-dropdown">
-                      <a href="blog.html">Blog</a>
-                      <ul class="sub-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                   </ul>
                 </nav>
               </div>
 
               <!-- header right info -->
               <div class="header-right-item d-none d-lg-inline-flex">
+                <div class="header-flag">
+                  <button class="flag" id="flagButton">
+                    <img
+                      id="currentFlag"
+                      src="{% static 'assets/images/united-kingdom (1).png' %}"
+                      alt="UK Flag"
+                    />
+                    <i class="fa-solid fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown" id="dropdown">
+                    <button
+                      class="dropdown-item"
+                      data-country="uk"
+                      data-lang="en"
+                      data-flag="{% static 'assets/images/united-kingdom (1).png' %}"
+                    >
+                      <img
+                        src="{% static 'assets/images/united-kingdom (1).png' %}"
+                        alt="UK Flag"
+                      />
+                      <span>English</span>
+                    </button>
+                    <button
+                      class="dropdown-item"
+                      data-country="ru"
+                      data-lang="ru"
+                      data-flag="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNGRkZGRkYiLz4KPG1hc2sgaWQ9Im1hc2swXzEyMl8yNzQiIHN0eWxlPSJtYXNrLXR5cGU6YWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+CjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSIjRkZGRkZGIi8+CjwvbWFzaz4KPGcgbWFzaz0idXJsKCNtYXNrMF8xMjJfMjc0KSI+CjxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgMTAuNjY2N0gzMlYyMS4zMzMzSDBWMTAuNjY2N1oiIGZpbGw9IiMwMDUyQjQiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDIxLjMzMzNIMzJWMzJIMFYyMS4zMzMzWiIgZmlsbD0iI0REMDAzNyIvPgo8L2c+Cjwvc3ZnPgo="
+                    >
+                      <img
+                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNGRkZGRkYiLz4KPG1hc2sgaWQ9Im1hc2swXzEyMl8yNzQiIHN0eWxlPSJtYXNrLXR5cGU6YWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+CjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSIjRkZGRkZGIi8+CjwvbWFzaz4KPGcgbWFzaz0idXJsKCNtYXNrMF8xMjJfMjc0KSI+CjxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgMTAuNjY2N0gzMlYyMS4zMzMzSDBWMTAuNjY2N1oiIGZpbGw9IiMwMDUyQjQiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDIxLjMzMzNIMzJWMzJIMFYyMS4zMzMzWiIgZmlsbD0iI0REMDAzNyIvPgo8L2c+Cjwvc3ZnPgo="
+                        alt="Russian Flag"
+                      />
+                      <span>Русский</span>
+                    </button>
+                  </div>
+                </div>
                 <div class="header-search">
                   <button class="search">
                     <i class="tji-search"></i>
@@ -353,7 +369,7 @@
                   <a class="main-color-rocb" href="contact.html">
                     <span class="btn-text"><span>Let’s Talk</span></span>
                     <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
+                      ><i class="fa-solid fa-user"></i
                     ></span>
                   </a>
                 </div>
@@ -416,10 +432,9 @@
             <div class="header-wrapper">
               <!-- site logo -->
               <div class="site_logo">
-                <a class="logo" href="index.html"
+                <a class="logo" href="{% url 'home' %}"
                   ><img
-                    style="height: 75px"
-                    src="{% static 'logo.png' %}"
+                    src="{% static 'assets/images/logos/logo.webp' %}"
                     alt=""
                 /></a>
               </div>
@@ -428,57 +443,37 @@
               <div class="menu-area d-none d-lg-inline-flex align-items-center">
                 <nav class="mainmenu">
                   <ul>
-                    <li class="has-dropdown current-menu-ancestor">
-                      <a href="index.html">Home</a>
-                      <ul class="sub-menu">
-                        <li class="current-menu-item">
-                          <a href="index.html">Home One</a>
-                        </li>
-                        <li><a href="index-2.html">Home Two</a></li>
-                        <li><a href="index-3.html">Home Three</a></li>
-                        <li><a href="index-4.html">Home Four</a></li>
-                        <li><a href="index-5.html">Home Five</a></li>
-                        <li><a href="index-6.html">Home Six</a></li>
-                        <li><a href="index-7.html">Home Seven</a></li>
-                      </ul>
+                    <li class="current-menu-ancestor">
+                      <a href="#">About Us</a>
                     </li>
                     <li class="has-dropdown">
-                      <a href="about.html">Pages</a>
+                      <a href="#">Region</a>
                       <ul class="sub-menu">
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="team-details.html">Team Details</a></li>
-                        <li><a href="faq.html">Faq</a></li>
-                        <li><a href="pricing.html">Pricing Page</a></li>
-                        <li><a href="error.html">Error 404</a></li>
+                        <li><a href="#">Adress by the Vice-Chair</a></li>
+                        <li><a href="#">Member Administrations</a></li>
+                        <li><a href="#">Regional Training Centers</a></li>
                       </ul>
                     </li>
+                    <li>
+                      <a href="#">News</a>
+                    </li>
+                    <li>
+                      <a href="#">Events</a>
+                    </li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">E-Training</a></li>
                     <li class="has-dropdown">
-                      <a href="service.html">Services</a>
+                      <a href="#">Publicity</a>
                       <ul class="sub-menu">
-                        <li><a href="service.html">Services</a></li>
-                        <li>
-                          <a href="service-details.html">Services Details</a>
-                        </li>
+                        <li><a href="#">Newsletters</a></li>
+                        <li><a href="#">Outreach Materials</a></li>
+                        <li><a href="#">Visual Gallery</a></li>
+                        <li><a href="#">CCT Center</a></li>
+                        <li><a href="#">Surveys</a></li>
+                        <li><a href="#">Utilize Our Premises</a></li>
                       </ul>
                     </li>
-                    <li class="has-dropdown">
-                      <a href="portfolio.html">Portfolio</a>
-                      <ul class="sub-menu">
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li>
-                          <a href="portfolio-details.html">Portfolio Details</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="has-dropdown">
-                      <a href="blog.html">Blog</a>
-                      <ul class="sub-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                   </ul>
                 </nav>
               </div>
@@ -518,7 +513,7 @@
                   <a class="main-color-rocb" href="contact.html">
                     <span class="btn-text"><span>Let’s Talk</span></span>
                     <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
+                      ><i class="fa-solid fa-user"></i
                     ></span>
                   </a>
                 </div>
@@ -611,8 +606,137 @@
       </section>
       <!-- end: Banner Section -->
 
+      <!-- start: Blog Section -->
+      <section class="tj-blog-section section-gap">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="sec-heading text-center">
+                <span class="sub-title wow fadeInUp" data-wow-delay=".3s"
+                  ><i class="tji-box"></i>Insights & Ideas</span
+                >
+                <h2 class="sec-title title-anim">
+                  The Ultimate <span>Resource.</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+          <div class="row row-gap-4">
+            <div class="col-xl-4 col-md-6">
+              <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
+                <div class="blog-thumb">
+                  <a href="blog-details.html"
+                    ><img
+                      src="{% static 'assets/images/blog/blog-1.webp' %}"
+                      alt=""
+                  /></a>
+                  <div class="blog-date">
+                    <span class="date">28</span>
+                    <span class="month">Feb</span>
+                  </div>
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="categories"
+                      ><a href="blog-details.html">Business</a></span
+                    >
+                    <span
+                      >By <a href="blog-details.html">Ellinien Loma</a></span
+                    >
+                  </div>
+                  <h4 class="title">
+                    <a href="blog-details.html"
+                      >Innovative Solutions for every Business Success.</a
+                    >
+                  </h4>
+                  <a class="text-btn" href="blog-details.html">
+                    <span class="btn-text"><span>Read More</span></span>
+                    <span class="btn-icon"
+                      ><i class="tji-arrow-right-long"></i
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+              <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
+                <div class="blog-thumb">
+                  <a href="blog-details.html"
+                    ><img
+                      src="{% static 'assets/images/blog/blog-2.webp' %}"
+                      alt=""
+                  /></a>
+                  <div class="blog-date">
+                    <span class="date">28</span>
+                    <span class="month">Feb</span>
+                  </div>
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="categories"
+                      ><a href="blog-details.html">Business</a></span
+                    >
+                    <span
+                      >By <a href="blog-details.html">Ellinien Loma</a></span
+                    >
+                  </div>
+                  <h4 class="title">
+                    <a href="blog-details.html"
+                      >Harnessing Digital Transform a Roadmap Businesses.</a
+                    >
+                  </h4>
+                  <a class="text-btn" href="blog-details.html">
+                    <span class="btn-text"><span>Read More</span></span>
+                    <span class="btn-icon"
+                      ><i class="tji-arrow-right-long"></i
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6">
+              <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
+                <div class="blog-thumb">
+                  <a href="blog-details.html"
+                    ><img
+                      src="{% static 'assets/images/blog/blog-3.webp' %}"
+                      alt=""
+                  /></a>
+                  <div class="blog-date">
+                    <span class="date">28</span>
+                    <span class="month">Feb</span>
+                  </div>
+                </div>
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span class="categories"
+                      ><a href="blog-details.html">Business</a></span
+                    >
+                    <span
+                      >By <a href="blog-details.html">Ellinien Loma</a></span
+                    >
+                  </div>
+                  <h4 class="title">
+                    <a href="blog-details.html"
+                      >Mastering Change Management Lessons for Businesses.</a
+                    >
+                  </h4>
+                  <a class="text-btn" href="blog-details.html">
+                    <span class="btn-text"><span>Read More</span></span>
+                    <span class="btn-icon"
+                      ><i class="tji-arrow-right-long"></i
+                    ></span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end: Blog Section -->
+
       <!-- start: Choose Section -->
-      <section id="choose" class="tj-choose-section section-gap">
+      <!-- <section id="choose" class="tj-choose-section section-gap">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -673,83 +797,15 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- end: Choose Section -->
 
       <!-- start: Client Section -->
-      <section
-        class="tj-client-section client-section-gap wow fadeInUp"
-        data-wow-delay=".4s"
-      >
-        <div class="container-fluid client-container">
-          <div class="row">
-            <div class="col-12">
-              <div class="client-content">
-                <h5 class="sec-title">
-                  Join Over <span class="client-numbers">1000+</span> Companies
-                  with <span class="client-text">Bexon</span> Here
-                </h5>
-              </div>
-              <div class="swiper client-slider client-slider-1">
-                <div class="swiper-wrapper">
-                  <div class="swiper-slide client-item">
-                    <div class="client-logo">
-                      <img
-                        src="{% static 'assets/images/brands/brand-1.webp' %}"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="swiper-slide client-item">
-                    <div class="client-logo">
-                      <img
-                        src="{% static 'assets/images/brands/brand-2.webp' %}"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="swiper-slide client-item">
-                    <div class="client-logo">
-                      <img
-                        src="{% static 'assets/images/brands/brand-3.webp' %}"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="swiper-slide client-item">
-                    <div class="client-logo">
-                      <img
-                        src="{% static 'assets/images/brands/brand-4.webp' %}"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="swiper-slide client-item">
-                    <div class="client-logo">
-                      <img
-                        src="{% static 'assets/images/brands/brand-5.webp' %}"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                  <div class="swiper-slide client-item">
-                    <div class="client-logo">
-                      <img
-                        src="{% static 'assets/images/brands/brand-6.webp' %}"
-                        alt=""
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
       <!-- end: Client Section -->
 
       <!-- start: About Section -->
-      <section class="tj-about-section section-gap">
+      <!-- <section class="tj-about-section section-gap">
         <div class="container">
           <div class="row">
             <div class="col-xl-6 col-lg-6 order-lg-1 order-2">
@@ -840,7 +896,7 @@
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- end: About Section -->
 
       <!-- start: Service Section -->
@@ -1646,135 +1702,6 @@
       </section>
       <!-- end: Contact Section -->
 
-      <!-- start: Blog Section -->
-      <section class="tj-blog-section section-gap">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="sec-heading text-center">
-                <span class="sub-title wow fadeInUp" data-wow-delay=".3s"
-                  ><i class="tji-box"></i>Insights & Ideas</span
-                >
-                <h2 class="sec-title title-anim">
-                  The Ultimate <span>Resource.</span>
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div class="row row-gap-4">
-            <div class="col-xl-4 col-md-6">
-              <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
-                <div class="blog-thumb">
-                  <a href="blog-details.html"
-                    ><img
-                      src="{% static 'assets/images/blog/blog-1.webp' %}"
-                      alt=""
-                  /></a>
-                  <div class="blog-date">
-                    <span class="date">28</span>
-                    <span class="month">Feb</span>
-                  </div>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <span class="categories"
-                      ><a href="blog-details.html">Business</a></span
-                    >
-                    <span
-                      >By <a href="blog-details.html">Ellinien Loma</a></span
-                    >
-                  </div>
-                  <h4 class="title">
-                    <a href="blog-details.html"
-                      >Innovative Solutions for every Business Success.</a
-                    >
-                  </h4>
-                  <a class="text-btn" href="blog-details.html">
-                    <span class="btn-text"><span>Read More</span></span>
-                    <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
-                    ></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-              <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
-                <div class="blog-thumb">
-                  <a href="blog-details.html"
-                    ><img
-                      src="{% static 'assets/images/blog/blog-2.webp' %}"
-                      alt=""
-                  /></a>
-                  <div class="blog-date">
-                    <span class="date">28</span>
-                    <span class="month">Feb</span>
-                  </div>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <span class="categories"
-                      ><a href="blog-details.html">Business</a></span
-                    >
-                    <span
-                      >By <a href="blog-details.html">Ellinien Loma</a></span
-                    >
-                  </div>
-                  <h4 class="title">
-                    <a href="blog-details.html"
-                      >Harnessing Digital Transform a Roadmap Businesses.</a
-                    >
-                  </h4>
-                  <a class="text-btn" href="blog-details.html">
-                    <span class="btn-text"><span>Read More</span></span>
-                    <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
-                    ></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-              <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
-                <div class="blog-thumb">
-                  <a href="blog-details.html"
-                    ><img
-                      src="{% static 'assets/images/blog/blog-3.webp' %}"
-                      alt=""
-                  /></a>
-                  <div class="blog-date">
-                    <span class="date">28</span>
-                    <span class="month">Feb</span>
-                  </div>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <span class="categories"
-                      ><a href="blog-details.html">Business</a></span
-                    >
-                    <span
-                      >By <a href="blog-details.html">Ellinien Loma</a></span
-                    >
-                  </div>
-                  <h4 class="title">
-                    <a href="blog-details.html"
-                      >Mastering Change Management Lessons for Businesses.</a
-                    >
-                  </h4>
-                  <a class="text-btn" href="blog-details.html">
-                    <span class="btn-text"><span>Read More</span></span>
-                    <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
-                    ></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end: Blog Section -->
-
       <!-- start: Cta Section -->
       <section class="tj-cta-section">
         <div class="container">
@@ -1814,7 +1741,7 @@
             <div class="col-xl-3 col-lg-4 col-md-6">
               <div class="footer-widget wow fadeInUp" data-wow-delay=".1s">
                 <div class="footer-logo">
-                  <a href="index.html">
+                  <a href="{% url 'home' %}">
                     <img
                       style="height: 75px"
                       src="{% static 'logo.png' %}"
@@ -1988,5 +1915,255 @@
     <script src="{% static 'assets/js/wow.min.js' %}"></script>
     <script src="{% static 'assets/js/meanmenu.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Language switcher loaded");
+
+        const flagButton = document.getElementById("flagButton");
+        const dropdown = document.getElementById("dropdown");
+        const currentFlag = document.getElementById("currentFlag");
+        const dropdownItems = document.querySelectorAll(".dropdown-item");
+
+        let currentCountry = "uk";
+
+        // Toggle dropdown
+        flagButton.addEventListener("click", function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const isOpen = dropdown.classList.contains("show");
+
+          if (isOpen) {
+            closeDropdown();
+          } else {
+            openDropdown();
+          }
+        });
+
+        // Handle dropdown item clicks
+        dropdownItems.forEach((item) => {
+          item.addEventListener("click", function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const country = this.dataset.country;
+            const langCode = this.dataset.lang;
+            const flagSrc = this.dataset.flag;
+
+            console.log("Selected country:", country, "Language:", langCode);
+
+            if (country !== currentCountry) {
+              // Update current flag
+              currentFlag.src = flagSrc;
+              currentCountry = country;
+
+              // Update selected state
+              updateSelectedState();
+
+              // Show feedback
+              showSelectionFeedback(langCode);
+
+              // Switch language
+              switchLanguage(langCode);
+            }
+
+            closeDropdown();
+          });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!flagButton.contains(e.target) && !dropdown.contains(e.target)) {
+            closeDropdown();
+          }
+        });
+
+        // Close dropdown on Escape key
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape") {
+            closeDropdown();
+          }
+        });
+
+        function openDropdown() {
+          flagButton.classList.add("active");
+          dropdown.classList.add("show");
+          updateSelectedState();
+        }
+
+        function closeDropdown() {
+          flagButton.classList.remove("active");
+          dropdown.classList.remove("show");
+        }
+
+        function updateSelectedState() {
+          dropdownItems.forEach((item) => {
+            if (item.dataset.country === currentCountry) {
+              item.classList.add("selected");
+            } else {
+              item.classList.remove("selected");
+            }
+          });
+        }
+
+        function showSelectionFeedback(langCode) {
+          const languageName = langCode === "en" ? "English" : "Русский";
+          console.log(`Language changed to ${languageName}`);
+        }
+
+        // Updated language switching function
+        function switchLanguage(langCode) {
+          console.log("Switching to language:", langCode);
+
+          // Get CSRF token
+          let csrfValue = getCsrfToken();
+
+          if (!csrfValue) {
+            console.warn("CSRF token not found, using simple redirect");
+            redirectWithLanguage(langCode);
+            return;
+          }
+
+          console.log("CSRF token found:", csrfValue ? "Yes" : "No");
+
+          // Calculate new path
+          const newPath = calculateNewPath(langCode);
+          console.log("New path will be:", newPath);
+
+          // Create and submit form
+          const form = document.createElement("form");
+          form.method = "POST";
+          form.action = "/i18n/setlang/";
+          form.style.display = "none";
+
+          const csrfInput = document.createElement("input");
+          csrfInput.type = "hidden";
+          csrfInput.name = "csrfmiddlewaretoken";
+          csrfInput.value = csrfValue;
+          form.appendChild(csrfInput);
+
+          const langInput = document.createElement("input");
+          langInput.type = "hidden";
+          langInput.name = "language";
+          langInput.value = langCode;
+          form.appendChild(langInput);
+
+          const nextInput = document.createElement("input");
+          nextInput.type = "hidden";
+          nextInput.name = "next";
+          nextInput.value = newPath;
+          form.appendChild(nextInput);
+
+          document.body.appendChild(form);
+
+          console.log("Submitting form with:", {
+            csrf: csrfValue,
+            language: langCode,
+            next: newPath,
+          });
+
+          form.submit();
+        }
+
+        function getCsrfToken() {
+          // Try meta tag first
+          const csrfMeta = document.querySelector('meta[name="csrf-token"]');
+          if (csrfMeta) {
+            return csrfMeta.getAttribute("content");
+          }
+
+          // Try hidden input
+          const csrfTokenInput = document.querySelector(
+            'input[name="csrfmiddlewaretoken"]'
+          );
+          if (csrfTokenInput) {
+            return csrfTokenInput.value;
+          }
+
+          // Try cookie
+          const cookies = document.cookie.split(";");
+          for (let cookie of cookies) {
+            const [name, value] = cookie.trim().split("=");
+            if (name === "csrftoken") {
+              return value;
+            }
+          }
+
+          // Try Django's built-in function if available
+          if (window.django && window.django.csrf) {
+            return window.django.csrf.getCookie("csrftoken");
+          }
+
+          return null;
+        }
+
+        function calculateNewPath(langCode) {
+          const currentPath = window.location.pathname;
+          let newPath = currentPath;
+
+          // Remove existing language prefix
+          if (currentPath.startsWith("/ru/")) {
+            newPath = currentPath.substring(3);
+          } else if (currentPath.startsWith("/en/")) {
+            newPath = currentPath.substring(3);
+          } else if (currentPath === "/ru" || currentPath === "/en") {
+            newPath = "/";
+          }
+
+          // Add new language prefix
+          if (langCode === "ru") {
+            newPath = `/ru${newPath === "/" ? "" : newPath}`;
+          } else if (langCode === "en") {
+            newPath = `/en${newPath === "/" ? "" : newPath}`;
+          } else {
+            // Default language (probably English)
+            newPath = newPath === "" ? "/" : newPath;
+          }
+
+          return newPath;
+        }
+
+        function redirectWithLanguage(langCode) {
+          const newPath = calculateNewPath(langCode);
+          console.log("Redirecting to:", newPath);
+          window.location.href = newPath;
+        }
+
+        function setActiveLanguageButton() {
+          const currentPath = window.location.pathname;
+          let currentLang = "en";
+
+          // Determine current language from URL
+          if (currentPath.startsWith("/ru/") || currentPath === "/ru") {
+            currentLang = "ru";
+            currentCountry = "ru";
+          } else if (currentPath.startsWith("/en/") || currentPath === "/en") {
+            currentLang = "en";
+            currentCountry = "uk";
+          } else {
+            // Default to English
+            currentLang = "en";
+            currentCountry = "uk";
+          }
+
+          console.log("Current language detected:", currentLang);
+
+          // Update flag and selected state
+          dropdownItems.forEach((item) => {
+            if (item.dataset.lang === currentLang) {
+              currentFlag.src = item.dataset.flag;
+              item.classList.add("selected");
+            } else {
+              item.classList.remove("selected");
+            }
+          });
+        }
+
+        // Initialize
+        setActiveLanguageButton();
+        updateSelectedState();
+      });
+    </script>
   </body>
 </html>

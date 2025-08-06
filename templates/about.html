@@ -1,3 +1,5 @@
+{% load static %} {% load i18n %}
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
   <head>
@@ -17,16 +19,22 @@
     />
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/font-awesome-pro.min.css" />
-    <link rel="stylesheet" href="assets/css/animate.min.css" />
-    <link rel="stylesheet" href="assets/css/bexon-icons.css" />
-    <link rel="stylesheet" href="assets/css/nice-select.css" />
-    <link rel="stylesheet" href="assets/css/swiper.min.css" />
-    <link rel="stylesheet" href="assets/css/venobox.min.css" />
-    <link rel="stylesheet" href="assets/css/odometer-theme-default.css" />
-    <link rel="stylesheet" href="assets/css/meanmenu.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/font-awesome-pro.min.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/bexon-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/venobox.min.css' %}" />
+    <link
+      rel="stylesheet"
+      href="{% static 'assets/css/odometer-theme-default.css' %}"
+    />
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
   </head>
 
   <body>
@@ -71,7 +79,10 @@
           >
             <div class="hamburger_logo">
               <a href="index.html" class="mobile_logo">
-                <img src="assets/images/logos/logo-2.webp" alt="Logo" />
+                <img
+                  src="{% static 'assets/images/logos/logo-2.webp' %}"
+                  alt="Logo"
+                />
               </a>
             </div>
             <div class="hamburger_close">
@@ -166,8 +177,11 @@
             class="hamburger_top d-flex align-items-center justify-content-between"
           >
             <div class="hamburger_logo">
-              <a href="index.html" class="mobile_logo">
-                <img src="assets/images/logos/logo-2.webp" alt="Logo" />
+              <a href="{% url 'home' %}" class="mobile_logo">
+                <img
+                  src="{% static 'assets/images/logos/logo-2.webp' %}"
+                  alt="Logo"
+                />
               </a>
             </div>
             <div class="hamburger_close">
@@ -240,8 +254,11 @@
             <div class="header-wrapper">
               <!-- site logo -->
               <div class="site_logo">
-                <a class="logo" href="index.html"
-                  ><img src="assets/images/logos/logo.webp" alt=""
+                <a class="logo" href="{% url 'home' %}"
+                  ><img
+                    style="height: 75px"
+                    src="{% static 'logo.png' %}"
+                    alt=""
                 /></a>
               </div>
 
@@ -249,63 +266,79 @@
               <div class="menu-area d-none d-lg-inline-flex align-items-center">
                 <nav id="mobile-menu" class="mainmenu">
                   <ul>
-                    <li class="has-dropdown">
-                      <a href="index.html">Home</a>
-                      <ul class="sub-menu">
-                        <li><a href="index.html">Home One</a></li>
-                        <li><a href="index-2.html">Home Two</a></li>
-                        <li><a href="index-3.html">Home Three</a></li>
-                        <li><a href="index-4.html">Home Four</a></li>
-                        <li><a href="index-5.html">Home Five</a></li>
-                        <li><a href="index-6.html">Home Six</a></li>
-                        <li><a href="index-7.html">Home Seven</a></li>
-                      </ul>
-                    </li>
-                    <li class="has-dropdown current-menu-ancestor">
-                      <a href="about.html">Pages</a>
-                      <ul class="sub-menu">
-                        <li class="current-menu-item">
-                          <a href="about.html">About Us</a>
-                        </li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="team-details.html">Team Details</a></li>
-                        <li><a href="faq.html">Faq</a></li>
-                        <li><a href="pricing.html">Pricing Page</a></li>
-                        <li><a href="error.html">Error 404</a></li>
-                      </ul>
+                    <li class="current-menu-ancestor">
+                      <a>About Us</a>
                     </li>
                     <li class="has-dropdown">
-                      <a href="service.html">Services</a>
+                      <a href="#">Region</a>
                       <ul class="sub-menu">
-                        <li><a href="service.html">Services</a></li>
-                        <li>
-                          <a href="service-details.html">Services Details</a>
-                        </li>
+                        <li><a href="#">Adress by the Vice-Chair</a></li>
+                        <li><a href="#">Member Administrations</a></li>
+                        <li><a href="#">Regional Training Centers</a></li>
                       </ul>
                     </li>
+                    <li>
+                      <a href="#">News</a>
+                    </li>
+                    <li>
+                      <a href="#">Events</a>
+                    </li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">E-Training</a></li>
                     <li class="has-dropdown">
-                      <a href="portfolio.html">Portfolio</a>
+                      <a href="#">Publicity</a>
                       <ul class="sub-menu">
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li>
-                          <a href="portfolio-details.html">Portfolio Details</a>
-                        </li>
+                        <li><a href="#">Newsletters</a></li>
+                        <li><a href="#">Outreach Materials</a></li>
+                        <li><a href="#">Visual Gallery</a></li>
+                        <li><a href="#">CCT Center</a></li>
+                        <li><a href="#">Surveys</a></li>
+                        <li><a href="#">Utilize Our Premises</a></li>
                       </ul>
                     </li>
-                    <li class="has-dropdown">
-                      <a href="blog.html">Blog</a>
-                      <ul class="sub-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                   </ul>
                 </nav>
               </div>
 
               <!-- header right info -->
               <div class="header-right-item d-none d-lg-inline-flex">
+                <div class="header-flag">
+                  <button class="flag" id="flagButton">
+                    <img
+                      id="currentFlag"
+                      src="{% static 'assets/images/united-kingdom (1).png' %}"
+                      alt="UK Flag"
+                    />
+                    <i class="fa-solid fa-caret-down"></i>
+                  </button>
+                  <div class="dropdown" id="dropdown">
+                    <button
+                      class="dropdown-item"
+                      data-country="uk"
+                      data-lang="en"
+                      data-flag="{% static 'assets/images/united-kingdom (1).png' %}"
+                    >
+                      <img
+                        src="{% static 'assets/images/united-kingdom (1).png' %}"
+                        alt="UK Flag"
+                      />
+                      <span>English</span>
+                    </button>
+                    <button
+                      class="dropdown-item"
+                      data-country="ru"
+                      data-lang="ru"
+                      data-flag="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNGRkZGRkYiLz4KPG1hc2sgaWQ9Im1hc2swXzEyMl8yNzQiIHN0eWxlPSJtYXNrLXR5cGU6YWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+CjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSIjRkZGRkZGIi8+CjwvbWFzaz4KPGcgbWFzaz0idXJsKCNtYXNrMF8xMjJfMjc0KSI+CjxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgMTAuNjY2N0gzMlYyMS4zMzMzSDBWMTAuNjY2N1oiIGZpbGw9IiMwMDUyQjQiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDIxLjMzMzNIMzJWMzJIMFYyMS4zMzMzWiIgZmlsbD0iI0REMDAzNyIvPgo8L2c+Cjwvc3ZnPgo="
+                    >
+                      <img
+                        src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiNGRkZGRkYiLz4KPG1hc2sgaWQ9Im1hc2swXzEyMl8yNzQiIHN0eWxlPSJtYXNrLXR5cGU6YWxwaGEiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjAiIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+CjxjaXJjbGUgY3g9IjE2IiBjeT0iMTYiIHI9IjE2IiBmaWxsPSIjRkZGRkZGIi8+CjwvbWFzaz4KPGcgbWFzaz0idXJsKCNtYXNrMF8xMjJfMjc0KSI+CjxyZWN0IHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0iI0ZGRkZGRiIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTAgMTAuNjY2N0gzMlYyMS4zMzMzSDBWMTAuNjY2N1oiIGZpbGw9IiMwMDUyQjQiLz4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0wIDIxLjMzMzNIMzJWMzJIMFYyMS4zMzMzWiIgZmlsbD0iI0REMDAzNyIvPgo8L2c+Cjwvc3ZnPgo="
+                        alt="Russian Flag"
+                      />
+                      <span>Русский</span>
+                    </button>
+                  </div>
+                </div>
                 <div class="header-search">
                   <button class="search">
                     <i class="tji-search"></i>
@@ -339,7 +372,7 @@
                   <a class="main-color-rocb" href="contact.html">
                     <span class="btn-text"><span>Let’s Talk</span></span>
                     <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
+                      ><i class="fa-solid fa-user"></i
                     ></span>
                   </a>
                 </div>
@@ -402,8 +435,10 @@
             <div class="header-wrapper">
               <!-- site logo -->
               <div class="site_logo">
-                <a class="logo" href="index.html"
-                  ><img src="assets/images/logos/logo.webp" alt=""
+                <a class="logo" href="{% url 'home' %}"
+                  ><img
+                    src="{% static 'assets/images/logos/logo.webp' %}"
+                    alt=""
                 /></a>
               </div>
 
@@ -411,57 +446,37 @@
               <div class="menu-area d-none d-lg-inline-flex align-items-center">
                 <nav class="mainmenu">
                   <ul>
-                    <li class="has-dropdown">
-                      <a href="index.html">Home</a>
-                      <ul class="sub-menu">
-                        <li><a href="index.html">Home One</a></li>
-                        <li><a href="index-2.html">Home Two</a></li>
-                        <li><a href="index-3.html">Home Three</a></li>
-                        <li><a href="index-4.html">Home Four</a></li>
-                        <li><a href="index-5.html">Home Five</a></li>
-                        <li><a href="index-6.html">Home Six</a></li>
-                        <li><a href="index-7.html">Home Seven</a></li>
-                      </ul>
-                    </li>
-                    <li class="has-dropdown current-menu-ancestor">
-                      <a href="about.html">Pages</a>
-                      <ul class="sub-menu">
-                        <li class="current-menu-item">
-                          <a href="about.html">About Us</a>
-                        </li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="team-details.html">Team Details</a></li>
-                        <li><a href="faq.html">Faq</a></li>
-                        <li><a href="pricing.html">Pricing Page</a></li>
-                        <li><a href="error.html">Error 404</a></li>
-                      </ul>
+                    <li class="current-menu-ancestor">
+                      <a href="#">About Us</a>
                     </li>
                     <li class="has-dropdown">
-                      <a href="service.html">Services</a>
+                      <a href="#">Region</a>
                       <ul class="sub-menu">
-                        <li><a href="service.html">Services</a></li>
-                        <li>
-                          <a href="service-details.html">Services Details</a>
-                        </li>
+                        <li><a href="#">Adress by the Vice-Chair</a></li>
+                        <li><a href="#">Member Administrations</a></li>
+                        <li><a href="#">Regional Training Centers</a></li>
                       </ul>
                     </li>
+                    <li>
+                      <a href="#">News</a>
+                    </li>
+                    <li>
+                      <a href="#">Events</a>
+                    </li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">E-Training</a></li>
                     <li class="has-dropdown">
-                      <a href="portfolio.html">Portfolio</a>
+                      <a href="#">Publicity</a>
                       <ul class="sub-menu">
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li>
-                          <a href="portfolio-details.html">Portfolio Details</a>
-                        </li>
+                        <li><a href="#">Newsletters</a></li>
+                        <li><a href="#">Outreach Materials</a></li>
+                        <li><a href="#">Visual Gallery</a></li>
+                        <li><a href="#">CCT Center</a></li>
+                        <li><a href="#">Surveys</a></li>
+                        <li><a href="#">Utilize Our Premises</a></li>
                       </ul>
                     </li>
-                    <li class="has-dropdown">
-                      <a href="blog.html">Blog</a>
-                      <ul class="sub-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="blog-details.html">Blog Details</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#">Contact</a></li>
                   </ul>
                 </nav>
               </div>
@@ -501,7 +516,7 @@
                   <a class="main-color-rocb" href="contact.html">
                     <span class="btn-text"><span>Let’s Talk</span></span>
                     <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
+                      ><i class="fa-solid fa-user"></i
                     ></span>
                   </a>
                 </div>
@@ -673,7 +688,10 @@
                 data-wow-delay=".3s"
               >
                 <div class="about-img">
-                  <img src="assets/images/about/about-5.webp" alt="" />
+                  <img
+                    src="{% static 'assets/images/about/about-5.webp' %}"
+                    alt=""
+                  />
                 </div>
                 <div class="box-area style-2">
                   <div class="progress-box wow fadeInUp" data-wow-delay=".3s">
@@ -755,10 +773,10 @@
           </div>
         </div>
         <div class="bg-shape-1">
-          <img src="assets/images/shape/pattern-2.svg" alt="" />
+          <img src="{% static 'assets/images/shape/pattern-2.svg' %}" alt="" />
         </div>
         <div class="bg-shape-2">
-          <img src="assets/images/shape/pattern-3.svg" alt="" />
+          <img src="{% static 'assets/images/shape/pattern-3.svg' %}" alt="" />
         </div>
       </section>
       <!-- end: About Section -->
@@ -781,32 +799,50 @@
                 <div class="swiper-wrapper">
                   <div class="swiper-slide client-item">
                     <div class="client-logo">
-                      <img src="assets/images/brands/brand-1.webp" alt="" />
+                      <img
+                        src="{% static 'assets/images/brands/brand-1.webp' %}"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="swiper-slide client-item">
                     <div class="client-logo">
-                      <img src="assets/images/brands/brand-2.webp" alt="" />
+                      <img
+                        src="{% static 'assets/images/brands/brand-2.webp' %}"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="swiper-slide client-item">
                     <div class="client-logo">
-                      <img src="assets/images/brands/brand-3.webp" alt="" />
+                      <img
+                        src="{% static 'assets/images/brands/brand-3.webp' %}"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="swiper-slide client-item">
                     <div class="client-logo">
-                      <img src="assets/images/brands/brand-4.webp" alt="" />
+                      <img
+                        src="{% static 'assets/images/brands/brand-4.webp' %}"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="swiper-slide client-item">
                     <div class="client-logo">
-                      <img src="assets/images/brands/brand-5.webp" alt="" />
+                      <img
+                        src="{% static 'assets/images/brands/brand-5.webp' %}"
+                        alt=""
+                      />
                     </div>
                   </div>
                   <div class="swiper-slide client-item">
                     <div class="client-logo">
-                      <img src="assets/images/brands/brand-6.webp" alt="" />
+                      <img
+                        src="{% static 'assets/images/brands/brand-6.webp' %}"
+                        alt=""
+                      />
                     </div>
                   </div>
                 </div>
@@ -828,7 +864,7 @@
               >
                 <div class="testimonial-img">
                   <img
-                    src="assets/images/testimonial/testimonial-img.webp"
+                    src="{% static 'assets/images/testimonial/testimonial-img.webp' %}"
                     alt=""
                   />
                   <div class="sec-heading style-2">
@@ -881,7 +917,7 @@
                           <div class="author-inner">
                             <div class="author-img">
                               <img
-                                src="assets/images/testimonial/client-1.webp"
+                                src="{% static 'assets/images/testimonial/client-1.webp' %}"
                                 alt=""
                               />
                             </div>
@@ -912,7 +948,7 @@
                           <div class="author-inner">
                             <div class="author-img">
                               <img
-                                src="assets/images/testimonial/client-2.webp"
+                                src="{% static 'assets/images/testimonial/client-2.webp' %}"
                                 alt=""
                               />
                             </div>
@@ -943,7 +979,7 @@
                           <div class="author-inner">
                             <div class="author-img">
                               <img
-                                src="assets/images/testimonial/client-3.webp"
+                                src="{% static 'assets/images/testimonial/client-3.webp' %}"
                                 alt=""
                               />
                             </div>
@@ -985,7 +1021,10 @@
               <div class="team-item left-swipe">
                 <div class="team-img">
                   <div class="team-img-inner">
-                    <img src="assets/images/team/team-1.webp" alt="" />
+                    <img
+                      src="{% static 'assets/images/team/team-1.webp' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="social-links">
                     <ul>
@@ -1027,7 +1066,10 @@
               <div class="team-item left-swipe">
                 <div class="team-img">
                   <div class="team-img-inner">
-                    <img src="assets/images/team/team-2.webp" alt="" />
+                    <img
+                      src="{% static 'assets/images/team/team-2.webp' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="social-links">
                     <ul>
@@ -1069,7 +1111,10 @@
               <div class="team-item left-swipe">
                 <div class="team-img">
                   <div class="team-img-inner">
-                    <img src="assets/images/team/team-3.webp" alt="" />
+                    <img
+                      src="{% static 'assets/images/team/team-3.webp' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="social-links">
                     <ul>
@@ -1111,7 +1156,10 @@
               <div class="team-item left-swipe">
                 <div class="team-img">
                   <div class="team-img-inner">
-                    <img src="assets/images/team/team-4.webp" alt="" />
+                    <img
+                      src="{% static 'assets/images/team/team-4.webp' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="social-links">
                     <ul>
@@ -1152,10 +1200,10 @@
           </div>
         </div>
         <div class="bg-shape-1">
-          <img src="assets/images/shape/pattern-2.svg" alt="" />
+          <img src="{% static 'assets/images/shape/pattern-2.svg' %}" alt="" />
         </div>
         <div class="bg-shape-2">
-          <img src="assets/images/shape/pattern-3.svg" alt="" />
+          <img src="{% static 'assets/images/shape/pattern-3.svg' %}" alt="" />
         </div>
       </section>
       <!-- end: Team Section -->
@@ -1333,7 +1381,10 @@
                   </div>
                 </div>
                 <div class="cta-img">
-                  <img src="assets/images/cta/cta-bg.webp" alt="" />
+                  <img
+                    src="{% static 'assets/images/cta/cta-bg.webp' %}"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -1352,7 +1403,10 @@
               <div class="footer-widget wow fadeInUp" data-wow-delay=".1s">
                 <div class="footer-logo">
                   <a href="index.html">
-                    <img src="assets/images/logos/logo.webp" alt="Logos" />
+                    <img
+                      src="{% static 'assets/images/logos/logo.webp' %}"
+                      alt="Logos"
+                    />
                   </a>
                 </div>
                 <div class="footer-text">
@@ -1363,10 +1417,16 @@
                 </div>
                 <div class="award-logo-area">
                   <div class="award-logo">
-                    <img src="assets/images/footer/award-logo-1.webp" alt="" />
+                    <img
+                      src="{% static 'assets/images/footer/award-logo-1.webp' %}"
+                      alt=""
+                    />
                   </div>
                   <div class="award-logo">
-                    <img src="assets/images/footer/award-logo-2.webp" alt="" />
+                    <img
+                      src="{% static 'assets/images/footer/award-logo-2.webp' %}"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
@@ -1491,31 +1551,31 @@
         </div>
       </div>
       <div class="bg-shape-1">
-        <img src="assets/images/shape/pattern-2.svg" alt="" />
+        <img src="{% static 'assets/images/shape/pattern-2.svg' %}" alt="" />
       </div>
       <div class="bg-shape-2">
-        <img src="assets/images/shape/pattern-3.svg" alt="" />
+        <img src="{% static 'assets/images/shape/pattern-3.svg' %}" alt="" />
       </div>
     </footer>
     <!-- end: Footer Section -->
 
     <!-- JS here -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'assets/js/jquery.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
 
-    <script src="assets/js/gsap.min.js"></script>
-    <script src="assets/js/gsap-scroll-to-plugin.min.js"></script>
-    <script src="assets/js/gsap-scroll-trigger.min.js"></script>
-    <script src="assets/js/gsap-split-text.min.js"></script>
-    <script src="assets/js/smooth-scroll.min.js"></script>
+    <script src="{% static 'assets/js/gsap.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap-scroll-to-plugin.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap-scroll-trigger.min.js' %}"></script>
+    <script src="{% static 'assets/js/gsap-split-text.min.js' %}"></script>
+    <script src="{% static 'assets/js/smooth-scroll.min.js' %}"></script>
 
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/swiper.min.js"></script>
-    <script src="assets/js/odometer.min.js"></script>
-    <script src="assets/js/venobox.min.js"></script>
-    <script src="assets/js/appear.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/meanmenu.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/swiper.min.js' %}"></script>
+    <script src="{% static 'assets/js/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/js/venobox.min.js' %}"></script>
+    <script src="{% static 'assets/js/appear.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/meanmenu.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %} "></script>
   </body>
 </html>

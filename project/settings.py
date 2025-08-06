@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
+from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,7 +44,7 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'modeltranslation', 
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -54,10 +55,12 @@ INSTALLED_APPS = [
     'django.contrib.sitemaps',
     'oneapp',
 
-    #third party apps
+    # third party apps
     'ckeditor',
     'ckeditor_uploader',
-    'rosetta', 
+    'rosetta',
+
+    'about',
 ]
 
 
@@ -123,8 +126,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-from django.utils.translation import gettext_lazy as _
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
@@ -132,15 +133,13 @@ from django.utils.translation import gettext_lazy as _
 LANGUAGES = [
     ('en', _('En')),
     ('ru', _('Ru')),
-    ('az', _('Az')),
 ]
 
 MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'
 PARLER_LANGUAGES = {
-    None : (
-        {'code': 'en',},
-        {'code': 'ru',},
-        {'code': 'az',},
+    None: (
+        {'code': 'en', },
+        {'code': 'ru', },
     ),
     'default': {
         'fallbacks': [],
@@ -172,7 +171,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
