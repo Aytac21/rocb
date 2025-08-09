@@ -1,6 +1,5 @@
+from django.utils.text import slugify
 from django.db import models
-
-# Create your models here.
 
 
 class About(models.Model):
@@ -19,6 +18,19 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Tab(models.Model):
+    title = models.CharField(max_length=100, verbose_name="Tab Title")
+    slug = models.SlugField(unique=True, blank=True)
+    order = models.PositiveIntegerField(default=0, verbose_name="Order")
+    about = models.ForeignKey(
+        'About', on_delete=models.CASCADE, related_name='tabs', verbose_name="About")
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
 
 
 class AboutSection(models.Model):

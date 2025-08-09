@@ -27,6 +27,7 @@ urlpatterns = [
 urlpatterns += i18n_patterns(
     re_path(r'^rosetta/', include('rosetta.urls')),
     path('', include("oneapp.urls")),
+    path('', include("contact.urls")),
     path('', include("about.urls")),
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 )
