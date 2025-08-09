@@ -29,6 +29,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/swiper.min.css' %}" />
     <link rel="stylesheet" href="{% static 'assets/css/venobox.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}" />
     <link
       rel="stylesheet"
       href="{% static 'assets/css/odometer-theme-default.css' %}"
@@ -266,8 +267,17 @@
               <div class="menu-area d-none d-lg-inline-flex align-items-center">
                 <nav id="mobile-menu" class="mainmenu">
                   <ul>
-                    <li class="current-menu-ancestor">
-                      <a>About Us</a>
+                    <li class="has-dropdown">
+                      <a href="{% url 'about:about_default' %}">About Us</a>
+                      <ul class="sub-menu">
+                        {% for tab in tabs %}
+                        <li>
+                          <a href="{% url 'about:about_tab' tab.slug %}"
+                            >{{ tab.title }}</a
+                          >
+                        </li>
+                        {% endfor %}
+                      </ul>
                     </li>
                     <li class="has-dropdown">
                       <a href="#">Region</a>
@@ -678,35 +688,9 @@
                     </li>
                     {% endfor %}
                   </ul>
-                  <div class="blog-video wow fadeInUp" data-wow-delay=".3s">
-                    <img
-                      src="{% static 'assets/images/blog/blog-video.webp' %}"
-                      alt="Video"
-                    />
-                    <a
-                      class="video-btn video-popup"
-                      data-autoplay="true"
-                      data-vbtype="video"
-                      data-maxwidth="1200px"
-                      href="https://www.youtube.com/watch?v=MLpWrANjFbI&ab_channel=eidelchteinadvogados"
-                    >
-                      <span><i class="tji-play"></i></span>
-                    </a>
-                  </div>
-                  <h3 class="wow fadeInUp" data-wow-delay=".3s">Conclusions</h3>
-                  <p class="wow fadeInUp" data-wow-delay=".3s">
-                    Unlocking your business’s full potential is a journey that
-                    requires vision, innovation, and strategic on our execution.
-                    By embracing key lessons such as leveraging data, focusing
-                    on customer are experience, fostering of adaptability, and
-                    nurturing effective leadership, businesses can thrive in an
-                    ever-evolving marketplace..
-                  </p>
-                  <p class="wow fadeInUp" data-wow-delay=".3s">
-                    The ability to continuously learn, collaborate, and optimize
-                    operations will not only drive growth but ensure long-term
-                    sustainability. Remember, the path to success is not linear.
-                  </p>
+                  
+                
+                
                 </div>
                 <div class="tj-tags-post wow fadeInUp" data-wow-delay=".3s">
                   {% if tags %}
@@ -743,216 +727,38 @@
                     </ul>
                   </div>
                 </div>
-                <div
-                  class="tj-post__navigation wow fadeInUp"
-                  data-wow-delay=".3s"
-                >
-                  <!-- previous post -->
-                  <div class="tj-nav__post previous">
-                    <div class="tj-nav-post__nav prev_post">
-                      <a href="blog-details.html"
-                        ><span><i class="tji-arrow-left"></i></span>Previous</a
-                      >
-                    </div>
-                  </div>
-                  <div class="tj-nav-post__grid">
-                    <a href="blog.html"><i class="tji-window"></i></a>
-                  </div>
-                  <!-- next post -->
-                  <div class="tj-nav__post next">
-                    <div class="tj-nav-post__nav next_post">
-                      <a href="blog-details.html"
-                        >Next<span><i class="tji-arrow-right"></i></span
-                      ></a>
-                    </div>
-                  </div>
-                </div>
+               <div class="tj-post__navigation wow fadeInUp" data-wow-delay=".3s">
+    <!-- previous tab -->
+    <div class="tj-nav__post previous">
+        <div class="tj-nav-post__nav prev_post">
+            {% if prev_tab %}
+                <a href="{% url 'about:about_tab' slug=prev_tab.slug %}">
+                    <span><i class="tji-arrow-left"></i></span>Previous
+                </a>
+            {% else %}
+                <a class="disabled"><span><i class="tji-arrow-left"></i></span>Previous</a>
+            {% endif %}
+        </div>
+    </div>
 
-                <div class="tj-comments-container">
-                  <div class="tj-comments-wrap">
-                    <div class="comments-title">
-                      <h3 class="title">Top Comments (02)</h3>
-                    </div>
-                    <div class="tj-latest-comments">
-                      <ul>
-                        <li class="tj-comment">
-                          <div class="comment-content">
-                            <div class="comment-avatar">
-                              <img
-                                src="{% static 'assets/images/blog/avatar-1.webp' %}"
-                                alt="Image"
-                              />
-                            </div>
-                            <div class="comments-header">
-                              <div class="avatar-name">
-                                <h6 class="title">
-                                  <a href="blog-details.html"
-                                    >Great insights!</a
-                                  >
-                                </h6>
-                              </div>
-                              <div class="comment-text">
-                                <span class="date"
-                                  >June 18, 2024 at 06:00 pm</span
-                                >
-                                <a class="reply" href="blog-details.html"
-                                  >Reply</a
-                                >
-                              </div>
-                              <div class="desc">
-                                <p>
-                                  "I completely agree that embracing innovation
-                                  and leveraging data are crucial for any
-                                  business looking to stay competitive in
-                                  today's market. The focus on leadership and
-                                  adaptability really resonated with me. Looking
-                                  forward to implementing these strategies"
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                        <li class="tj-comment">
-                          <ul class="children">
-                            <li class="tj-comment">
-                              <div class="comment-content">
-                                <div class="comment-avatar">
-                                  <img
-                                    src="{% static 'assets/images/blog/avatar-2.webp' %}"
-                                    alt="Image"
-                                  />
-                                </div>
-                                <div class="comments-header">
-                                  <div class="avatar-name">
-                                    <h6 class="title">
-                                      <a href="blog-details.html"
-                                        >This was a fantastic read</a
-                                      >
-                                    </h6>
-                                  </div>
-                                  <div class="comment-text">
-                                    <span class="date"
-                                      >June 18, 2024 at 06:00 pm</span
-                                    >
-                                    <a class="reply" href="blog-details.html"
-                                      >Reply</a
-                                    >
-                                  </div>
-                                  <div class="desc">
-                                    <p>
-                                      "The lessons on customer-centric
-                                      approaches and operational efficiency are
-                                      especially relevant. It's inspiring to see
-                                      how these core principles can truly unlock
-                                      a business's potential. Thanks for sharing
-                                      such valuable content!"
-                                    </p>
-                                  </div>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </li>
-                        <li class="tj-comment">
-                          <div class="comment-content">
-                            <div class="comment-avatar">
-                              <img
-                                src="{% static 'assets/images/blog/avatar-2.webp' %}"
-                                alt="Image"
-                              />
-                            </div>
-                            <div class="comments-header">
-                              <div class="avatar-name">
-                                <h6 class="title">
-                                  <a href="blog-details.html"
-                                    >This was a fantastic read</a
-                                  >
-                                </h6>
-                              </div>
-                              <div class="comment-text">
-                                <span class="date"
-                                  >June 18, 2024 at 06:00 pm</span
-                                >
-                                <a class="reply" href="blog-details.html"
-                                  >Reply</a
-                                >
-                              </div>
-                              <div class="desc">
-                                <p>
-                                  "The lessons on customer-centric approaches
-                                  and operational efficiency are especially
-                                  relevant. It's inspiring to see how these core
-                                  principles can truly unlock a business's
-                                  potential. Thanks for sharing such valuable
-                                  content!"
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="tj-comments__container">
-                    <div class="comment-respond">
-                      <h3 class="comment-reply-title">Leave a Comment</h3>
-                      <div class="row">
-                        <div class="col-lg-12">
-                          <div class="form-input">
-                            <textarea
-                              id="comment"
-                              name="message"
-                              placeholder="Write Your Comment *"
-                            ></textarea>
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="form-input">
-                            <input
-                              type="text"
-                              id="name"
-                              name="name"
-                              placeholder="Full Name *"
-                              required=""
-                            />
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="form-input">
-                            <input
-                              type="email"
-                              id="emailOne"
-                              name="name"
-                              placeholder="Your Email *"
-                              required=""
-                            />
-                          </div>
-                        </div>
-                        <div class="col-lg-4">
-                          <div class="form-input">
-                            <input
-                              type="text"
-                              id="website"
-                              name="name"
-                              placeholder="Website"
-                              required=""
-                            />
-                          </div>
-                        </div>
-                        <div class="comments-btn">
-                          <button class="main-color-rocb" type="submit">
-                            <span class="btn-text"
-                              ><span>Submit Now</span></span
-                            >
-                            <span class="btn-icon"
-                              ><i class="tji-arrow-right-long"></i
-                            ></span>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    <div class="tj-nav-post__grid">
+        <a href="{% url 'about:about_default' %}"><i class="tji-window"></i></a>
+    </div>
+
+    <!-- next tab -->
+    <div class="tj-nav__post next">
+        <div class="tj-nav-post__nav next_post">
+            {% if next_tab %}
+                <a href="{% url 'about:about_tab' slug=next_tab.slug %}">
+                    Next<span><i class="tji-arrow-right"></i></span>
+                </a>
+            {% else %}
+                <a class="disabled">Next<span><i class="tji-arrow-right"></i></span></a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
               </div>
             </div>
             {% endfor %}
@@ -979,27 +785,7 @@
                     {% endfor %}
                   </ul>
                 </div>
-                <div
-                  class="tj-sidebar-widget widget-feature-item wow fadeInUp"
-                  data-wow-delay=".3s"
-                >
-                  <div class="feature-box">
-                    <div class="feature-content">
-                      <h2 class="title">Modern</h2>
-                      <span>Home Makeover</span>
-                      <a
-                        class="read-more feature-contact"
-                        href="tel:8321890640"
-                      >
-                        <i class="tji-phone-3"></i>
-                        <span>+8 (321) 890-640</span>
-                      </a>
-                    </div>
-                    <div class="feature-images">
-                      <img src="assets/images/service/service-ad.webp" alt="" />
-                    </div>
-                  </div>
-                </div>
+               
               </div>
             </div>
           </div>
@@ -1008,33 +794,7 @@
       <!-- end: Blog Section -->
 
       <!-- start: Cta Section -->
-      <section class="tj-cta-section">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="cta-area">
-                <div class="cta-content">
-                  <h2 class="title title-anim">Let’s Build Future Together.</h2>
-                  <div class="cta-btn wow fadeInUp" data-wow-delay=".6s">
-                    <a class="main-color-rocb btn-dark" href="contact.html">
-                      <span class="btn-text"><span>Get Started Now</span></span>
-                      <span class="btn-icon"
-                        ><i class="tji-arrow-right-long"></i
-                      ></span>
-                    </a>
-                  </div>
-                </div>
-                <div class="cta-img">
-                  <img
-                    src="{% static 'assets/images/cta/cta-bg.webp' %}"
-                    alt=""
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+  
       <!-- end: Cta Section -->
     </main>
 

@@ -263,8 +263,17 @@
               <div class="menu-area d-none d-lg-inline-flex align-items-center">
                 <nav id="mobile-menu" class="mainmenu">
                   <ul>
-                    <li>
-                      <a href="{% url 'about' %}">About Us</a>
+                    <li class="has-dropdown">
+                      <a href="{% url 'about:about_default' %}">About Us</a>
+                      <ul class="sub-menu">
+                        {% for tab in tabs %}
+                        <li>
+                          <a href="{% url 'about:about_tab' tab.slug %}"
+                            >{{ tab.title }}</a
+                          >
+                        </li>
+                        {% endfor %}
+                      </ul>
                     </li>
                     <li class="has-dropdown">
                       <a href="#">Region</a>

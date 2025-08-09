@@ -1,10 +1,5 @@
 from django.contrib import admin
-from .models import About, Tab, AboutSection, MiniTitle, Image, BlockQuote, Tag
-
-
-class TabInline(admin.TabularInline):
-    model = Tab
-    extra = 1
+from .models import About, AboutSection, MiniTitle, Image, BlockQuote, Tag
 
 
 class AboutSectionInline(admin.TabularInline):
@@ -15,13 +10,7 @@ class AboutSectionInline(admin.TabularInline):
 @admin.register(About)
 class AboutAdmin(admin.ModelAdmin):
     list_display = ("title", "created_at", "created_by")
-    inlines = [TabInline, AboutSectionInline]
-
-
-@admin.register(Tab)
-class TabAdmin(admin.ModelAdmin):
-    list_display = ("title", "order", "about")
-    list_editable = ("order",)
+    inlines = [AboutSectionInline]
 
 
 @admin.register(AboutSection)

@@ -1,30 +1,39 @@
 from django.shortcuts import render, get_object_or_404
-from .models import About, Tab
+from .models import About
 
 
-def about_page(request, tab_slug=None):
-    tabs = Tab.objects.select_related('about').order_by('order')
+def about_page(request, slug=None):
+    tabs = list(About.objects.order_by('created_at'))
 
-    if not tabs.exists():
-        return render(request, "about.html", {"tabs": [], "selected_tab": None, "about": None})
+    if not tabs:
+        return render(request, "about.html", {
+            "tabs": [],
+            "selected_tab": None,
+            "about": None
+        })
 
-    if tab_slug:
-        selected_tab = get_object_or_404(
-            Tab, slug=tab_slug
-        )
+    if slug:
+        selected_tab = get_object_or_404(About, slug=slug)
     else:
-        selected_tab = tabs.first()
+        selected_tab = tabs[0]
 
-    about = selected_tab.about
+    # Önceki ve sonraki tab'ı bul
+    current_index = tabs.index(selected_tab)
+    prev_tab = tabs[current_index - 1] if current_index > 0 else None
+    next_tab = tabs[current_index +
+                    1] if current_index < len(tabs) - 1 else None
 
-    sections = about.sections.prefetch_related(
-        'mini_titles', 'images', 'block_quotes').all()
-    tags = about.tags.all()
+    sections = selected_tab.sections.prefetch_related(
+        'mini_titles', 'images', 'block_quotes'
+    ).all()
+    tags = selected_tab.tags.all()
 
     return render(request, "about.html", {
         "tabs": tabs,
         "selected_tab": selected_tab,
-        "about": about,
+        "about": selected_tab,
         "sections": sections,
-        "tags": tags
+        "tags": tags,
+        "prev_tab": prev_tab,
+        "next_tab": next_tab
     })

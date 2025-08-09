@@ -4,6 +4,7 @@ from django.db import models
 
 class About(models.Model):
     title = models.CharField(max_length=200, verbose_name="Title")
+    slug = models.SlugField(unique=True, editable=False, blank=True, null=True)
     description = models.TextField(verbose_name="Description")
     image = models.ImageField(
         upload_to='about_images/', verbose_name="Image", blank=True, null=True)
@@ -18,14 +19,6 @@ class About(models.Model):
 
     def __str__(self):
         return self.title
-
-
-class Tab(models.Model):
-    title = models.CharField(max_length=100, verbose_name="Tab Title")
-    slug = models.SlugField(unique=True, blank=True)
-    order = models.PositiveIntegerField(default=0, verbose_name="Order")
-    about = models.ForeignKey(
-        'About', on_delete=models.CASCADE, related_name='tabs', verbose_name="About")
 
     def save(self, *args, **kwargs):
         if not self.slug:
