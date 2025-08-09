@@ -193,3 +193,11 @@ DATA_UPLOAD_MAX_MEMORY_SIZE = 12428800
 TRANSLATABLE_MODEL_MODULES = ["oneapp.models", ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'aytacmehdizade08@gmail.com'
+EMAIL_HOST_PASSWORD = 'pful vvvc uhib hxup'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
