@@ -258,19 +258,19 @@
           <div class="banner-left-box">
             <div class="banner-content">
               <span class="sub-title wow fadeInDown" data-wow-delay=".2s">
-                <i class="tji-excellence"></i> Recognized for Excellence
+                <i class="tji-excellence"></i> Rocb Europe
               </span>
               <h1 class="banner-title title-anim">
-                Driving Excellence Through Evolution and
-                <span>Trust.</span>
+                WCO <span>Europe</span> Regional Office for Capacity Building
               </h1>
               <div class="banner-desc-area wow fadeInUp" data-wow-delay=".7s">
                 <a class="banner-link" href="about.html">
                   <span><i class="tji-arrow-right-big"></i></span>
                 </a>
                 <div class="banner-desc">
-                  Represents growth, expansion, and modern business solution
-                  present growth, expansion.
+                  ROCB Europe supports member states in modernizing Customs
+                  Services by addressing regional needs and international
+                  standards.
                 </div>
               </div>
             </div>
@@ -281,8 +281,45 @@
               />
             </div>
           </div>
+          <div class="banner-right-box">
+            <div class="banner-img">
+              <img
+                data-speed="0.8"
+                src="{% static 'assets/images/hero.jpg' %}"
+                alt=""
+                data-lag="0"
+              />
+            </div>
+            <div class="box-area">
+              <div class="customers-box">
+                <a
+                  class="customers-number link-hero wow fadeInUp"
+                  data-wow-delay=".5s"
+                  style="
+                    visibility: visible;
+                    animation-delay: 0.5s;
+                    animation-name: fadeInUp;
+                  "
+                >
+                  Contact us
+                  <div class="banner-link ">
+                  <span><i class="fa-solid fa-arrow-right"></i></span>
+                </div>
+                </a>
+                
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="banner-scroll wow fadeInDown" data-wow-delay="2s">
+        <div
+          class="banner-scroll wow fadeInDown"
+          data-wow-delay="2s"
+          style="
+            visibility: visible;
+            animation-delay: 2s;
+            animation-name: fadeInDown;
+          "
+        >
           <a href="#choose" class="scroll-down">
             <span><i class="tji-arrow-down-long"></i></span>
             Scroll Down
@@ -298,40 +335,42 @@
             <div class="col-12">
               <div class="sec-heading text-center">
                 <span class="sub-title wow fadeInUp" data-wow-delay=".3s"
-                  ><i class="tji-box"></i>Insights & Ideas</span
+                  ><i class="tji-box"></i>Events</span
                 >
                 <h2 class="sec-title title-anim">
-                  The Ultimate <span>Resource.</span>
+                 Last events</span>
                 </h2>
               </div>
             </div>
           </div>
           <div class="row row-gap-4">
+            {% for event in events %}
             <div class="col-xl-4 col-md-6">
               <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
                 <div class="blog-thumb">
                   <a href="blog-details.html"
                     ><img
-                      src="{% static 'assets/images/blog/blog-1.webp' %}"
+                      src="{{event.image.url}}"
                       alt=""
                   /></a>
                   <div class="blog-date">
-                    <span class="date">28</span>
-                    <span class="month">Feb</span>
+                    <span class="date">{{ event.date|date:"j" }}</span>  
+                    <span class="month">{{ event.date|date:"M" }}</span> 
                   </div>
                 </div>
                 <div class="blog-content">
-                  <div class="blog-meta">
+          
+                    {% if event.tag %}
+                            <div class="blog-meta">
                     <span class="categories"
-                      ><a href="blog-details.html">Business</a></span
+                      ><a href="blog-details.html">{{ event.tag }}</a></span
                     >
-                    <span
-                      >By <a href="blog-details.html">Ellinien Loma</a></span
-                    >
-                  </div>
+                    </div>
+                    {% endif %}
+                  
                   <h4 class="title">
                     <a href="blog-details.html"
-                      >Innovative Solutions for every Business Success.</a
+                      >{{ event.title }}</a
                     >
                   </h4>
                   <a class="text-btn" href="blog-details.html">
@@ -343,246 +382,11 @@
                 </div>
               </div>
             </div>
-            <div class="col-xl-4 col-md-6">
-              <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
-                <div class="blog-thumb">
-                  <a href="blog-details.html"
-                    ><img
-                      src="{% static 'assets/images/blog/blog-2.webp' %}"
-                      alt=""
-                  /></a>
-                  <div class="blog-date">
-                    <span class="date">28</span>
-                    <span class="month">Feb</span>
-                  </div>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <span class="categories"
-                      ><a href="blog-details.html">Business</a></span
-                    >
-                    <span
-                      >By <a href="blog-details.html">Ellinien Loma</a></span
-                    >
-                  </div>
-                  <h4 class="title">
-                    <a href="blog-details.html"
-                      >Harnessing Digital Transform a Roadmap Businesses.</a
-                    >
-                  </h4>
-                  <a class="text-btn" href="blog-details.html">
-                    <span class="btn-text"><span>Read More</span></span>
-                    <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
-                    ></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-4 col-md-6">
-              <div class="blog-item wow fadeInUp" data-wow-delay=".4s">
-                <div class="blog-thumb">
-                  <a href="blog-details.html"
-                    ><img
-                      src="{% static 'assets/images/blog/blog-3.webp' %}"
-                      alt=""
-                  /></a>
-                  <div class="blog-date">
-                    <span class="date">28</span>
-                    <span class="month">Feb</span>
-                  </div>
-                </div>
-                <div class="blog-content">
-                  <div class="blog-meta">
-                    <span class="categories"
-                      ><a href="blog-details.html">Business</a></span
-                    >
-                    <span
-                      >By <a href="blog-details.html">Ellinien Loma</a></span
-                    >
-                  </div>
-                  <h4 class="title">
-                    <a href="blog-details.html"
-                      >Mastering Change Management Lessons for Businesses.</a
-                    >
-                  </h4>
-                  <a class="text-btn" href="blog-details.html">
-                    <span class="btn-text"><span>Read More</span></span>
-                    <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
-                    ></span>
-                  </a>
-                </div>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
       </section>
       <!-- end: Blog Section -->
-
-      <!-- start: Choose Section -->
-      <!-- <section id="choose" class="tj-choose-section section-gap">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="sec-heading text-center">
-                <span class="sub-title wow fadeInUp" data-wow-delay=".3s"
-                  ><i class="tji-box"></i>Choose the Best</span
-                >
-                <h2 class="sec-title title-anim">
-                  Empowering Business with <span>Expertise.</span>
-                </h2>
-              </div>
-            </div>
-          </div>
-          <div class="row row-gap-4 rightSwipeWrap">
-            <div class="col-lg-4">
-              <div class="choose-box right-swipe">
-                <div class="choose-content">
-                  <div class="choose-icon">
-                    <i class="tji-innovative"></i>
-                  </div>
-                  <h4 class="title">Innovative Solutions</h4>
-                  <p class="desc">
-                    We stay ahead of the curve, leveraging cutting-edge
-                    technologies and strategies to keep you competitive in a
-                    marketplace.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="choose-box right-swipe">
-                <div class="choose-content">
-                  <div class="choose-icon">
-                    <i class="tji-award"></i>
-                  </div>
-                  <h4 class="title">Award-Winning Expertise</h4>
-                  <p class="desc">
-                    Recognized by industry leaders, our award-winning team has a
-                    proven record of delivering excellence across projects.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="choose-box right-swipe">
-                <div class="choose-content">
-                  <div class="choose-icon">
-                    <i class="tji-support"></i>
-                  </div>
-                  <h4 class="title">Dedicated Support</h4>
-                  <p class="desc">
-                    Our team is always available to address your concerns,
-                    providing quick and effective solution to keep your
-                    business.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- end: Choose Section -->
-
-      <!-- start: Client Section -->
-
-      <!-- end: Client Section -->
-
-      <!-- start: About Section -->
-      <!-- <section class="tj-about-section section-gap">
-        <div class="container">
-          <div class="row">
-            <div class="col-xl-6 col-lg-6 order-lg-1 order-2">
-              <div class="about-img-area wow fadeInLeft" data-wow-delay=".2s">
-                <div class="about-img">
-                  <img
-                    src="{% static 'assets/images/about/about-1.webp' %}"
-                    alt=""
-                  />
-                </div>
-                <div class="box-area">
-                  <div class="experience-box wow fadeInUp" data-wow-delay=".3s">
-                    <span class="sub-title">Experiences</span>
-                    <div class="customers-number">13+</div>
-                    <h6 class="customers-text">
-                      Decades of Experience, Endless Innovation
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-xl-6 col-lg-6 order-lg-2 order-1">
-              <div
-                class="about-content-area style-1 wow fadeInLeft"
-                data-wow-delay=".2s"
-              >
-                <div class="sec-heading">
-                  <span class="sub-title wow fadeInUp" data-wow-delay=".3s"
-                    ><i class="tji-box"></i>Get to Know Us</span
-                  >
-                  <h2 class="sec-title title-anim">
-                    Empowering Businesses with Innovation, Expertise, and for
-                    <span>Success.</span>
-                  </h2>
-                </div>
-                <div class="wow fadeInUp" data-wow-delay=".5s">
-                  <a class="text-btn" href="about.html">
-                    <span class="btn-text"><span>Learn More</span></span>
-                    <span class="btn-icon"
-                      ><i class="tji-arrow-right-long"></i
-                    ></span>
-                  </a>
-                </div>
-              </div>
-              <div class="about-bottom-area">
-                <div
-                  class="client-review-cont wow fadeInUp"
-                  data-wow-delay=".7s"
-                >
-                  <div class="rating-area">
-                    <div class="star-ratings">
-                      <div class="fill-ratings" style="width: 100%">
-                        <span>★★★★★</span>
-                      </div>
-                      <div class="empty-ratings">
-                        <span>★★★★★</span>
-                      </div>
-                    </div>
-                  </div>
-                  <p class="desc">
-                    We believe in building lasting relationships with our
-                    clients through trust, innovation, and exceptional service.
-                  </p>
-                  <div class="client-info-area">
-                    <div class="client-info">
-                      <h6 class="title">Esther Howard</h6>
-                      <span class="designation">Co.Founder</span>
-                    </div>
-                    <span class="quote-icon"><i class="tji-quote"></i></span>
-                  </div>
-                </div>
-                <div class="video-img wow fadeInUp" data-wow-delay=".9s">
-                  <img
-                    src="{% static 'assets/images/about/about-2.webp' %}"
-                    alt=""
-                  />
-                  <a
-                    class="video-btn video-popup"
-                    data-autoplay="true"
-                    data-vbtype="video"
-                    data-maxwidth="1200px"
-                    href="https://www.youtube.com/watch?v=MLpWrANjFbI&amp;ab_channel=eidelchteinadvogados"
-                  >
-                    <span><i class="tji-play"></i></span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- end: About Section -->
 
       <!-- start: Service Section -->
       <section
@@ -595,10 +399,10 @@
                 <span
                   class="sub-title text-white wow fadeInUp"
                   data-wow-delay=".3s"
-                  ><i class="tji-box"></i>Our Solutions</span
+                  ><i class="tji-box"></i>News</span
                 >
                 <h2 class="sec-title text-white title-anim">
-                  Solutions to Transform Your <span>Business.</span>
+                  Last news
                 </h2>
               </div>
             </div>
@@ -610,27 +414,23 @@
               <div class="service-wrapper wow fadeInUp" data-wow-delay=".4s">
                 <div class="swiper service-slider">
                   <div class="swiper-wrapper">
+                    {% for news in news %}
                     <div class="swiper-slide">
                       <div class="service-item style-1">
                         <div class="service-img">
                           <img
-                            src="{% static 'assets/images/service/service-1.webp' %}"
+                            src="{{news.image.url}}"
                             alt=""
                           />
-                        </div>
-                        <div class="service-icon">
-                          <i class="tji-service-1"></i>
                         </div>
                         <div class="service-content">
                           <h4 class="title">
                             <a href="service-details.html"
-                              >Business Strategy Development</a
+                              >{{ news.title }}</a
                             >
                           </h4>
                           <p class="desc">
-                            Through a combination of data-driven insights and
-                            innovative approaches, we work closely with you to
-                            develop customized.
+                            {{ news.description }}
                           </p>
                           <a class="text-btn" href="service-details.html">
                             <span class="btn-text"
@@ -643,105 +443,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="swiper-slide">
-                      <div class="service-item style-1">
-                        <div class="service-img">
-                          <img
-                            src="{% static 'assets/images/service/service-5.webp' %}"
-                            alt=""
-                          />
-                        </div>
-                        <div class="service-icon">
-                          <i class="tji-service-2"></i>
-                        </div>
-                        <div class="service-content">
-                          <h4 class="title">
-                            <a href="service-details.html"
-                              >Customer Experience Solutions</a
-                            >
-                          </h4>
-                          <p class="desc">
-                            Developing personalized customer journeys to
-                            increase satisfaction and loyalty of our expansion
-                            to keep competitive.
-                          </p>
-                          <a class="text-btn" href="service-details.html">
-                            <span class="btn-text"
-                              ><span>Learn More</span></span
-                            >
-                            <span class="btn-icon"
-                              ><i class="tji-arrow-right-long"></i
-                            ></span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="service-item style-1">
-                        <div class="service-img">
-                          <img
-                            src="{% static 'assets/images/service/service-6.webp' %}"
-                            alt=""
-                          />
-                        </div>
-                        <div class="service-icon">
-                          <i class="tji-service-3"></i>
-                        </div>
-                        <div class="service-content">
-                          <h4 class="title">
-                            <a href="service-details.html"
-                              >Sustainability and ESG Consulting</a
-                            >
-                          </h4>
-                          <p class="desc">
-                            Provide tailored strategies that not only drive
-                            long-term value but also build trust with
-                            stakeholders, investors.
-                          </p>
-                          <a class="text-btn" href="service-details.html">
-                            <span class="btn-text"
-                              ><span>Learn More</span></span
-                            >
-                            <span class="btn-icon"
-                              ><i class="tji-arrow-right-long"></i
-                            ></span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="service-item style-1">
-                        <div class="service-img">
-                          <img
-                            src="{% static 'assets/images/service/service-7.webp' %}"
-                            alt=""
-                          />
-                        </div>
-                        <div class="service-icon">
-                          <i class="tji-service-4"></i>
-                        </div>
-                        <div class="service-content">
-                          <h4 class="title">
-                            <a href="service-details.html"
-                              >Training and Development Programs</a
-                            >
-                          </h4>
-                          <p class="desc">
-                            Training and Development Programs are designed to
-                            empower employees with the skills, knowledge, and
-                            tools they need.
-                          </p>
-                          <a class="text-btn" href="service-details.html">
-                            <span class="btn-text"
-                              ><span>Learn More</span></span
-                            >
-                            <span class="btn-icon"
-                              ><i class="tji-arrow-right-long"></i
-                            ></span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                    {% endfor %}
                   </div>
                   <div class="swiper-pagination-area white-pagination"></div>
                 </div>
@@ -758,133 +460,9 @@
       </section>
       <!-- end: Service Section -->
 
-      <!-- start: Project Section -->
-      <section class="tj-project-section section-gap">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="sec-heading-wrap">
-                <span class="sub-title wow fadeInUp" data-wow-delay=".3s"
-                  ><i class="tji-box"></i>Proud Projects</span
-                >
-                <div class="heading-wrap-content">
-                  <div class="sec-heading">
-                    <h2 class="sec-title title-anim">
-                      Breaking Boundaries, Building <span>Dreams.</span>
-                    </h2>
-                  </div>
-                  <p class="desc wow fadeInUp" data-wow-delay=".5s">
-                    We work closely with our clients to understand their unique
-                    needs and craft tailored solutions that address challenges.
-                  </p>
-                  <div class="btn-wrap wow fadeInUp" data-wow-delay=".6s">
-                    <a class="main-color-rocb" href="portfolio.html">
-                      <span class="btn-text"><span>More Projects</span></span>
-                      <span class="btn-icon"
-                        ><i class="tji-arrow-right-long"></i
-                      ></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div class="project-area">
-                <div class="project-item wow fadeInLeft" data-wow-delay=".3s">
-                  <div
-                    class="project-img"
-                    data-bg-image="{% static 'assets/images/project/project-1.webp' %}"
-                  ></div>
-                  <div class="project-content">
-                    <span class="categories"
-                      ><a href="portfolio-details.html">Connect</a></span
-                    >
-                    <div class="project-text">
-                      <h4 class="title">
-                        <a href="portfolio-details.html"
-                          >Event Management Platform</a
-                        >
-                      </h4>
-                      <a class="project-btn" href="portfolio-details.html">
-                        <i class="tji-arrow-right-long"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-item wow fadeInRight" data-wow-delay=".3s">
-                  <div
-                    class="project-img"
-                    data-bg-image="{% static 'assets/images/project/project-2.webp' %}"
-                  ></div>
-                  <div class="project-content">
-                    <span class="categories"
-                      ><a href="portfolio-details.html">Empower</a></span
-                    >
-                    <div class="project-text">
-                      <h4 class="title">
-                        <a href="portfolio-details.html"
-                          >Digital Marketing Campaign</a
-                        >
-                      </h4>
-                      <a class="project-btn" href="portfolio-details.html">
-                        <i class="tji-arrow-right-long"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-item wow fadeInLeft" data-wow-delay=".3s">
-                  <div
-                    class="project-img"
-                    data-bg-image="{% static 'assets/images/project/project-3.webp' %}"
-                  ></div>
-                  <div class="project-content">
-                    <span class="categories"
-                      ><a href="portfolio-details.html">Support</a></span
-                    >
-                    <div class="project-text">
-                      <h4 class="title">
-                        <a href="portfolio-details.html"
-                          >Interactive Learning Platform</a
-                        >
-                      </h4>
-                      <a class="project-btn" href="portfolio-details.html">
-                        <i class="tji-arrow-right-long"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div class="project-item wow fadeInRight" data-wow-delay=".3s">
-                  <div
-                    class="project-img"
-                    data-bg-image="{% static 'assets/images/project/project-4.webp' %}"
-                  ></div>
-                  <div class="project-content">
-                    <span class="categories"
-                      ><a href="portfolio-details.html">Business</a></span
-                    >
-                    <div class="project-text">
-                      <h4 class="title">
-                        <a href="portfolio-details.html"
-                          >Environmental Impact Dashboard</a
-                        >
-                      </h4>
-                      <a class="project-btn" href="portfolio-details.html">
-                        <i class="tji-arrow-right-long"></i>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- end: Project Section -->
 
       <!-- start: Countup Section -->
-      <div class="tj-countup-section">
+      <div class="tj-countup-section section-gap ">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -948,158 +526,6 @@
       </div>
       <!-- end: Countup Section -->
 
-      <!-- start: Testimonial Section -->
-      <section class="tj-testimonial-section section-gap section-gap-x">
-        <div class="container">
-          <div class="row justify-content-between">
-            <div class="col-12">
-              <div class="sec-heading-wrap">
-                <span class="sub-title wow fadeInUp" data-wow-delay=".3s"
-                  ><i class="tji-box"></i>Clients Feedback</span
-                >
-                <div class="heading-wrap-content">
-                  <div class="sec-heading">
-                    <h2 class="sec-title title-anim">
-                      Success <span>Stories</span> Fuel our Innovation.
-                    </h2>
-                  </div>
-                  <div
-                    class="slider-navigation d-inline-flex wow fadeInUp"
-                    data-wow-delay=".4s"
-                  >
-                    <div class="slider-prev">
-                      <span class="anim-icon">
-                        <i class="tji-arrow-left"></i>
-                        <i class="tji-arrow-left"></i>
-                      </span>
-                    </div>
-                    <div class="slider-next">
-                      <span class="anim-icon">
-                        <i class="tji-arrow-right"></i>
-                        <i class="tji-arrow-right"></i>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-12">
-              <div
-                class="testimonial-wrapper wow fadeInUp"
-                data-wow-delay=".5s"
-              >
-                <div class="swiper swiper-container testimonial-slider">
-                  <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                      <div class="testimonial-item">
-                        <span class="quote-icon"
-                          ><i class="tji-quote"></i
-                        ></span>
-                        <div class="desc">
-                          <p>
-                            Working with Bexon has been a game-changer for our
-                            business. Their team's professionalism, attention to
-                            detail, and innovative solutions have helped us
-                            streamline operations and achieve our goals faster
-                            than we imagined. We truly feel like a valued
-                            partner.
-                          </p>
-                        </div>
-                        <div class="testimonial-author">
-                          <div class="author-inner">
-                            <div class="author-img">
-                              <img
-                                src="{% static 'assets/images/testimonial/client-1.webp' %}"
-                                alt=""
-                              />
-                            </div>
-                            <div class="author-header">
-                              <h4 class="title">Guy Hawkins</h4>
-                              <span class="designation">Co. Founder</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="testimonial-item">
-                        <span class="quote-icon"
-                          ><i class="tji-quote"></i
-                        ></span>
-                        <div class="desc">
-                          <p>
-                            The results we’ve seen after partnering with Bexon
-                            are beyond our expectations. They not only
-                            understood our vision but also brought new ideas to
-                            the table that have taken our business to the next
-                            level. Their expertise and commitment to success
-                            make them a trusted.
-                          </p>
-                        </div>
-                        <div class="testimonial-author">
-                          <div class="author-inner">
-                            <div class="author-img">
-                              <img
-                                src="{% static 'assets/images/testimonial/client-2.webp' %}"
-                                alt=""
-                              />
-                            </div>
-                            <div class="author-header">
-                              <h4 class="title">Ralph Edwards</h4>
-                              <span class="designation">Co. Founder</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide">
-                      <div class="testimonial-item">
-                        <span class="quote-icon"
-                          ><i class="tji-quote"></i
-                        ></span>
-                        <div class="desc">
-                          <p>
-                            We’ve been working with Bexonfor years, and they
-                            continue to deliver outstanding results. Their team
-                            is proactive, responsive, and always goes the extra
-                            mile to ensure our needs are met. They’ve become a
-                            key contributor to our growth and success that
-                            really help us"
-                          </p>
-                        </div>
-                        <div class="testimonial-author">
-                          <div class="author-inner">
-                            <div class="author-img">
-                              <img
-                                src="{% static 'assets/images/testimonial/client-3.webp' %}"
-                                alt=""
-                              />
-                            </div>
-                            <div class="author-header">
-                              <h4 class="title">Devon Lane</h4>
-                              <span class="designation">Co. Founder</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="swiper-pagination-area"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="bg-shape-1">
-          <img src="{% static 'assets/images/shape/pattern-2.svg' %}" alt="" />
-        </div>
-        <div class="bg-shape-2">
-          <img src="{% static 'assets/images/shape/pattern-3.svg' %}" alt="" />
-        </div>
-      </section>
-      <!-- end: Testimonial Section -->
 
       <!-- start: Faq Section -->
       <section class="tj-faq-section section-gap">

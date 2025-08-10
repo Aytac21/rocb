@@ -1035,27 +1035,27 @@ Progressbar js
 		}
 
 		/* Title Animation */
-		if ($(".title-anim").length) {
-			let staggerAmount = 0.01,
-				delayValue = 0.1,
-				easeType = "power1.inout",
-				animatedTitleElements = document.querySelectorAll(".title-anim");
+		// if ($(".title-anim").length) {
+		// 	let staggerAmount = 0.01,
+		// 		delayValue = 0.1,
+		// 		easeType = "power1.inout",
+		// 		animatedTitleElements = document.querySelectorAll(".title-anim");
 
-			animatedTitleElements.forEach(element => {
-				let animatedTitleElements = new SplitText(element, {
-					types: "lines, words",
-				});
-				gsap.from(animatedTitleElements.chars, {
-					y: "100%",
-					duration: 0.5,
-					delay: delayValue,
-					autoAlpha: 0,
-					stagger: staggerAmount,
-					ease: easeType,
-					scrollTrigger: { trigger: element, start: "top 85%" },
-				});
-			});
-		}
+		// 	animatedTitleElements.forEach(element => {
+		// 		let animatedTitleElements = new SplitText(element, {
+		// 			types: "lines, words",
+		// 		});
+		// 		gsap.from(animatedTitleElements.chars, {
+		// 			y: "100%",
+		// 			duration: 0.5,
+		// 			delay: delayValue,
+		// 			autoAlpha: 0,
+		// 			stagger: staggerAmount,
+		// 			ease: easeType,
+		// 			scrollTrigger: { trigger: element, start: "top 85%" },
+		// 		});
+		// 	});
+		// }
 
 		/* Marque js */
 		gsap.to(".marquee-slider-wrapper-two", {
