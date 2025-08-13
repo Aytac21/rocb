@@ -630,7 +630,6 @@ body:has(.sticky) .sticky-lg-top {
 }
 .main-color-rocb .btn-icon i {
   color: var(--tj-color-common-white);
- 
 }
 .main-color-rocb.btn-dark {
   background-color: var(--tj-color-theme-dark);
@@ -1336,135 +1335,134 @@ START: Theme Header CSS
   transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
- .header-flag {
-            line-height: 1;
-            position: relative;
-        }
+.header-flag {
+  line-height: 1;
+  position: relative;
+}
 
-        .header-flag .flag {
-            color: var(--tj-color-heading-primary);
-            font-size: 20px;
-            line-height: 1;
-            width: 48px;
-            height: 48px;
-            gap: 10px;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            background: white;
-            border: 2px solid #e0e0e0;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-        }
+.header-flag .flag {
+  color: var(--tj-color-heading-primary);
+  font-size: 20px;
+  line-height: 1;
+  width: 48px;
+  height: 48px;
+  gap: 10px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 2px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
 
-        .header-flag .flag:hover {
-            border-color: #007bff;
-            box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
-        }
+.header-flag .flag:hover {
+  border-color: #007bff;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
 
-        .header-flag .flag img {
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
+.header-flag .flag img {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  object-fit: cover;
+}
 
-        .header-flag .flag i {
-            position: absolute;
-            right: -5px;
-            bottom: -5px;
-            background: white;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            border: 1px solid #e0e0e0;
-            transition: transform 0.3s ease;
-        }
+.header-flag .flag i {
+  position: absolute;
+  right: -5px;
+  bottom: -5px;
+  background: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease;
+}
 
-        .header-flag .flag.active i {
-            transform: rotate(180deg);
-        }
+.header-flag .flag.active i {
+  transform: rotate(180deg);
+}
 
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            min-width: 120px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: all 0.3s ease;
-            z-index: 1000;
-            margin-top: 8px;
-        }
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  margin-top: 8px;
+}
 
-        .dropdown.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
+.dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
 
-        .dropdown-item {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-            border: none;
-            background: none;
-            width: 100%;
-            text-align: left;
-        }
+.dropdown-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+}
 
-        .dropdown-item:hover {
-            background-color: #f8f9fa;
-        }
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
 
-        .dropdown-item:first-child {
-            border-radius: 8px 8px 0 0;
-        }
+.dropdown-item:first-child {
+  border-radius: 8px 8px 0 0;
+}
 
-        .dropdown-item:last-child {
-            border-radius: 0 0 8px 8px;
-        }
+.dropdown-item:last-child {
+  border-radius: 0 0 8px 8px;
+}
 
-        .dropdown-item:only-child {
-            border-radius: 8px;
-        }
+.dropdown-item:only-child {
+  border-radius: 8px;
+}
 
-        .dropdown-item img {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            margin-right: 10px;
-            object-fit: cover;
-        }
+.dropdown-item img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
 
-        .dropdown-item span {
-            font-size: 14px;
-            color: var(--tj-color-heading-primary);
-        }
+.dropdown-item span {
+  font-size: 14px;
+  color: var(--tj-color-heading-primary);
+}
 
-        .dropdown-item.selected {
-            background-color: #e3f2fd;
-            color: #1976d2;
-        }
+.dropdown-item.selected {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
 
-        .dropdown-item.selected span {
-            color: #1976d2;
-            font-weight: 500;
-        }
-
+.dropdown-item.selected span {
+  color: #1976d2;
+  font-weight: 500;
+}
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .header-search .search {
@@ -5042,21 +5040,6 @@ START: Hero CSS
   }
 }
 
-.banner-left-box {
-  background-color: var(--tj-color-theme-dark);
-  border-radius: 12px;
-  padding: 70px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  overflow: hidden;
-}
 .banner-left-box::before {
   content: "";
   position: absolute;
@@ -5138,24 +5121,24 @@ START: Hero CSS
 }
 @media only screen and (min-width: 1400px) and (max-width: 1600px) {
   .banner-content .banner-title {
-    font-size: 68px;
+    font-size: 50px;
   }
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .banner-content .banner-title {
-    font-size: 58px;
+    font-size: 45px;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .banner-content .banner-title {
-    font-size: 50px;
+    font-size: 40px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px),
   only screen and (min-width: 576px) and (max-width: 767px),
   (max-width: 575px) {
   .banner-content .banner-title {
-    font-size: 45px;
+    font-size: 35px;
   }
 }
 .banner-content .banner-link {
@@ -5494,25 +5477,32 @@ START: Hero CSS
 
 .customers-number {
   color: var(--tj-color-theme-dark);
-  font-size: 58px;
+  font-size: 25px;
   line-height: 0.8;
   letter-spacing: -1.2px;
   font-family: var(--tj-ff-heading);
   font-weight: var(--tj-fw-sbold);
-  padding: 45px 0 13px 0;
+  padding: 4px 0 4px 0;
+  font-weight: 500;
+  display: flex; 
+  gap:6px;
+  cursor: pointer;
+}
+.customers-number a{
+  max-width: 60px;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1399px),
   only screen and (min-width: 992px) and (max-width: 1199px) {
   .customers-number {
-    font-size: 50px;
-    padding: 25px 0 13px 0;
+    font-size: 20px;
+    padding: 2px 0 2px 0;
   }
 }
 @media only screen and (min-width: 576px) and (max-width: 767px),
   (max-width: 575px) {
   .customers-number {
-    font-size: 40px;
-    padding: 20px 0 10px 0;
+    font-size: 15px;
+    padding: 2px 0 2px 0;
   }
 }
 
@@ -7201,6 +7191,7 @@ START: Services CSS
 .service-item.style-1::before {
   content: "";
   background: var(--tj-color-theme-dark-2);
+  opacity: 0.1;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -22207,4 +22198,52 @@ START: Hero CSS
 /* !END: Hero CSS */ /*# sourceMappingURL=main.css.map */
 .main-color-rocb {
   color: #12579e;
+}
+.banner-left-box {
+  background-color: var(--tj-color-theme-dark);
+  border-radius: 12px;
+  padding: 70px;
+  width: calc(50% - 15px);
+  -webkit-margin-end: 15px;
+  margin-inline-end: 15px;
+  position: relative;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  overflow: hidden;
+}
+.link-hero {
+  font-size: 25px;
+  font-weight: 500;
+  color: black;
+  display: flex;
+  width: 100%;
+}
+.link-hero i {
+  font-size: 25px;
+  font-weight: 700;
+  color: black;
+}
+
+.link-hero {
+  position: relative; /* if needed */
+  transition: right 0.3s ease; /* optional if you want to animate parent's right property */
+  margin-left:10px;
+}
+
+.link-hero span {
+  display: inline-block; /* və ya block */
+  transition: transform 0.3s ease;
+}
+
+.link-hero:hover span {
+  transform: translateX(14px);
+}
+
+#countup-section-id{
+  margin-top:60px;
 }

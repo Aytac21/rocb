@@ -335,18 +335,18 @@ START: Hero CSS
 }
 .customers-number {
 	color: var(--tj-color-theme-dark);
-	font-size: 58px;
+	font-size: 35px;
 	line-height: 0.8;
 	letter-spacing: -1.2px;
 	font-family: var(--tj-ff-heading);
 	font-weight: var(--tj-fw-sbold);
 	padding: 45px 0 13px 0;
 	@media #{$xl, $lg} {
-		font-size: 50px;
+		font-size: 350px;
 		padding: 25px 0 13px 0;
 	}
 	@media #{$sm, $xs} {
-		font-size: 40px;
+		font-size: 30px;
 		padding: 20px 0 10px 0;
 	}
 }

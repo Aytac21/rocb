@@ -50,7 +50,9 @@ class News(BaseMixin):
     description = models.TextField()
     image = models.ImageField(null=True, blank=True)
     in_home = models.BooleanField(default=False)
-
+    date = models.DateTimeField(null=True, blank=True)
+    tag = models.CharField(max_length=200, null=True,blank=True)
+    
     def __str__(self):
         return f'-{self.title}'
 
@@ -85,6 +87,8 @@ class Event(BaseMixin):
     description = models.TextField()
     image = models.ImageField(null=True, blank=True)
     in_home = models.BooleanField(default=False)
+    date = models.DateTimeField(null=True, blank=True)
+    tag = models.CharField(max_length=300,null=True,blank=True)
 
     def __str__(self):
         return f'-{self.title}'
