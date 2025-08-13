@@ -31,11 +31,15 @@
                   </ul>
                 </li>
                 <li class="has-dropdown">
-                  <a href="#">Region</a>
+                  <a href="{% url 'region:region_default' %}">Region</a>
                   <ul class="sub-menu">
-                    <li><a href="#">Adress by the Vice-Chair</a></li>
-                    <li><a href="#">Member Administrations</a></li>
-                    <li><a href="#">Regional Training Centers</a></li>
+                    {% for tab in regiontabs %}
+                    <li>
+                      <a href="{% url 'region:region_tab' tab.slug %}"
+                        >{{ tab.title }}</a
+                      >
+                    </li>
+                    {% endfor %}
                   </ul>
                 </li>
                 <li>

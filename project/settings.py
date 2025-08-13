@@ -61,7 +61,8 @@ INSTALLED_APPS = [
     'rosetta',
 
     'about',
-    "contact"
+    "contact",
+    "region"
 ]
 
 

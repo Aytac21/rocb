@@ -29,6 +29,7 @@ urlpatterns += i18n_patterns(
     path('', include("oneapp.urls")),
     path('', include("contact.urls")),
     path('', include("about.urls")),
+    path('', include("region.urls")),
     # path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
 )
 

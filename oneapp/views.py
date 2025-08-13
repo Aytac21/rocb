@@ -14,6 +14,7 @@ import json
 import random
 
 from about.models import About
+from region.models import Region
 
 from .models import News, Event
 
@@ -41,11 +42,13 @@ def home(request):
     events = Event.objects.filter(in_home=True)[0:8]
     news = News.objects.filter(in_home=True)[0:8]
     tabs = About.objects.order_by('created_at')
+    regiontabs = Region.objects.order_by('created_at')
 
     context = {
         "events": events,
         "news": news,
-        "tabs": tabs
+        "tabs": tabs,
+        "regiontabs": regiontabs,
     }
 
     return render(request, 'index.html', context)

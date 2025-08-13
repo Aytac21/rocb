@@ -9,12 +9,14 @@ from django.views.decorators.http import require_http_methods
 import json
 from .models import ContactInfo, Contact
 from .forms import ContactForm
+from about.models import About
 
 
 @require_http_methods(["GET", "POST"])
 def contact_view(request):
     # ContactInfo modelinden data götürülecek
     contact_infos = ContactInfo.objects.all()
+    tabs = About.objects.order_by('created_at')
 
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -161,6 +163,7 @@ def contact_view(request):
     context = {
         'form': form,
         'contact_infos': contact_infos,
+        'tabs': tabs
     }
 
     return render(request, 'contact.html', context)
